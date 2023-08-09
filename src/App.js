@@ -8,9 +8,9 @@ import Signup from "./pages/Signup";
 import Contact from "./pages/Contact";
 import Root from "./layout/Root";
 import Faq from "./pages/Faq";
-
+import UserDashboard from "./pages/UserDashboard";
 function App() {
-  return (
+	return (
 		<>
 			<Router>
 				<Routes>
@@ -20,13 +20,13 @@ function App() {
 						<Route path="signin" element={<Signin />} />
 						<Route path="signup" element={<Signup />} />
 						<Route path="contact" element={<Contact />} />
-						<Route path="userdashboard" element={<UserDashboard />} />
+						<Route path="login" element={<Faq />} />
+						<Route path="/account" element={<UserDashboard />} />
 					</Route>
 				</Routes>
 			</Router>
 		</>
 	);
-	
 }
 
 export default App;
