@@ -33,7 +33,7 @@
     background-color: #191B1C;
     transition: width 0.2s;
     position: absolute;
-    top: 60%;
+    top: 100%;
   }
   
   .navbar__link.active::before{

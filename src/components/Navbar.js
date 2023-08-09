@@ -11,23 +11,24 @@ const Navbar = () => {
 
     return(
         <Box px={'8'} py={'4'} w={'100%'} pos={'sticky'} top={'0'} bg={'white'}>
-            <Flex justifyContent={'space-between'}>
+            <Flex justifyContent={'space-between'} align={'center'}>
                 <Logo />
                 <Box hideBelow={'lg'} display={'flex'} gap={'1.5rem'}>
                     <NavLink to={'/'} className={'navbar__link'}>Home</NavLink>
-                    <NavLink to={'/about-us'} className={'navbar__link'}>About Us</NavLink>
-                    <NavLink to={'/packages'} className={'navbar__link'}>Packages</NavLink>
+                    <NavLink to={'/about-us'} className={'navbar__link'}>Products</NavLink>
+                    <NavLink to={'/about-us'} className={'navbar__link'}>FAQ</NavLink>
+                    <NavLink to={'/packages'} className={'navbar__link'}>About Us</NavLink>
                     <NavLink to={'/contact-us'} className={'navbar__link'}>Contact Us</NavLink>
                 </Box>
-                <Flex gap={'6'} >
+                <Flex gap={{lg: '.5rem'}} >
                     <Button bg={'none'} >
-                        <Image src={searchIcon}/>
+                        <Image src={searchIcon} width={'20px'}/>
                     </Button>
                     <Button bg={'none'}>
-                        <Image src={cartIcon}/>
+                        <Image src={cartIcon} width={'20px'}/>
                     </Button>
                     <Button bg={'none'}>
-                        <Image src={menuIcon}/>
+                        <Image src={menuIcon} />
                     </Button>
                 </Flex>
             </Flex>
