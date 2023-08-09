@@ -10,7 +10,7 @@ import Logo from "./Logo"
 const Navbar = () => {
 
     return(
-        <Box px={'8'} py={'4'} w={'100%'} pos={'sticky'} top={'0'} bg={'white'}>
+        <Box px={'8'} py={'4'} w={'100%'} pos={'sticky'} top={'0'} bg={'white'} shadow={'base'}>
             <Flex justifyContent={'space-between'} align={'center'}>
                 <Logo />
                 <Box hideBelow={'lg'} display={'flex'} gap={'1.5rem'}>
@@ -27,7 +27,7 @@ const Navbar = () => {
                     <Button bg={'none'}>
                         <Image src={cartIcon} width={'20px'}/>
                     </Button>
-                    <Button bg={'none'}>
+                    <Button bg={'none'} hideFrom={'lg'}>
                         <Image src={menuIcon} />
                     </Button>
                 </Flex>
