@@ -16,8 +16,6 @@ import Fortune from "../images/fortune.jpg"
 const About = () => {
 
     return<>
-        <Navbar/>
-
         <section className="aboutHero">
             <div className="leftAbout">
                 <h2>WHO WE <span>ARE</span></h2>
@@ -110,7 +108,6 @@ const About = () => {
 
 
         <Testimonials/>
-        <Footer/>
     </>
 
 }

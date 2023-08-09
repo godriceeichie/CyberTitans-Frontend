@@ -1,3 +1,5 @@
+export { default as Products } from "./Products";
+
 export {default as Faq} from "./Faq";
 export {default as Signin} from "./Signin";
 export {default as Signup} from "./Signup";
