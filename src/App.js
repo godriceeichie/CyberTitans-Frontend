@@ -6,14 +6,15 @@ import About from "./pages/About";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Contact from "./pages/Contact";
-import UserDashboard from "./pages/UserDashboard";
+import Root from "./layout/Root";
+import Faq from "./pages/Faq";
 
 function App() {
-	return (
+  return (
 		<>
 			<Router>
 				<Routes>
-					<Route path="/">
+					<Route path="/" element={<Root />}>
 						<Route index element={<Home />} />
 						<Route path="about" element={<About />} />
 						<Route path="signin" element={<Signin />} />
@@ -25,6 +26,7 @@ function App() {
 			</Router>
 		</>
 	);
+	
 }
 
 export default App;
