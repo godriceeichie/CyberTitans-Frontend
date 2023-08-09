@@ -20,8 +20,12 @@ const colors = {
     600: "#23856D"
   },
   textColor:{
-    500: "737373"
+    400: "#252B42"
+  },
+  secondTextColor: {
+    400: "#737373"
   }
+
 }
 const theme = extendTheme({colors, fonts})
 
