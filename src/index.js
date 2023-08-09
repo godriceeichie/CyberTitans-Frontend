@@ -18,6 +18,9 @@ const colors = {
   brand: {
     500: "#47AD97",
     600: "#23856D"
+  },
+  textColor:{
+    500: "737373"
   }
 }
 const theme = extendTheme({colors, fonts})

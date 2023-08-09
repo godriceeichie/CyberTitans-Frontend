@@ -10,7 +10,7 @@ import Logo from "./Logo"
 const Navbar = () => {
 
     return(
-        <Box px={{base: '8', lg: '12'}} zIndex={'50'} py={'4'} w={'100%'} pos={'sticky'} top={'0'} bg={'white'} shadow={'base'} >
+        <Box px={{base: '6', lg: '12'}} zIndex={'50'} py={'4'} w={'100%'} pos={'sticky'} top={'0'} bg={'white'} shadow={'base'} >
             <Flex justifyContent={'space-between'} align={'center'}>
                 <Logo />
                 <Box hideBelow={'lg'} display={'flex'} gap={'1.5rem'}>
