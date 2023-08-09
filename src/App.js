@@ -9,8 +9,8 @@ import Faq from "./pages/Faq";
 
 function App() {
   return<>
-  <Faq/>
-    {/* <Router>
+  
+    <Router>
         <Routes>
           <Route path="/" element={<Root />}>
             <Route index element={<Home/>}/>
@@ -21,7 +21,7 @@ function App() {
           </Route>
           
         </Routes>
-    </Router> */}
+    </Router>
   </>
 }
 
