@@ -2,14 +2,14 @@ import { NavLink } from "react-router-dom"
 import "../styles/Footer.css"
 import fb from "../images/facebook.png"
 import maps from "../images/maps.png"
-
+import Logo from "./Logo"
 
 const Footer = () => {
 
     return<>
         <footer>
             <div className={"leftFooter"}>
-                <h2 className="logo">CyberTitans</h2>
+                <Logo />
                 <p>Welcome to our Entertainment Company! We take pride in being your one-stop destination for all things music, movies, and creativity.</p>
                 <div className={"socialIcons"}>
                     <NavLink to="/"><img src={fb} alt="Facebook Logo" /></NavLink>
