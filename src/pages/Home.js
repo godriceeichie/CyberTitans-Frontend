@@ -13,7 +13,7 @@ import booking from "../images/booking.png"
 const Home = () => {
 
     return <>
-        <Navbar/>
+        {/* <Navbar/> */}
 
         <section className="hero">
             <div className="leftHero">
@@ -67,7 +67,7 @@ const Home = () => {
         </section>
         <Testimonials/>
 
-        <Footer/>
+        {/* <Footer/> */}
         
     </>
 
