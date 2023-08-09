@@ -1,62 +1,38 @@
+import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react"
 import "../styles/Navbar.css"
-import { NavLink } from "react-router-dom"
-import { useState } from "react"
+import { Link, NavLink } from "react-router-dom"
+import searchIcon from '../assets/searchIcon.svg'
+import cartIcon from '../assets/shopping__cart.svg'
+import menuIcon from '../assets/menuIcon.svg'
+import Logo from "./Logo"
+
 
 const Navbar = () => {
-    const [showNav, setShowNav] = useState(false)
 
-    const activeStyle = {
-        color: "#003498",
-        fontWeight: 500
-    }
-
-    const ShowNavbar = () => {
-        if (window.innerWidth < 1000) {
-            showNav ? setShowNav(false) : setShowNav(true)
-        }
-    }
-
-    return<>
-        <nav>
-            <div className="logo">
-                <h3>CyberTitans</h3>
-            </div>
-            <ul className="menu">
-                <li><NavLink to="/" style = {({isActive}) => isActive? activeStyle : undefined} end>Home</NavLink></li>
-                <li><NavLink to="/about" style = {({isActive}) => isActive? activeStyle : undefined} end>About</NavLink></li>
-                <li><NavLink>Services</NavLink></li>
-                <li><NavLink to="/contact" style = {({isActive}) => isActive? activeStyle : undefined} end>Contact Us</NavLink></li>
-            </ul>
-            <div className="navButtonWrapper">
-                <NavLink to="/signup"><button>Create Account</button></NavLink>
-                <NavLink to="/signin"> <button>Signin</button></NavLink>
-                <span class={showNav || window.innerWidth > 1000 ? "hide" : "material-symbols-outlined"} onClick={ShowNavbar}>menu</span>
-                <span class={!showNav ? "hide" : "material-symbols-outlined"} onClick={() => setShowNav(false)}>close</span>
-            </div>
-            
-            {/* <ul className="profileWrapper">
-                <span class="material-symbols-outlined">notifications</span>
-                <div className="profile">
-                    <img src="" alt="" />
-                    <p>John Doe</p>
-                </div>
-                
-            </ul> */}
-            
-        </nav>
-        <div className={showNav ? "responsivenav" : "hide"}>
-            <ul className="menu">
-                <li><NavLink to="/" style = {({isActive}) => isActive? activeStyle : undefined} end>Home</NavLink></li>
-                <li><NavLink to="/about" style = {({isActive}) => isActive? activeStyle : undefined} end>About</NavLink></li>
-                <li><NavLink>Services</NavLink></li>
-                <li><NavLink>Contact Us</NavLink></li>
-            </ul>
-            <div className="navButtonWrapper">
-                <NavLink to="/signup"><button>Create Account</button></NavLink>
-               <NavLink to="/sgnin"> <button>Signin</button></NavLink>
-            </div>
-        </div>
-    </>
+    return(
+        <Box px={'8'} py={'4'} w={'100%'} pos={'sticky'} top={'0'} bg={'white'}>
+            <Flex justifyContent={'space-between'}>
+                <Logo />
+                <Box hideBelow={'lg'} display={'flex'} gap={'1.5rem'}>
+                    <NavLink to={'/'} className={'navbar__link'}>Home</NavLink>
+                    <NavLink to={'/about-us'} className={'navbar__link'}>About Us</NavLink>
+                    <NavLink to={'/packages'} className={'navbar__link'}>Packages</NavLink>
+                    <NavLink to={'/contact-us'} className={'navbar__link'}>Contact Us</NavLink>
+                </Box>
+                <Flex gap={'6'} >
+                    <Button bg={'none'} >
+                        <Image src={searchIcon}/>
+                    </Button>
+                    <Button bg={'none'}>
+                        <Image src={cartIcon}/>
+                    </Button>
+                    <Button bg={'none'}>
+                        <Image src={menuIcon}/>
+                    </Button>
+                </Flex>
+            </Flex>
+        </Box>
+    )
 
 }
 

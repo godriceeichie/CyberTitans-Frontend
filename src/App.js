@@ -5,9 +5,11 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Contact from "./pages/Contact";
 import Root from "./layout/Root";
+import Faq from "./pages/Faq";
 
 function App() {
   return<>
+  
     <Router>
         <Routes>
           <Route path="/" element={<Root />}>
