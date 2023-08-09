@@ -1,0 +1,312 @@
+/* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; */
+:root{
+    --blue: #003498;
+    --darkblue: #0e2c64;
+}
+
+.aboutHero{
+    margin-top: 80px;
+    padding: 100px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.leftAbout{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 40%;
+}
+.leftAbout h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+}
+.leftAbout h2 span{
+    color: var(--darkblue);
+}
+.leftAbout p{
+    margin-bottom: 15px;
+    line-height: 25px;
+    text-align: justify;
+    width: 90%;
+    font-size: 17px;
+}
+.leftAbout button{
+    width: fit-content;
+    padding: 15px 40px;
+    border: 2px solid var(--blue);
+    background-color: white;
+    font-weight: 600;
+    color: var(--blue);
+    border-radius: 5px;
+    font-size: 14px;
+}
+.leftAbout button:hover{
+    cursor: pointer;
+    background-color: var(--darkblue);
+    transition: 500ms;
+    color: white;
+}
+.aboutHero img{
+    width: 50%;
+    border-radius: 20px;
+}
+
+.missionWrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding: 100px 5%;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.missionWrapper .heading{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    align-items: center;
+}
+.missionWrapper .heading h2{
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+.missionWrapper .heading h2 span{
+    color: var(--darkblue);
+}
+.missionWrapper .heading p{
+    font-size: 16px;
+    width: 60%;
+    text-align: center;
+}
+.missionCardsWrapper{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3%;
+    row-gap: 30px;
+}
+.missionCards{
+    width: 48.5%;
+    background-color: whitesmoke;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.missionCards img{
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.teamWrapper{
+    padding: 100px 5%;
+    padding-bottom: 0px;
+    display: flex;
+    row-gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.teamWrapper .heading{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    align-items: center;
+}
+.teamWrapper .heading h2{
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+.teamWrapper .heading h2 span{
+    color: var(--darkblue);
+}
+.teamWrapper .heading p{
+    font-size: 16px;
+    width: 60%;
+    text-align: center;
+}
+.teamCardWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 3%;
+    width: 90%;
+}
+.teamCard{
+    width: 31.3%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.teamCard img{
+    height: 400px;
+    width: 100%;
+    background-color: gray;
+    object-fit: cover;
+}
+.sophia img{
+    object-position: top;
+
+}
+
+@media(max-width: 1500px){
+    .leftAbout{
+        width: 45%;
+    }
+    .leftAbout p{
+        width: 100%;
+    }
+    .aboutHero img{
+        height: 500px;
+        object-fit: cover;
+    }
+}
+@media(max-width: 1300px){
+    .missionCardsWrapper{
+        width: 80%;
+    }
+    .teamCardWrapper{
+        width: 100%;
+    }
+}
+@media(max-width: 1000px){
+    .leftAbout h2{
+        font-size: 35px;
+    }
+    .leftAbout p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .aboutHero img{
+        height: 400px;
+    }
+    .missionCardsWrapper{
+        width: 100%;
+    }
+    .missionWrapper .heading h2{
+        font-size: 30px;
+    }
+    .missionWrapper .heading p{
+        font-size: 14px;
+        width: 80%;
+    }
+    .missionCards h3{
+        font-size: 16px;
+    }
+    .missionCards p{
+        font-size: 14px;
+    }
+    .missionCards img{
+        width: 60px;
+        height: 60px;
+    }
+    .teamWrapper .heading h2{
+        font-size: 30px;
+    }
+    .teamWrapper .heading p{
+        width: 80%;
+    }
+    .teamCard img{
+        height: 300px;
+    }
+}
+@media(max-width: 750px){
+    .aboutHero{
+        flex-direction: column;
+        row-gap: 50px;
+        padding-bottom: 40px;
+    }
+    .leftAbout{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .leftAbout p{
+        text-align: center;
+    }
+    .leftAbout button{
+        padding: 10px 25px;
+    }
+    .aboutHero img{
+        width: 100%;
+    }
+    .missionWrapper .heading p{
+        width: 100%;
+    }
+    .missionCards{
+        padding: 20px;
+    }
+    .missionCards img{
+        width: 50px;
+        height: 50px;
+    }
+    .teamCard{
+        width: 48.5%;
+    }
+    .teamWrapper .heading p{
+        width: 100%;
+    }
+}
+@media(max-width: 500px){
+    .aboutHero img{
+        height: 300px;
+    }
+    .missionWrapper{
+        padding-bottom: 40px;
+    }
+    .missionWrapper .heading h2{
+        font-size: 25px;
+    }
+    .leftAbout h2{
+        font-size: 30px;
+    }
+    .missionCardsWrapper{
+        flex-direction: column;
+    }
+    .missionCards{
+        width: 100%;   
+    }
+    .teamWrapper .heading h2{
+        font-size: 25px;
+    }
+    .teamWrapper .heading p{
+        font-size: 13px;
+    }
+    .teamCard img{
+        height: 200px;
+    }
+    .teamCard h3{
+        font-size: 15px;
+    }
+    .teamCard p{
+        font-size: 13px;
+    }
+}
+@media(max-width: 400px){
+    .teamCard img{
+        height: 170px;
+    }
+}
+@media(max-width: 350px){
+    .teamCard{
+        width: 100%;
+    }
+    .teamCard img{
+        height: 300px;
+    }
+}

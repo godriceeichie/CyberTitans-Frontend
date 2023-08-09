@@ -1,0 +1,277 @@
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Montserrat', sans-serif; */
+
+:root{
+    --blue: #003498;
+    --darkblue: #0e2c64;
+}
+
+
+.contactusWrapper{
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 90px;
+}
+.leftContactus{
+    width: 48%;
+    display: grid;
+    place-items: center;
+}
+.leftContactusWrapper{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.contactusHeading{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+}
+
+.contactusHeading h2{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+.contactusHeading p{
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+    margin-top: -3px;
+}
+.leftContactusWrapper form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.leftContactusWrapper form .inputWrapper{
+    display: flex;
+    flex-direction: column;
+}
+.leftContactusWrapper form .inputContainer .inputWrapper{
+    width: 50%;
+}
+.leftContactusWrapper form .inputContainer{
+    display: flex;
+    column-gap: 10px;
+}
+.leftContactusWrapper form .inputWrapper label{
+    font-size: 14px;
+}
+.leftContactusWrapper form .inputWrapper input{
+    padding: 10px 10px;
+    outline: none;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+}
+
+.leftContactusWrapper form .inputWrapper input:hover{
+    box-shadow: 0px 0px 3px #90b2f7;
+    border: 1px solid var(--blue);
+    
+}
+.leftContactusWrapper form .inputWrapper textarea{
+    padding: 6.5px 10px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+    resize: vertical;
+}
+.leftContactus form button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: var(--blue);
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    color: white;
+}
+.leftContactus form button:hover{
+    background-color: var(--darkblue);
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.rightContactus{
+    width: 52%;
+    background-color: gray;
+    height: 95vh;
+}
+.rightContactus iframe{
+    width: 100%;
+    height: 100%;
+    /* -webkit-filter: grayscale(50%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+         filter: grayscale(50%); */
+}
+
+.contactDetails{
+    padding: 150px 5%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    background-color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+}
+.contactDetailsHeading{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+    align-items: center;
+    text-align: center;
+}
+.contactDetailsHeading h2{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+.contactDetailsHeading p{
+    font-size: 14px;
+    color: rgb(67, 67, 67);
+}
+.contactDetailsCard{
+    display: flex;
+    column-gap: 3%;
+}
+.contactCard{
+    width: 31.3%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    
+}
+.contactCard img{
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    background-color: var(--blue);
+    border-radius: 10px;
+}
+.contactCardDetails{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-top: 10px;
+}
+.contactCardDetails h3{
+    font-size: 16px;
+}
+.contactCardDetails p{
+    font-size: 14px;
+    color: rgb(67, 67, 67);
+}
+
+@media(max-width: 1300px){
+    .contactDetailsHeading h2{
+        font-size: 25px;
+    }
+    .contactCard .bi{
+        font-size: 17px;
+    }
+}
+@media(max-width: 850px){
+    .contactusWrapper{
+        flex-direction: column;
+        row-gap: 80px;
+    }
+    .leftContactus{
+        width: 100%;
+        margin-top: 60px;
+    }
+    .rightContactus{
+        width: 100%;
+    }
+    .contactCard .bi{
+        font-size: 17px;
+    }
+}
+@media(max-width: 750px){
+    .contactDetailsCard{
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+    .contactDetailsCard .contactCard{
+        width: 48.5%;
+    }
+    .contactCard:last-child{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media(max-width: 600px){
+    .leftContactusWrapper{
+        width: 90%;
+    }
+}
+@media(max-width: 500px){
+    .rightContactus{
+        height: 400px;
+    }
+    .contactDetailsCard .contactCard{
+        width: 100%;
+    }
+    .contactCard:last-child{
+        width: 100%;
+        justify-content: left;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .contactusHeading h2{
+        font-size: 25px;
+    }
+    .contactusHeading p{
+        font-size: 13px;
+    }
+    .contactDetailsHeading h2{
+        font-size: 24px;
+    }
+    .contactDetailsHeading p{
+        line-height: 18px;
+        font-size: 13px;
+    }
+    .leftContactusWrapper form .inputContainer{
+        flex-direction: column;
+        row-gap: 15px;
+    }
+    .leftContactusWrapper form .inputContainer .inputWrapper{
+        width: 100%;
+    }
+    .contactDetails{
+        padding: 80px 4%;
+    }
+}
+@media(max-width: 420px){
+    .contactusHeading h2{
+        font-size: 22px;
+    }
+    .contactDetailsHeading h2{
+        font-size: 22px;
+    }
+    .contactCardDetails h3{
+        font-size: 14px;
+    }
+    .leftContactusWrapper form .inputWrapper label{
+        font-size: 13px;
+    }
+    .contactCardDetails h3{
+        font-size: 15px;
+    }
+    .contactCardDetails p{
+        font-size: 13px;
+    }
+    .contactCard img{
+        width: 35px;
+        height: 35px;
+    }
+    .contactDetails{
+        padding: 150px 5%;
+    }
+    .contactDetailsHeading p{
+        font-size: 13px;
+    }
+}

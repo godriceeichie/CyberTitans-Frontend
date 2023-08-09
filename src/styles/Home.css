@@ -1,0 +1,408 @@
+/* font-family: 'Montserrat', sans-serif; */
+:root{
+    --blue: #003498;
+    --darkblue: #0e2c64;
+}
+
+.hero{
+    display: flex;
+    padding-left: 5%;
+    margin-top: 80px;
+    align-items: center;
+    height: 90vh;
+    font-family: 'Poppins', sans-serif;
+}
+.leftHero{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.leftHero h1{
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    line-height: 55px;
+    color: var(--darkblue);
+}
+.leftHero h3{
+    font-family: 'Inika', serif; 
+    font-weight: 400;
+    font-size: 20px;
+}
+.leftHero p{
+    margin-top: -12px;
+    color: rgb(93, 93, 93);
+    font-size: 16px;
+}
+.leftHero button{
+    padding: 15px 50px;
+    width: fit-content;
+    border: 2px solid var(--blue);
+    background-color: white;
+    border-radius: 5px;
+    color: var(--darkblue);
+    font-weight: 600;
+    margin-top: 20px;
+}
+.leftHero button:hover{
+    cursor: pointer;
+    background-color: #003498;
+    color: white;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+.rightHero{
+    width: 60%;
+}
+.rightHero img{
+    /* width: 100%; */
+    object-fit: cover;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+}
+.bottomHeroDesign img{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 120px;
+    object-fit: cover;
+}
+
+
+.servicesSection{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 200px 5%;
+    font-family: 'Poppins', sans-serif;
+}
+.servicesSection .heading{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    align-items: center;
+}
+.servicesSection .heading h2{
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+.servicesSection .heading h2 span{
+    color: var(--darkblue);
+}
+.servicesSection .heading p{
+    font-size: 16px;
+    width: 70%;
+    text-align: center;
+}
+.servicesCardWrapper{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.servicesCardWrapper .serviceCard{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    padding: 30px;
+    row-gap: 10px;
+    text-align: center;
+}
+.serviceCard:nth-child(1){
+    background-image: linear-gradient(270deg,  #E0EAFF, #E5EEFF, #ffffff);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+.serviceCard:nth-child(3){
+    background-image: linear-gradient(90deg,  #E0EAFF, #E5EEFF, #ffffff);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.serviceCard img{
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.serviceCard h3{
+    font-size: 17px;
+}
+.serviceCard p{
+    font-size: 14px;
+}
+
+.bookTicketSection{
+    background-color: whitesmoke;
+    padding: 0px 5%;
+    padding-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.leftBookTicketAd{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 40%;
+}
+.leftBookTicketAd h2{
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: var(--darkblue);
+}
+.leftBookTicketAd p{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(86, 86, 86);
+}
+.leftBookTicketAd button{
+    width: fit-content;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: 2px solid var(--blue);
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: var(--blue);
+    font-weight: 600;
+}
+.leftBookTicketAd button:hover{
+    cursor: pointer;
+    border: 2px solid var(--darkblue);
+    background-color: var(--darkblue);
+    color: white;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
+}
+.rightBookTicketAd{
+    width: 60%;
+}
+.rightBookTicketAd img{
+    width: 100%;
+    height: 100%;
+}
+@media(max-width: 1300px){
+    .servicesCardWrapper{
+        width: 100%;
+    }
+}
+
+@media(max-width: 1200px){
+    .leftHero{
+        width: 42%;
+    }
+    .leftHero h1{
+        font-size: 50px;
+    }
+    .leftHero h3{
+        font-size: 17px;
+    }
+    .leftHero p{
+        font-size: 14px;
+    }
+    .leftHero button{
+        padding: 12px 40px;
+        margin-top: 10px;
+    }
+    .rightHero{
+        width: 50%;
+    }
+    .rightHero img{
+        width: 60%;
+        height: auto;
+        top: 50px;
+    }
+    .servicesSection .heading h2{
+        font-size: 30px;
+    }
+    .servicesSection .heading p{
+        font-size: 14px;
+    }
+    .serviceCard img{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0px;
+    }
+    .serviceCard p{
+        font-size: 13px;
+    }
+}
+@media(max-width: 1100px){
+    .rightHero{
+        width: 100%;
+        z-index: -1;
+        display: flex;
+        justify-content: right;
+        margin-top: -90px;
+    }
+    .rightHero img{
+        position: static;
+        
+        
+    }
+    .hero{
+        justify-content: center;
+        height: fit-content;
+        padding-left: 0px;
+        /* row-gap: 50px; */
+        flex-direction: column;
+    }
+    .leftHero{
+        padding: 100px 5%;
+        padding-bottom: 0px;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .servicesCardWrapper .serviceCard{
+        padding: 20px;
+    }
+    .leftBookTicketAd h2{
+        font-size: 30px;
+    }
+    .servicesSection{
+        padding: 150px 5%;
+    }
+    .leftBookTicketAd p{
+        font-size: 15px;
+    }
+}
+@media(max-width: 850px){
+    .servicesCardWrapper{
+        flex-direction: column;
+    }
+    .servicesCardWrapper .serviceCard{
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .leftBookTicketAd h2{
+        font-size: 28px;
+        line-height: 26px;
+    }
+    .leftBookTicketAd p{
+        font-size: 14px;
+    }
+}
+@media(max-width: 750px){
+    .leftHero{
+        width: 90%;
+        padding-top: 80px;
+    }
+    .leftHero h1{
+        font-size: 40px;
+        line-height: 37px;
+    }
+    .rightHero{
+        margin-top: -50px;
+    }
+    .servicesSection .heading h2{
+        font-size: 28px;
+    }
+    .servicesSection .heading p{
+        width: 90%;
+    }
+    .bookTicketSection{
+        flex-direction: column;
+        padding: 0px;
+    }
+    .leftBookTicketAd{
+        padding: 120px 5%;
+        padding-bottom: 70px;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .rightBookTicketAd{
+        width: 100%;
+    }
+}
+@media(max-width: 500px){
+    .leftHero{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .leftHero h1{
+        font-size: 30px;
+        line-height: 37px;
+    }
+    .rightHero{
+        margin-top: 0px;
+    }
+    .rightHero img{
+        z-index: 0;
+        width: 100%;
+    }
+    .bottomHeroDesign {
+        display: none;
+    }
+    .leftHero h3{
+        font-size: 14px;
+    }
+    .leftHero p{
+        font-size: 13px;
+        width: 100%;
+
+    }
+    .leftHero button{
+        padding: 10px 25px;
+    }
+    .servicesSection .heading h2{
+        font-size: 25px;
+    }
+    .servicesSection .heading p{
+        width:100%;
+        font-size: 14px;
+    }
+    .serviceCard h3{
+        font-size: 15px;
+    }
+    .serviceCard img{
+        width: 35px;
+        height: 35px;
+    }
+}
+@media (max-width: 400px){
+    .leftHero h1{
+        font-size: 30px;
+    }
+    .leftHero p{
+        font-size: 13px;
+    }
+    .leftHero h3{
+        font-size: 14px;
+    }
+    .servicesSection{
+        padding: 120px 5%;
+    }
+    .servicesCardWrapper{
+        row-gap: 20px;
+    }
+    .servicesCardWrapper .serviceCard{
+        padding: 15px;
+    }
+    .serviceCard h3{
+        font-size: 14px;
+    }
+    .servicesSection .heading p{
+        font-size: 13px;
+    }
+    .leftBookTicketAd h2{
+        font-size: 25px;
+    }
+    .leftBookTicketAd p{
+        font-size: 13px;
+    }
+    .leftBookTicketAd button{
+        padding: 8px 22px;
+        font-size: 13px;
+    }
+}
