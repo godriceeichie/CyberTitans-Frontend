@@ -1,8 +1,8 @@
 .FAQ-container{
     width: 100%;
-    height: 400px;
+    height: 300px;
     /* background-color: #23856D; */
-    background-color: white;
+  background-color: white;
 }
 
 .FAQ-top h1{
@@ -17,5 +17,107 @@
     justify-content: center;
     display: flex;
     padding-top: 30px;
+}
+
+.Questions{
+    height: 300px;
+    width: 100%;
+    /* background-color: blue; */
+    /* align-items: center;
+    justify-content: center;
+    display: flex; */
+
+}
+
+.Questions-top{
+    align-items: center;
+    justify-content: center;
+    /* display: flex; */
+    width: 40%;
+    height: 100px;
+    /* background-color: aqua; */
+  
+}
+
+.Questions-top h1{
+    font-size: 40px;
+    margin-left: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200px;
+
+}
+.Questions-top span{
+    font-size: 15px;
+    margin-left: 25px;
+color: rgba(0, 0, 0, 0.582);
+  
+
+}
+
+
+.Questions-container1{
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* background-color: aqua; */
+
+}
+
+.boxes{
+    width: 100%;
+    height: 150px;
+    /* background-color: blue; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(2,1fr); */
+}
+
+.box1{
+    width: 40%;
+    height: 100px;
+}
+
+.box1 h1{
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.box1 span{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.737);
+}
+
+
+.signup-container{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 200px;
+}
+
+.signup-c1{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+}
+
+.signup-c1 h1{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.signup-c2{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.signup-c1 h2{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 

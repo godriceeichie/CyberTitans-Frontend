@@ -1,11 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
-import Contact from "./pages/Contact";
 import Root from "./layout/Root";
-import Faq from "./pages/Faq";
+
+import { About, Contact, Faq, Home, Signin, Signup } from "./pages";
+
 
 function App() {
   return<>
@@ -18,6 +15,7 @@ function App() {
             <Route path="signin" element={<Signin/>}/>
             <Route path="signup" element={<Signup/>}/>
             <Route path="contact" element={<Contact/>}/>
+            <Route path="faq" element={<Faq/>}/>
           </Route>
           
         </Routes>

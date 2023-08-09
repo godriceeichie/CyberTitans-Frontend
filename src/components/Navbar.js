@@ -16,9 +16,9 @@ const Navbar = () => {
                 <Box hideBelow={'lg'} display={'flex'} gap={'1.5rem'}>
                     <NavLink to={'/'} className={'navbar__link'}>Home</NavLink>
                     <NavLink to={'/about-us'} className={'navbar__link'}>Products</NavLink>
-                    <NavLink to={'/about-us'} className={'navbar__link'}>FAQ</NavLink>
-                    <NavLink to={'/packages'} className={'navbar__link'}>About Us</NavLink>
-                    <NavLink to={'/contact-us'} className={'navbar__link'}>Contact Us</NavLink>
+                    <NavLink to={'/faq'} className={'navbar__link'}>FAQ</NavLink>
+                    <NavLink to={'/about'} className={'navbar__link'}>About Us</NavLink>
+                    <NavLink to={'/contact'} className={'navbar__link'}>Contact Us</NavLink>
                 </Box>
                 <Flex gap={{lg: '.5rem'}} >
                     <Button bg={'none'} >

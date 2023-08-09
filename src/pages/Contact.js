@@ -9,7 +9,6 @@ import location from "../images/location.png"
 const Contact = () => {
 
     return<>
-        <Navbar/>
 
         
         <section className="contactusWrapper">
@@ -85,7 +84,6 @@ const Contact = () => {
         </section>
 
         <Testimonials/>
-        <Footer/>
 
     </>
 
