@@ -1,3 +1,6 @@
+export { default as ContactHero} from "./contact/ContactHero";
+export { default as ContactDetails} from "./contact/ContactDetails";
+export { default as ContactForm} from "./contact/ContactForm";
 export { default as FeaturedProduct } from "./FeaturedProduct";
 export {default as TodayDeals} from "./TodayDeals";
 export { default as Benefits } from "./Benefits";

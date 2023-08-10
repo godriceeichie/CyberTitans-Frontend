@@ -3,7 +3,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Root from "./layout/Root";
 
-import { About, Contact, Faq, Home, Shop, Signin, Signup, UserDashboard, History, Inbox, Order, Settings, Wishlist, Products } from "./pages";
+import { About, Contact, Faq, Home, Shop, Login, Signup, UserDashboard, History, Inbox, Order, Settings, Wishlist, Products } from "./pages";
 
 function App() {
 	return (
@@ -14,7 +14,7 @@ function App() {
 						<Route index element={<Home />} />
 						<Route path="products" element={<Products />} />
 						<Route path="about" element={<About />} />
-						<Route path="signin" element={<Signin />} />
+						<Route path="login" element={<Login />} />
 						<Route path="signup" element={<Signup />} />
 						<Route path="contact" element={<Contact />} />
 						<Route path="account" element={<UserDashboard />} />
