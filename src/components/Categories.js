@@ -16,7 +16,7 @@ const Categories = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
     };
   return (
-    <Box as='section' my={'20'} p={'0'} px={{base: '10', lg:'48'}}>
+    <Box as='section' my={'24'} p={'0'} px={{base: '10', lg:'48'}}>
         <Heading 
             textAlign={'center'} 
             mb={'10'} 

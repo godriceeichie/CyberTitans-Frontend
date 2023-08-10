@@ -10,8 +10,8 @@ import SearchBar from "./SearchBar"
 const Navbar = () => {
 
     return(
-        <>
-            <Box px={{base: '6', lg: '12'}} zIndex={'50'} py={'4'} w={'100%'} pos={'sticky'} top={'0'} bg={'white'} shadow={'base'} >
+        <Box pos={'sticky'} top={'0'} zIndex={'50'}>
+            <Box px={{base: '6', lg: '12'}}  py={'4'} w={'100%'} bg={'white'} shadow={'base'} >
                 <Flex justifyContent={'space-between'} align={'center'}>
                     <Logo />
                     <SearchBar />
@@ -37,7 +37,7 @@ const Navbar = () => {
                 <NavLink to={'/about'} className={'navbar__link'}>About Us</NavLink>
                 <NavLink to={'/contact'} className={'navbar__link'}>Contact Us</NavLink>
             </Box>
-        </>
+        </Box>
     )
 
 }
