@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import "../styles/Signup.css"
 import google from "../images/google.png"
 
-const Signin = () => {
+const Login = () => {
 
     return<>
         <div className="signupWrapper">
@@ -50,4 +50,4 @@ const Signin = () => {
 
 }
 
-export default Signin
+export default Login

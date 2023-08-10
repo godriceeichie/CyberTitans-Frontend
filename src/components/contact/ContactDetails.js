@@ -28,7 +28,7 @@ const ContactDetails = () => {
                 <VStack gap={'2'}>
                     <Heading as={'h3'} fontSize={'1.4rem'} fontWeight={'semibold'} color={'brand.500'}>Our Location</Heading>
                     <Container maxW={'2xs'} fontSize={'1.14rem'}>
-                        Suite 17, LSDPC office complex, Pen Cinema, Agege, Lagos
+                        MBM PLAZA, 48 Old Aba Rd, near Shell I.A. Rumubiokani,
                     </Container>
                 </VStack>
                 <IconButton onClick={() => copy(address)}>

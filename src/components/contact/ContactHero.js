@@ -16,7 +16,7 @@ const ContactHero = () => {
                 <Center>
                     <Image minW={'85%'} maxW={'450px'} src={contactHeroImg}/>
                 </Center>
-            </Box>
+            </Box>  
             <Box flexGrow={'1'} bg={'white'} w={{lg: '50%'}} display={'flex'} flexDirection={'column'} gap={'8'}>
                 <Flex direction={'column'} gap={'2'} alignItems={{base: 'center', lg: 'flex-start'}}>
                     <Text as={'h2'} color={'brand.500'} fontSize={{base: '3xl', lg: '4xl'}} fontWeight={'bold'}>Contact Us</Text>
@@ -26,25 +26,25 @@ const ContactHero = () => {
                 <VStack align={'left'} hideBelow={'lg'}>
                     <Flex align={'center'} gap={'4'}>
                         <img src={twitterIcon} alt="" />
-                        <Link href='https://www.twitter.com/FroNetAfrica' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
+                        <Link href='https://www.twitter.com/' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
                             Twitter <ExternalLinkIcon />
                         </Link>
                     </Flex>
                     <Flex align={'center'} gap={'4'}>
                         <img src={whatsappIcon} alt="" />
-                        <Link href='https://www.whatsapp.com' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
+                        <Link href='https://www.whatsapp.com/' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
                             Whatsapp <ExternalLinkIcon />
                         </Link>
                     </Flex>
                     <Flex align={'center'} gap={'4'}>
                         <img src={instagramIcon} alt="" />
-                        <Link href='https://www.instagram.com/fronetafrica' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
+                        <Link href='https://www.instagram.com/' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
                             Instagram <ExternalLinkIcon />
                         </Link>
                     </Flex>
                     <Flex align={'center'} gap={'4'}>
                         <img src={facebookIcon} alt="" />
-                        <Link href='https://www.facebook.com' isExternal fontWeight={'medium'}  display={'flex'} alignItems={'center'} gap={'4'}>
+                        <Link href='https://www.facebook.com/' isExternal fontWeight={'medium'}  display={'flex'} alignItems={'center'} gap={'4'}>
                             Facebook <ExternalLinkIcon />
                         </Link>
                     </Flex>

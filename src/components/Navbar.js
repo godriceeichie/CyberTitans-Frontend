@@ -28,12 +28,12 @@ const Navbar = () => {
                         <Button bg={'none'} hideFrom={'lg'} p={'0'}>
                             <Image src={menuIcon} />
                         </Button>
-                        <Link as={RouterLink} ml={'.5rem'} hideBelow={'lg'} color={'#252B42'}>Login</Link>
-                        <Link as={RouterLink} ml={'.5rem'} hideBelow={'lg'} fontSize={'.875rem'} borderRadius={'.375rem'} bg={'brand.500'} color={'white'} py={'0.5rem'} px={'4'}>Create Account</Link>
+                        <Link as={RouterLink} to={'/login'} ml={'.5rem'} hideBelow={'lg'} color={'#252B42'}>Login</Link>
+                        <Link as={RouterLink} to={'/signup'} ml={'.5rem'} hideBelow={'lg'} fontSize={'.875rem'} borderRadius={'.375rem'} bg={'brand.500'} color={'white'} py={'0.5rem'} px={'4'}>Create Account</Link>
                     </Flex>
                 </Flex>
             </Box>
-            <Box w={'100%'} hideBelow={'lg'} display={'flex'} alignItems={'center'} justifyContent={'center'} gap={'1.5rem'} bgColor={'brand.600'} py={'2'} px={'4'}>
+            <Box w={'100%'} hideBelow={'lg'} display={'flex'} alignItems={'center'} justifyContent={'center'} gap={'1.5rem'} bgColor={'brand.600'} py={'2.5'} px={'4'}>
                 <NavLink to={'/'} className={'navbar__link'}>Home</NavLink>
                 <NavLink to={'/shop'} className={'navbar__link'}>Shop</NavLink>
                 <NavLink to={'/faq'} className={'navbar__link'}>FAQ</NavLink>
