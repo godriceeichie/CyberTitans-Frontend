@@ -1,8 +1,6 @@
-import { Box, Flex, Heading, Icon, Link, LinkBox, LinkOverlay, Text, VStack } from '@chakra-ui/react'
+import { Box, Heading, Link, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
-// import bg from '../assets/leaf-background-wallpaper-tropical-vector-green-indoor-plant_53876-136757.avif'
 import bg from '../assets/ekrem-osmanoglu-SqUZtDv3avM-unsplash.jpg'
-import smallbg from '../assets/small_hero_bg.jpg'
 import { Link as RouterLink } from 'react-router-dom'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 
@@ -29,6 +27,7 @@ const Hero = () => {
         >
 
             <Box style={overlayStyles} >
+                
                 <VStack px={{base: "4", lg: '8.75rem'}} justifyContent={'center'} alignItems={{base: 'center', lg:'flex-start'}} height={'100%'}>
                     <Heading color={'white'} fontSize={{base: '2.5rem', lg: '5xl'}} w={{lg: '50%'}} textAlign={{base: 'center', lg: 'left'}}>
                         Discover the Beauty of Nature
