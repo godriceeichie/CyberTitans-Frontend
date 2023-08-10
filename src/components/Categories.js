@@ -16,7 +16,7 @@ const Categories = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
     };
   return (
-    <Box my={'20'} px={{base: '10', lg:'48'}}>
+    <Box as='section' my={'20'} px={{base: '10', lg:'48'}}>
         <Heading textAlign={'center'} mb={'10'} fontWeight={'semibold'} fontSize={'2xl'}>Plant Categories</Heading>
         <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)'}} templateRows={{md: 'repeat(3, 1fr)'}} gap={'6'}>
             <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={nonFloweringPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
