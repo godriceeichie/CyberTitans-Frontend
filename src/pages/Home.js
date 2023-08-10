@@ -1,4 +1,4 @@
-import { Benefits, Categories, Hero } from "../components"
+import { Benefits, Categories, FeaturedProduct, Hero, TodayDeals } from "../components"
 
 const Home = () => {
 
@@ -7,6 +7,8 @@ const Home = () => {
             <Hero />
             <Benefits />
             <Categories />
+            <TodayDeals />
+            <FeaturedProduct />
         </>
     )
 
