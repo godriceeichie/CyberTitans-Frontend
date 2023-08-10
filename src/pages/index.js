@@ -1,4 +1,4 @@
-export { default as Products } from "./Products";
+export { default as Shop } from "./Shop";
 
 export {default as Faq} from "./Faq";
 export {default as Signin} from "./Signin";
