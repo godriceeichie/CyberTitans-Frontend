@@ -1,0 +1,33 @@
+.productMain{
+   min-height: 100vh;
+    width: 100%;
+    background-color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+        padding: 100px 0;
+}
+.productMain h1{
+        margin-bottom: 8px;
+        position: relative;
+        font-size: 24px;
+        font-weight: 600;
+         padding-bottom: 10px;
+}
+.productMain h1::after{
+    position: absolute;
+    content: '';
+    background: #abd373;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 66px;
+     height: 2px;
+
+}
+.categories{
+    max-height: max-content;
+    width: 100%;
+    background-color: peachpuff;
+}
