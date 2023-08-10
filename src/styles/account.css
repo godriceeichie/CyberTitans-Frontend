@@ -1,0 +1,33 @@
+/** @format */
+
+:root {
+	--accountcolor: #47ad97;
+}
+
+.accountwrp {
+	/* background-color: #47ad97; */
+	width: 100%;
+	display: flex;
+	gap: 10px;
+}
+
+.sidemenu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 15px;
+	width: 25%;
+	background-color: rgb(252, 249, 249);
+	height: 550px;
+	padding-left: 5rem;
+}
+
+.sidemenu a {
+	font-size: 17px;
+}
+
+.contentmenu {
+	width: 75%;
+	background-color: rgb(241, 241, 241);
+	height: 550px;
+}
