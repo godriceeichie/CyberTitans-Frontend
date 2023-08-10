@@ -1,8 +1,8 @@
-export { default as History} from "./account/History";
-export { default as Inbox} from "./account/Inbox";
-export { default as Order} from "./account/Order";
-export { default as Settings} from "./account/Settings";
-export { default as Wishlist} from "./account/Wishlist";
+export { default as History} from "./userdashboard/History";
+export { default as Inbox} from "./userdashboard/Inbox";
+export { default as Order} from "./userdashboard/Order";
+export { default as Settings} from "./userdashboard/Settings";
+export { default as Wishlist} from "./userdashboard/Wishlist";
 export { default as UserDashboard} from "./UserDashboard";
 export {default as Faq} from "./Faq";
 export {default as Signin} from "./Signin";
