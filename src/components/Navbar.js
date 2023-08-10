@@ -6,17 +6,20 @@ import cartIcon from '../assets/shopping__cart.svg'
 import menuIcon from '../assets/menuIcon.svg'
 import Logo from "./Logo"
 import SearchBar from "./SearchBar"
+import { useState } from "react"
+import { ArrowBackIcon } from "@chakra-ui/icons"
 
 const Navbar = () => {
-
+    const [show, setShow] = useState(false);
     return(
         <Box pos={'sticky'} top={'0'} zIndex={'50'}>
             <Box px={{base: '6', lg: '12'}}  py={'4'} w={'100%'} bg={'white'} shadow={'base'} >
                 <Flex justifyContent={'space-between'} align={'center'}>
-                    <Logo />
-                    <SearchBar />
-                    <Flex gap={{lg: '.5rem'}} alignItems={'center'} fontWeight={'medium'}>
-                        <Button bg={'none'} p={'0'}>
+                    <Logo show={show}/>
+                    <ArrowBackIcon display={show ? 'block' : 'none'} onClick={() => setShow(!show)}/>
+                    <SearchBar show={show}/>
+                    <Flex gap={{lg: '.5rem'}} alignItems={'center'} fontWeight={'medium'} display={show ? 'none' : 'flex'}>
+                        <Button bg={'none'} p={'0'} hideFrom={'lg'} onClick={() => setShow(!show)}>
                             <Image src={searchIcon} width={'20px'}/>
                         </Button>
                         <Button bg={'none'} p={'0'}>
