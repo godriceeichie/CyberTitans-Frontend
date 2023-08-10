@@ -2,13 +2,8 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Root from "./layout/Root";
-import UserDashboard from "./pages/UserDashboard";
-import Settings from "./pages/account/Settings";
-import History from "./pages/account/History";
-import Inbox from "./pages/account/Inbox";
-import Order from "./pages/account/Order";
-import Wishlist from "./pages/account/Wishlist";
-import { About, Contact, Faq, Home, Products, Signin, Signup } from "./pages";
+
+import { About, Contact, Faq, Home, Shop, Signin, Signup, UserDashboard, History, Inbox, Order, Settings, Wishlist } from "./pages";
 
 function App() {
 	return (
@@ -17,7 +12,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Root />}>
 						<Route index element={<Home />} />
-						<Route path="products" element={<Products />} />
+						<Route path="shop" element={<Shop />} />
 						<Route path="about" element={<About />} />
 						<Route path="signin" element={<Signin />} />
 						<Route path="signup" element={<Signup />} />

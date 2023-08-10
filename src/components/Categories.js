@@ -16,8 +16,28 @@ const Categories = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
     };
   return (
-    <Box as='section' my={'20'} px={{base: '10', lg:'48'}}>
-        <Heading textAlign={'center'} mb={'10'} fontWeight={'semibold'} fontSize={'2xl'}>Plant Categories</Heading>
+    <Box as='section' my={'20'} p={'0'} px={{base: '10', lg:'48'}}>
+        <Heading 
+            textAlign={'center'} 
+            mb={'10'} 
+            fontWeight={'semibold'} 
+            fontSize={'2xl'}
+            position={'relative'}
+            _before={{
+                content: '" "',
+                position: 'absolute',
+                bottom: '0',
+                top: '100%',
+                left: '50%',
+                width: '66px',
+                height: '2px',
+                bgColor: 'brand.500',
+                transform: 'translate(-50%)',
+                
+            }}
+        >
+            Featured Categories
+        </Heading>
         <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)'}} templateRows={{md: 'repeat(3, 1fr)'}} gap={'6'}>
             <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={nonFloweringPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
                 <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}}  style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
