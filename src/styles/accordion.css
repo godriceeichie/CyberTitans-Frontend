@@ -3,7 +3,6 @@
     width: 20%;
     height: 40px;
     margin-left: 20px;
-    /* background-color: aqua; */
 }
 
 .column-container{
@@ -19,7 +18,6 @@
 
 .column-container:hover{
     background-color: ghostwhite;
-    /* width: 100%; */
 }
 
 .column-text{
@@ -33,6 +31,9 @@
     opacity: 1;
     animation-name:textanimate ;
     animation-duration:2s ;
+    margin-bottom: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(0, 128, 0, 0.693);
 }
 
 @keyframes textanimate{
