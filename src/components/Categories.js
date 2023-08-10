@@ -6,6 +6,7 @@ import nonFloweringPlant from '../assets/nonflowering-plants.webp'
 import indoorPlant from '../assets/indoor-plant.jpg'
 import outdoorPlant from '../assets/outdoor-plants.jpeg'
 import succulentPlants from '../assets/succulent-plants.jpg'
+import medicinalPlant from '../assets/medicinal-plant.jpg'
 import { Link } from 'react-router-dom'
 
 const Categories = () => {
@@ -62,7 +63,7 @@ const Categories = () => {
                     <Text fontSize={'xl'} color={'white'}>Succulents</Text>
                 </LinkOverlay>
             </GridItem>
-            <GridItem borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={floweringPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
+            <GridItem borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={medicinalPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
                 <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}} style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
                     <Text fontSize={'xl'} color={'white'}>Medicinal</Text>
                 </LinkOverlay>

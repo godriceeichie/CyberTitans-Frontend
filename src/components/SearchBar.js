@@ -1,6 +1,5 @@
 import { Flex, IconButton, Input } from '@chakra-ui/react'
 import React from 'react'
-import searchIcon from '../assets/searchIcon.svg'
 import { SearchIcon } from '@chakra-ui/icons'
 
 
