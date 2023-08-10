@@ -6,7 +6,7 @@ import Card from "../components/Card";
 import CardData from "../Carddetails";
 import { FaUserAstronaut } from "react-icons/fa";
 import { BsShop } from "react-icons/bs";
-import { MdOutlineRateReview } from "react-icons/md";
+// import { MdOutlineRateReview } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 import { GrHistory } from "react-icons/gr";
