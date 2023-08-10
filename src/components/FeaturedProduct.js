@@ -3,14 +3,16 @@ import React from 'react'
 
 const FeaturedProduct = () => {
   return (
-    <Box as={'section'} w={'100%'} p={'0'} my={'24'} px={{base: '10', lg:'48'}}>
-        <Flex>
-            <Stack>
+    // <Box as={'section'} w={'100%'} p={'0'} my={'24'} px={{base: '10', lg:'48'}}>
+    //     <Flex>
+    //         <Stack>
 
-            </Stack>
-            <Image />
-        </Flex>
-    </Box>
+    //         </Stack>
+    //         <Image />
+    //     </Flex>
+    // </Box>
+    <>
+    </>
   )
 }
 

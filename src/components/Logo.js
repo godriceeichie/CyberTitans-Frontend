@@ -2,9 +2,9 @@ import { Heading } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Logo = ({fontSize}) => {
+const Logo = ({show}) => {
   return (
-    <Heading as={Link} to={'/'} fontFamily={'cursive'} color={'brand.500'} fontSize={'35px' || fontSize}>PlantNest</Heading>
+    <Heading display={show ? 'none' : 'block'} as={Link} to={'/'} fontFamily={'cursive'} color={'brand.500'} fontSize={{base: '30px', lg: '35px'}}>PlantNest</Heading>
   )
 }
 

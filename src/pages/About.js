@@ -11,20 +11,31 @@ import Sophia from "../images/sophia.jpg"
 import Wutche from "../images/wutche.jpg"
 import Obinna from "../images/obinna.jpg"
 import Fortune from "../images/fortune.jpg"
+import { Box, Center, Flex, Image } from "@chakra-ui/react"
+import heroImg from '../assets/aboutHeroImg.svg'
 
 
 const About = () => {
 
     return<>
-        <section className="aboutHero">
-            <div className="leftAbout">
-                <h2>WHO WE <span>ARE</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta corporis aut repellendus porro eius quia eaque explicabo laudantium necessitatibus, aliquam inventore modi in perspiciatis? Earum repellat illum velit quam deleniti!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia facere veritatis explicabo quisquam. Veritatis explicabo dignissimos esse, reiciendis, ratione, cumque eius sint natus velit dolore beatae voluptatum non perspiciatis aut.</p>
-                <button>Get in touch</button>
-            </div>
-            <img src={about} alt="" />
-        </section>
+        <Box as={'section'} py={'0'} px={{base: '6', md: '20'}} mt={'4.25rem'}>
+            <Flex direction={{base: 'column', lg: 'row-reverse'}}>
+                <Box w={{lg: '50%'}} >
+                    <Center>
+                        <Image minW={'85%'} maxW={'450px'} src={heroImg}/>
+                    </Center>
+                </Box>
+                <Box flexGrow={'1'} bg={'white'} w={{lg: '50%'}} display={'flex'} flexDirection={'column'} gap={'8'}>
+
+                </Box>
+                {/* <div className="leftAbout">
+                    <h2>WHO WE <span>ARE</span></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta corporis aut repellendus porro eius quia eaque explicabo laudantium necessitatibus, aliquam inventore modi in perspiciatis? Earum repellat illum velit quam deleniti!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia facere veritatis explicabo quisquam. Veritatis explicabo dignissimos esse, reiciendis, ratione, cumque eius sint natus velit dolore beatae voluptatum non perspiciatis aut.</p>
+                    <button>Get in touch</button>
+                </div> */}
+            </Flex>
+        </Box>
 
         <section className="missionWrapper">
             <div className="heading">
