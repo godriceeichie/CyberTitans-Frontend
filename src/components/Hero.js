@@ -15,7 +15,7 @@ const Hero = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
     };
   return (
-    <Box pos={'relative'} w={'100%'} py={'20'} height={'500px'} >
+    <Box pos={'relative'} w={'100%'} height={'500px'} >
         <Box pos={'absolute'}
             top={'0'}
             left={'0'}
@@ -25,8 +25,6 @@ const Hero = () => {
             bgPosition={'center'}
             bgRepeat={'no-repeat'}
             bgSize={'cover'}
-            display={'flex'}
-            alignItems={'center'}
         >
 
             <Box style={overlayStyles} >
@@ -34,7 +32,7 @@ const Hero = () => {
                     <Heading color={'white'} fontSize={{base: '2.5rem', lg: '5xl'}} w={{lg: '50%'}} textAlign={{base: 'center', lg: 'left'}}>
                         Discover the Beauty of Nature
                     </Heading>
-                    <Text color={'#e2e2e2'} fontSize={'lg'} fontWeight={'medium'} textAlign={{base: 'center', lg: 'left'}}>Explore Our Exquisite Plants and Accessories Collection</Text>
+                    <Text color={'#e2e2e2'} w={{lg: '50%'}} fontSize={'lg'} fontWeight={'medium'} textAlign={{base: 'center', lg: 'left'}}> Embark on a Journey Through Our Exquisite Collection of Plants and Enchanting Plant Accessories</Text>
                     <Link as={RouterLink} fontSize={'md'} fontWeight={'semibold'} borderRadius={'.375rem'} bg={'brand.600'} color={'white'} mt={'8'} py={'0.5rem'} px={'6'}>Shop Now</Link>
                     {/* <Link bg={'brand.600'} >Shop Now</Link> */}
                 </VStack>

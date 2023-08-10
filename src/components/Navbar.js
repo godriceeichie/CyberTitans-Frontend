@@ -21,16 +21,16 @@ const Navbar = () => {
                     <NavLink to={'/contact'} className={'navbar__link'}>Contact Us</NavLink>
                 </Box>
                 <Flex gap={{lg: '.5rem'}} alignItems={'center'} fontWeight={'medium'}>
-                    <Button bg={'none'} >
+                    <Button bg={'none'} p={'0'}>
                         <Image src={searchIcon} width={'20px'}/>
                     </Button>
-                    <Button bg={'none'}>
+                    <Button bg={'none'} p={'0'}>
                         <Image src={cartIcon} width={'20px'}/>
                     </Button>
-                    <Button bg={'none'} hideFrom={'lg'}>
+                    <Button bg={'none'} hideFrom={'lg'} p={'0'}>
                         <Image src={menuIcon} />
                     </Button>
-                    <Link as={RouterLink} ml={'.5rem'} hideBelow={'lg'}>Login</Link>
+                    <Link as={RouterLink} ml={'.5rem'} hideBelow={'lg'} color={'#252B42'}>Login</Link>
                     <Link as={RouterLink} ml={'.5rem'} hideBelow={'lg'} fontSize={'.875rem'} borderRadius={'.375rem'} bg={'brand.600'} color={'white'} py={'0.5rem'} px={'4'}>Create Account</Link>
                 </Flex>
             </Flex>

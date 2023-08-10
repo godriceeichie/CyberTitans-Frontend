@@ -1,10 +1,12 @@
-import { Hero } from "../components"
+import { Benefits, Categories, Hero } from "../components"
 
 const Home = () => {
 
     return(
         <>
             <Hero />
+            <Benefits />
+            <Categories />
         </>
     )
 
