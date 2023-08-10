@@ -1,110 +1,237 @@
-.FAQ-container{
+.hero1{
     width: 100%;
+    height: 400px;
+    display: flex;
+    /* background-color: aqua; */
+}
+.hero-left{
+    width: 50%;
+    height: 400px;
+    background-color: black;
+    margin-left: 10px;
+}
+
+.hero-left img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.hero-right{
+    /* margin-top: 30px; */
+    width: 50%;
+    height: 400px;
+    /* background-color: black; */
+    padding-top: 40px;
+    margin-left: 20px;
+}
+
+.hero-right span{
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(0, 128, 0, 0.718);
+
+  
+   
+}
+
+.hero-right h1{
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(0, 0, 0, 0.645);
+    font-weight:bolder;
+    margin-left: 30px;
+  
+}
+
+.hero-right .h1c{
+    width: 45%;
+    height: 100px;
+    margin-left: 50px;
+ 
+}
+
+.hero-right p{
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.446);
+    margin-left: 30px;
+}
+
+.input-field{
+    height: 40px;
+    border-radius: 5px;
+    width: 50%;
+    /* background-color: aqua; */
+    margin-top: 100px;
+    margin-left: 80px;
+    border: 1px solid rgba(0, 128, 0, 0.628);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+::placeholder {
+    color: red; /* Change the color of the placeholder text */
+    font-style: italic; /* Apply italic style to the placeholder text */
+    font-size: 15px;
+    padding-left: 10px;
+  }
+
+
+  .hero2{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    /* background-color: aqua; */
+  }
+
+  .hero2-right{
+    width: 50%;
     height: 300px;
-    background-color: white;
-}
+    /* background-color: black; */
+    margin-top: 20px;
+  }
 
-.FAQ-top h1{
-    font-size: 80px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 100;
+  .hero2-right h1{
+    margin-left: 70px;
+    margin-top: 50px;
+  }
 
-}
+  .question-fields{
+    width: 50%;
+    height: 500px;
+    margin-left: 60px;
+    margin-top: 20px;
+    /* display: flex; */
+    /* background-color: black; */
+  }
 
-.FAQ-top{
+
+  .hero2-left{
+    width: 50%;
+    height: 300px;
+    /* background-color: black; */
+    margin-top: 20px;
+  }
+
+  .hero2-left h1{
+    margin-left: 70px;
+    margin-top: 50px;
+  }
+
+  .hero-3{
+    width: 100%;
+    height:300px;
+    display: flex;
+    /* background-color: aqua; */
+  }
+
+  .hero-3 .container1{
+    height: 300px;
+    width: 50%;
     align-items: center;
     justify-content: center;
     display: flex;
-    padding-top: 30px;
-}
+    /* background-color: black; */
+  }
 
-.Questions{
-    height: 300px;
-    width: 100%;
+  .c-box1{
+    width: 60%;
+    height: 200px;
+    border-radius: 4%;
+    /* background-color: blue; */
+    border: 1px solid rgba(0, 128, 0, 0.76);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+  }
 
-}
+  .c-box1-left{
+    width: 50%;
+    height: 200px;
+    /* background-color: rgb(255, 200, 0); */
+  }
 
-.Questions-top{
+  .c-box1-left img{
+    margin-left: 60px;
+    margin-top: 40px;
+  
+  }
+
+
+  .c-box1-right{
+    width: 50%;
+    height: 200px;
+    /* background-color: aqua; */
+    margin-right: 20px;
+  }
+
+  .c-box1-right span{
     align-items: center;
     justify-content: center;
-    width: 40%;
-    height: 100px;
-}
+    display: flex;
+    margin-top: 40px;
+    padding-right: 10px;
+   
+  }
 
-.Questions-top h1{
-    font-size: 40px;
-    margin-left: 25px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 200px;
+  .c-box1-right p{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: rgba(0, 128, 0, 0.675);
+    margin-left: 10px;
+  }
 
-}
-.Questions-top span{
-    font-size: 15px;
-    margin-left: 25px;
-color: rgba(0, 0, 0, 0.582);
+  .hero-3 .container2{
+    height: 300px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* background-color: black; */
+  }
+
+  .c-box2{
+    width: 60%;
+    height: 200px;
+    border-radius: 4%;
+    /* background-color: blue; */
+    border: 1px solid rgba(0, 128, 0, 0.76);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+  }
+
+  .c-box2-left{
+    width: 50%;
+    height: 200px;
+    /* background-color: rgb(255, 200, 0); */
+  }
+
+  .c-box2-right{
+    width: 50%;
+    height: 200px;
+    /* background-color: aqua; */
+    margin-right: 20px;
+  }
+
+  .c-box2-right span{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 40px;
+    padding-right: 10px;
+   
+  }
+
+  .c-box2-right p{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: rgba(0, 128, 0, 0.675);
+    margin-left: 10px;
+  }
   
 
-}
+/* accordian-test */
 
-
-.Questions-container1{
-    width: 100%;
-    height: 100px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-
-}
-
-.boxes{
-    width: 100%;
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.box1{
-    width: 40%;
-    height: 100px;
-}
-
-.box1 h1{
-    margin-bottom: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-
-.box1 span{
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.737);
-}
-
-
-.signup-container{
-    width: 100%;
-    height: 200px;
-}
-
-.signup-c1{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 20px;
-}
-
-.signup-c1 h1{
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.signup-c2{
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-.signup-c1 h2{
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
