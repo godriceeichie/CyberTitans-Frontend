@@ -1,3 +1,5 @@
+export { default as FeaturedProduct } from "./FeaturedProduct";
+export {default as TodayDeals} from "./TodayDeals";
 export { default as Benefits } from "./Benefits";
 export {default as Categories} from "./Categories";
 export {default as Logo} from "./Logo";
