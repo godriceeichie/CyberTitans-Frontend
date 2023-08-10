@@ -1,14 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Root from "./layout/Root";
-
 import { About, Contact, Faq, Home, Products, Signin, Signup } from "./pages";
-import Forgotpassword from "./pages/Forgotpassword";
+import { Forgotpassword } from "./components";
 
 function App() {
   return<>
-  <Forgotpassword/>
-  
-    {/* <Router>
+    <Router>
         <Routes>
           <Route path="/" element={<Root />}>
             <Route index element={<Home/>}/>
@@ -21,7 +18,7 @@ function App() {
           </Route>
           
         </Routes>
-    </Router> */}
+    </Router>
   </>
 }
 
