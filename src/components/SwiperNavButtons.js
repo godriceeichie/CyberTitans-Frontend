@@ -7,7 +7,7 @@ import { useSwiper } from 'swiper/react'
 const SwiperNavButtons = () => {
   const swiper = useSwiper()
   return (
-    <Flex w={'100%'} mt={'5'} bgColor={'brand.500'} justifyContent={'space-between'} alignItems={'center'} p={1}>
+    <Flex w={'100%'} mt={'5'} justifyContent={'space-between'} alignItems={'center'} p={1}>
       <IconButton 
         onClick={() => swiper.slidePrev()} 
         borderRadius={'50%'} 

@@ -15,7 +15,7 @@ const Navbar = () => {
                 <Logo />
                 <Box hideBelow={'lg'} display={'flex'} gap={'1.5rem'}>
                     <NavLink to={'/'} className={'navbar__link'}>Home</NavLink>
-                    <NavLink to={'/products'} className={'navbar__link'}>Products</NavLink>
+                    <NavLink to={'/shop'} className={'navbar__link'}>Shop</NavLink>
                     <NavLink to={'/faq'} className={'navbar__link'}>FAQ</NavLink>
                     <NavLink to={'/about'} className={'navbar__link'}>About Us</NavLink>
                     <NavLink to={'/contact'} className={'navbar__link'}>Contact Us</NavLink>
