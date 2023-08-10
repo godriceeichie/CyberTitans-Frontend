@@ -52,17 +52,35 @@
     padding: 5px;
     border: 1px solid black;
 }
-.categories input{
-    height: 40px;
-    border: 1px solid black;
+.categories input {
+  max-width: 190px;
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: .15rem .5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+}
+
+.categories input:focus {
+  border-bottom: 2px solid #5b5fc7;
+  border-radius: 4px 4px 2px 2px;
+}
+
+ .categories input:hover {
+  outline: 1px solid lightgrey;
 }
 .productList{
     display: flex;
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
-    height: 150vh;
+    height: 100vh;
     width: 100%;
+    margin-top: 20px;
     /* background-color: aqua; */
 }
 .productListCard{
@@ -70,8 +88,8 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-
-    width: 1170px;
+    width: 100%;
+   /* overflow-y: scroll; */
     height: max-content;
     /* background-color: red; */
 }
@@ -81,19 +99,21 @@ display: flex;
     justify-content: space-between;
     flex-direction: column;
     height: 463px;
-    width: 293px;
-        border: 1px solid #f0f0f0;
+    width: 100%;
+        
     /* background-color: blue; */
     /* border: 1px solid black; */
 }
 .listedProduct img{
     height: 350px;
     width: 263px;
+    border: 1px solid #f0f0f0;
 }
 .description{
     height: 112px;
     width: 261px;
     padding: 17px 20px 16px;
+    border: 1px solid #f0f0f0;
     /* background-color: #24856D; */
 }
 .description h1{
