@@ -9,6 +9,10 @@ import plantV from '../assets/plantV.webp'
 import plantVI from '../assets/plantVI.jpeg'
 import plantVII from '../assets/plantVII.jpeg'
 import plantVIII from '../assets/plantVIII.jpeg'
+import { AiOutlineEye } from 'react-icons/ai'
+import { AiOutlineHeart } from 'react-icons/ai'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { Link } from 'react-router-dom';
 
 const Products = () => {
    const [selectedCategory, setSelectedCategory] = useState('All');
@@ -122,6 +126,19 @@ const Products = () => {
               {chunk.map(product => (
                 <div className='listedProduct' key={product.id} id={product.category}>
                   <img src={product.image} alt='' />
+                  <div className='cart'>
+                    <div>
+                     <Link to={`/productdescriptionI/${product.id}`}>
+                        <AiOutlineEye />
+                      </Link>
+                    </div>
+                     <div>
+                      <AiOutlineHeart />
+                    </div>
+                     <div>
+                      <AiOutlineShoppingCart/>
+                    </div>
+                  </div>
                   <div className='description'>
                     <h1>{product.name}</h1>
                     <p>${product.price}</p>
