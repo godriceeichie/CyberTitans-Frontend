@@ -1,0 +1,31 @@
+.cartContainer{
+    height: 80vh;
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.cartContainer h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+.cartContainer h2::after{
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 5rem;
+    /* top: 0; */
+    left: 0;
+    bottom: 0;
+    background-color: #24856D;
+}
+.cartChild{
+    height: 30rem;
+    width: 80%;
+    background-color: white;
+}
+

@@ -1,6 +1,6 @@
 import { Box, Heading } from '@chakra-ui/react'
 import React from 'react'
-import SwiperContainer from './SwiperContainer'
+import SwiperContainer from '../SwiperContainer'
 
 
 const TodayDeals = () => {
