@@ -1,10 +1,14 @@
 import React from 'react';
+import Usersidebar from '../../components/Usersidebar';
 
 const Order = () => {
   return (
-    <div>
-      <h1>Order</h1>
-    </div>
+    <div className="accountwrp">
+				<Usersidebar />
+				<div className="contentmenu">
+          
+				</div>
+			</div>
   );
 };
 
