@@ -26,6 +26,7 @@ const Categories = () => {
             fontWeight={'semibold'} 
             fontSize={'2xl'}
             position={'relative'}
+            pb={'7px'}
             _before={{
                 content: '" "',
                 position: 'absolute',
@@ -36,7 +37,7 @@ const Categories = () => {
                 height: '2px',
                 bgColor: 'brand.500',
                 transform: 'translate(-50%)',
-                
+                  
             }}
         >
             Featured Categories

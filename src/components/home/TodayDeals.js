@@ -14,7 +14,7 @@ const TodayDeals = () => {
         fontWeight={'semibold'} 
         fontSize={'2xl'}
         position={'relative'}
-        pb={'10px'}
+        pb={'7px'}
         color={'textColor.400'}
         _before={{
           content: '" "',

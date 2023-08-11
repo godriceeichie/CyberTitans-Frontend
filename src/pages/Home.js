@@ -1,5 +1,4 @@
-import { Benefits, Categories, FeaturedPlants, Hero, TodayDeals } from "../components"
-
+import { Benefits, Categories, FeaturedPlants, Hero, Testimonials, TodayDeals } from "../components"
 const Home = () => {
 
     return(
@@ -9,7 +8,7 @@ const Home = () => {
             <Categories />
             <Benefits />
             <TodayDeals />
-            
+            <Testimonials />
         </>
     )
 
