@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/Cart.css';
+import { Link as RouterLink } from "react-router-dom"
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Cart = ({ cartItems, setCartItems }) => {
@@ -44,26 +46,29 @@ const Cart = ({ cartItems, setCartItems }) => {
   return (
     <div className='cartContainer'>
       <h2>Your Cart</h2>
-      <div className='cartChild'>
-        <div className='cartItems'>
-        {cartItems.map((item, index) => (
-          <div key={index} className='cartItem'>
-            <img src={item.image} alt={item.name} />
-            <div className='cartItemDetails'>
-              <h3>{item.name}</h3>
-              <p>${item.price}</p>
-              <div className='quantityControls'>
-                <button className='quantityButton' onClick={() => handleDecrement(index)}>-</button>
-                <span className='quantity'>{item.quantity}</span>
-                <button className='quantityButton' onClick={() => handleIncrement(index)}>+</button>
-              </div>
-              <p>Total: ${item.totalPrice}</p>
-              <button className='removeButton' onClick={() => handleRemoveItem(index)}>Remove</button>
+        <div className='cartChild'>
+            <div className='cartItems'>
+                {cartItems.map((item, index) => (
+                <div key={index} className='cartItem'>
+                    <img src={item.image} alt={item.name} />
+                    <div className='cartItemDetails'>
+                        <h3>{item.name}</h3>
+                        <p>${item.price}</p>
+                        <div className='quantityControls'>
+                            <button className='quantityButton' onClick={() => handleDecrement(index)}>-</button>
+                            <span className='quantity'>{item.quantity}</span>
+                            <button className='quantityButton' onClick={() => handleIncrement(index)}>+</button>
+                        </div>
+                        <p>Total: ${item.totalPrice}</p>
+                        <button className='removeButton' onClick={() => handleRemoveItem(index)}>Remove</button>
+                        <Link as={RouterLink} to={'/checkout'}>
+                            <button className='checkoutButtonInItem'>Checkout</button>
+                        </Link>
+                    </div>
+                </div>
+                ))}
             </div>
-          </div>
-        ))}
-      </div>
-      </div>
+        </div>
     </div>
   );
 };
