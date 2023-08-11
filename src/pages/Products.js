@@ -14,7 +14,7 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 
-const Products = () => {
+const Products = ({ cartItems, setCartItems }) => {
    const [selectedCategory, setSelectedCategory] = useState('All');
 
   const products = [
@@ -136,7 +136,7 @@ const Products = () => {
                       <AiOutlineHeart />
                     </div>
                      <div>
-                      <AiOutlineShoppingCart/>
+                      <AiOutlineShoppingCart onClick={() => setCartItems([...cartItems, product])} />
                     </div>
                   </div>
                   <div className='description'>
