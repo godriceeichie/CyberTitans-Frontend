@@ -7,6 +7,7 @@ export { default as Settings } from "./userdashboard/Settings";
 export { default as Wishlist } from "./userdashboard/Wishlist";
 export { default as Account } from "./userdashboard/Account";
 export { default as UserDashboard } from "./UserDashboard";
+export { default as Overview } from "../pages/admindashboard/Overview";
 export { default as Faq } from "./Faq";
 export { default as Login } from "./Login";
 export { default as Signup } from "./Signup";
