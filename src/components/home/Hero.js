@@ -16,8 +16,8 @@ const Hero = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
     };
   return (
-    <Box w={'100%'} height={'500px'} >
-        <Grid maxW={'150rem'} mx={'auto'} templateColumns={{base: 'repeat(1, fr)', md: 'repeat(2, 1fr)'}} height={'100%'}>
+    <Box w={'100%'} height={'500px'}  >
+        <Grid maxW={'1500px'} mx={'auto'} templateColumns={{base: 'repeat(1, fr)', md: 'repeat(2, 1fr)'}} height={'100%'}>
             <Box display={'flex'} justifyContent={'center'} alignItems={'center'} py={{base: '20'}} height={'100%'}>
                 <Flex flexDirection={'column'} gap={'2rem'} justifyContent={'center'} px={{base: '10', lg: '14'}} alignItems={{base: 'center', md:'flex-start'}} height={'100%'}>
                     <VStack p={'0'}>
