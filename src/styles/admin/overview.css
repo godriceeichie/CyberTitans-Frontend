@@ -40,7 +40,7 @@
 }
 
 .navlinks a span {
-  font-size: 25px;
+	font-size: 25px;
 }
 
 .settings {
@@ -48,6 +48,16 @@
 	flex-direction: column;
 	margin-bottom: 25px;
 	gap: 25px;
+}
+
+.settings a {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.settings a span {
+	font-size: 25px;
 }
 
 .overview {

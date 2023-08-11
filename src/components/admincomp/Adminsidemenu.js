@@ -7,6 +7,8 @@ import { RiDashboard2Fill } from "react-icons/ri";
 import { FaShopify } from "react-icons/fa";
 import { MdInventory } from "react-icons/md";
 import { VscFeedback } from "react-icons/vsc";
+import { AiFillSetting } from "react-icons/ai";
+import { BiLogOutCircle } from "react-icons/bi";
 const Adminsidemenu = () => {
 	return (
 		<div className="adminsidemenu">
@@ -48,8 +50,21 @@ const Adminsidemenu = () => {
 			</div>
 
 			<div className="settings">
-				<NavLink>Settings</NavLink>
-				<NavLink>Log Out</NavLink>
+				<NavLink>
+					{" "}
+					<span>
+						{" "}
+						<AiFillSetting />{" "}
+					</span>{" "}
+					Settings
+				</NavLink>
+				<NavLink>
+					{" "}
+					<span>
+						<BiLogOutCircle />{" "}
+					</span>{" "}
+					Log Out
+				</NavLink>
 			</div>
 		</div>
 	);

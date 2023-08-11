@@ -21,6 +21,7 @@ import {
 	UserDashboard,
 	Overview,
 	Cart,
+	Checkout,
 } from "./pages";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
 						<Route path="history" element={<History />} />
 						<Route path="userDashboard" element={<UserDashboard />} />
 						<Route path="cart" element={<Cart />} />
+						<Route path="checkout" element={<Checkout />} />
 					</Route>
 					<Route path="/cart" element={<Root />}>
         				<Route index element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
