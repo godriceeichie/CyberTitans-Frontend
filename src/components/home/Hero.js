@@ -19,7 +19,7 @@ const Hero = () => {
     <Box w={'100%'} height={'500px'} >
         <Grid maxW={'150rem'} mx={'auto'} templateColumns={{base: 'repeat(1, fr)', md: 'repeat(2, 1fr)'}} height={'100%'}>
             <Box display={'flex'} justifyContent={'center'} alignItems={'center'} py={{base: '20'}} height={'100%'}>
-                <Flex flexDirection={'column'} gap={'2rem'} justifyContent={'center'} px={'10'} alignItems={{base: 'center', md:'flex-start'}} height={'100%'}>
+                <Flex flexDirection={'column'} gap={'2rem'} justifyContent={'center'} px={{base: '10', lg: '14'}} alignItems={{base: 'center', md:'flex-start'}} height={'100%'}>
                     <VStack p={'0'}>
                         <Heading mb={'0'} color={'black'} fontSize={{base: '2rem', lg: '5xl'}} textAlign={{base: 'center', md: 'left'}}>
                             Delivering <Text as={'span'} color={'brand.500'}>Plants</Text>,
