@@ -9,7 +9,7 @@ import succulentPlants from '../../assets/succulent-plants.jpg'
 import medicinalPlant from '../../assets/medicinal-plant.jpg'
 import { Link } from 'react-router-dom'
 
-const Categories = () => {
+const PlantCategories = () => {
     const overlayStyles = {
         position: 'absolute',
         top: 0,
@@ -220,4 +220,4 @@ const Categories = () => {
   )
 }
 
-export default Categories
+export default PlantCategories
