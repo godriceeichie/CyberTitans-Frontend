@@ -22,9 +22,11 @@ const Navbar = () => {
                         <Button bg={'none'} p={'0'} hideFrom={'lg'} onClick={() => setShow(!show)}>
                             <Image src={searchIcon} width={'20px'}/>
                         </Button>
-                        <Button bg={'none'} p={'0'}>
-                            <Image src={cartIcon} width={'20px'}/>
-                        </Button>
+                        <Link as={RouterLink} to={'/cart'}>
+                            <Button bg={'none'} p={'0'}>
+                                <Image src={cartIcon} width={'20px'}/>
+                            </Button>
+                        </Link>
                         <Button bg={'none'} hideFrom={'lg'} p={'0'}>
                             <Image src={menuIcon} />
                         </Button>
