@@ -1,12 +1,14 @@
-import React from 'react';
+/** @format */
 
-
+import React from "react";
+import Logo from "../Logo";
 const Adminsidemenu = () => {
-  return (
-    <div>
-      <h1>Sidemenu</h1>
-    </div>
-  );
+	return (
+		<div className="adminsidemenu">
+			<Logo />
+      na
+		</div>
+	);
 };
 
 export default Adminsidemenu;
