@@ -11,16 +11,19 @@ const FeaturedPlant = ({data}) => {
     >
         <Stack>
             <CardBody>
-                <Heading size="md">The perfect latte</Heading>
-
+                <Text mb={'.5rem'} color={'brand.500'} fontWeight={'bold'}>{data.category}</Text>
+                <Heading size="md">Canary</Heading>
                 <Text py="2">
-                Caffè latte is a coffee beverage of Italian origin made with
-                espresso and steamed milk.
+                    Caffè latte is a coffee beverage of Italian origin made with
+                    espresso and steamed milk.
                 </Text>
             </CardBody>
 
             <CardFooter>
-                <Text>{data.price}</Text>
+                <Text fontWeight={'bold'}>
+                    {data.price}
+                    <Text as={'span'} color={'brand.500'} fontSize={'14px'}>.00</Text>
+                </Text>
             </CardFooter>
         </Stack>
         <Image

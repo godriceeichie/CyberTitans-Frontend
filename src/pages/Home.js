@@ -6,8 +6,8 @@ const Home = () => {
         <>
             <Hero />
             <FeaturedPlants />
-            <Benefits />
             <Categories />
+            <Benefits />
             <TodayDeals />
             
         </>

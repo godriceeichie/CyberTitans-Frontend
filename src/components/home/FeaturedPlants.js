@@ -11,9 +11,9 @@ const FeaturedPlants = () => {
       my={"24"}
       px={{ base: "10", lg: "24" }}
     >
-      <Flex gap={'1.75rem'}>
-        <FeaturedPlant  data={{price: '$30'}}/>
-        <FeaturedPlant data={{price: '$20'}}/>
+      <Flex flexDirection={{base: 'column', lg: 'row'}} gap={'1.75rem'}>
+        <FeaturedPlant  data={{price: '$30', category: 'Outdoor'}}/>
+        <FeaturedPlant data={{price: '$20', category: 'Indoor'}}/>
       </Flex>
     </Box>
   );
