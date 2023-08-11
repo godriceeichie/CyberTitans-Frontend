@@ -6,9 +6,7 @@ import SwiperContainer from '../SwiperContainer'
 const TodayDeals = () => {
   return (
     <Box as='section' p={'0'} px={'14'} my={'24'} 
-      maxW={'1500px'} mx={'auto'}
-    
-    >
+      maxW={'1500px'} mx={'auto'}>
       <Heading 
         textAlign={'center'} 
         
