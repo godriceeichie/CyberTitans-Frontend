@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Heading, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
+import { Box, Grid, GridItem, Heading, Image, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import React from 'react'
 import floweringPlant from '../../assets/flowered-plant.jpeg'
@@ -43,35 +43,175 @@ const Categories = () => {
             Featured Categories
         </Heading>
         <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)'}} templateRows={{md: 'repeat(3, 1fr)'}} gap={'6'}>
-            <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={nonFloweringPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
-                <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}}  style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <Text fontSize={'xl'} color={'white'}>Non-flowering Plants</Text>
+            <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'}>
+                <LinkOverlay 
+                    as={Link} 
+                    to={'/products'} 
+                    borderRadius={{base: '2xl', md: 'none'}}  
+                    style={overlayStyles} 
+                    display={'flex'} 
+                    alignItems={'center'} 
+                    justifyContent={'center'}
+                    overflow={'hidden'}
+                >
+                    <Image
+                        w={'100%'} 
+                        position='absolute'
+                        top='0'
+                        left='0'
+                        width='100%'
+                        height='100%'
+                        src={nonFloweringPlant}
+                        sx={{filter: 'brightness(60%)'}}
+                        transition={'0.65s'}
+                        _hover={{
+                            transform: 'scale(1.2)'
+                        }}
+                    />
+                    <Text fontSize={'xl'} color={'white'} zIndex={'3'}>Non-flowering Plants</Text>
                 </LinkOverlay>
             </GridItem>
-            <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}}  rowSpan={{md: 2}}  position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} bgImage={indoorPlant} bgColor={'red'} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
-                <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}} style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <Text fontSize={'xl'} color={'white'}>Indoor Plants</Text>
+
+            <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}}  rowSpan={{md: 2}}  position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} >
+                <LinkOverlay 
+                    as={Link} 
+                    to={'/products'} 
+                    borderRadius={{base: '2xl', md: 'none'}}  
+                    style={overlayStyles} 
+                    display={'flex'} 
+                    alignItems={'center'} 
+                    justifyContent={'center'}
+                    overflow={'hidden'}
+                >
+                    <Image
+                        w={'100%'} 
+                        position='absolute'
+                        top='0'
+                        left='0'
+                        width='100%'
+                        height='100%'
+                        src={indoorPlant}
+                        sx={{filter: 'brightness(60%)'}}
+                        transition={'0.65s'}
+                        _hover={{
+                            transform: 'scale(1.2)'
+                        }}
+                    />
+                    <Text fontSize={'xl'} color={'white'} zIndex={'3'}>Indoor Plants</Text>
                 </LinkOverlay>
             </GridItem>
             
-            <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={outdoorPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
-                <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}} style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <Text fontSize={'xl'} color={'white'}>Outdoor Plants</Text>
+            <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'}>
+                <LinkOverlay 
+                    as={Link} 
+                    to={'/products'} 
+                    borderRadius={{base: '2xl', md: 'none'}}  
+                    style={overlayStyles} 
+                    display={'flex'} 
+                    alignItems={'center'} 
+                    justifyContent={'center'}
+                    overflow={'hidden'}
+                >
+                    <Image
+                        w={'100%'} 
+                        position='absolute'
+                        top='0'
+                        left='0'
+                        width='100%'
+                        height='100%'
+                        src={outdoorPlant}
+                        sx={{filter: 'brightness(60%)'}}
+                        transition={'0.65s'}
+                        _hover={{
+                            transform: 'scale(1.2)'
+                        }}
+                    />
+                    <Text fontSize={'xl'} color={'white'} zIndex={'3'}>Outdoor Plants</Text>
                 </LinkOverlay>
             </GridItem>
-            <GridItem borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={succulentPlants} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
-                <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}} style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <Text fontSize={'xl'} color={'white'}>Succulents</Text>
+            <GridItem borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} >
+                <LinkOverlay 
+                    as={Link} 
+                    to={'/products'} 
+                    borderRadius={{base: '2xl', md: 'none'}}  
+                    style={overlayStyles} 
+                    display={'flex'} 
+                    alignItems={'center'} 
+                    justifyContent={'center'}
+                    overflow={'hidden'}
+                >
+                    <Image
+                        w={'100%'} 
+                        position='absolute'
+                        top='0'
+                        left='0'
+                        width='100%'
+                        height='100%'
+                        src={succulentPlants}
+                        sx={{filter: 'brightness(60%)'}}
+                        transition={'0.65s'}
+                        _hover={{
+                            transform: 'scale(1.2)'
+                        }}
+                    />
+                    <Text fontSize={'xl'} color={'white'} zIndex={'3'}>Succulents</Text>
                 </LinkOverlay>
             </GridItem>
-            <GridItem borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={medicinalPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
-                <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}} style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <Text fontSize={'xl'} color={'white'}>Medicinal</Text>
+            <GridItem borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} >
+                <LinkOverlay 
+                    as={Link} 
+                    to={'/products'} 
+                    borderRadius={{base: '2xl', md: 'none'}}  
+                    style={overlayStyles} 
+                    display={'flex'} 
+                    alignItems={'center'} 
+                    justifyContent={'center'}
+                    overflow={'hidden'}
+                >
+                    <Image
+                        w={'100%'} 
+                        position='absolute'
+                        top='0'
+                        left='0'
+                        width='100%'
+                        height='100%'
+                        src={medicinalPlant}
+                        sx={{filter: 'brightness(60%)'}}
+                        transition={'0.65s'}
+                        _hover={{
+                            transform: 'scale(1.2)'
+                        }}
+                    />
+                    <Text fontSize={'xl'} color={'white'} zIndex={'3'}>Medicinal Plants</Text>
                 </LinkOverlay>
             </GridItem>
-            <GridItem borderRadius={{base: '2xl', md: 'none'}} colSpan={{md: 3}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} bgImage={floweringPlant} bgSize={'cover'} bgPosition={'center'} bgRepeat={'no-repeat'}>
-                <LinkOverlay as={Link} to={'/contact'} borderRadius={{base: '2xl', md: 'none'}} style={overlayStyles} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <Text fontSize={'xl'} color={'white'}>Flowering Plants</Text>
+            <GridItem borderRadius={{base: '2xl', md: 'none'}} colSpan={{md: 3}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'} >
+                <LinkOverlay 
+                    as={Link} 
+                    to={'/products'} 
+                    borderRadius={{base: '2xl', md: 'none'}}  
+                    style={overlayStyles} 
+                    display={'flex'} 
+                    alignItems={'center'} 
+                    justifyContent={'center'}
+                    overflow={'hidden'}
+                >
+                    <Image
+                        w={'100%'} 
+                        position='absolute'
+                        objectFit={'cover'}
+                        top='0'
+                        left='0'
+                        width='100%'
+                        height='100%'
+                        src={floweringPlant}
+                        sx={{filter: 'brightness(60%)'}}
+                        transition={'0.65s'}
+                        _hover={{
+                            transform: 'scale(1.2)'
+                        }}
+                    />
+                    <Text fontSize={'xl'} color={'white'} zIndex={'3'}>Flowering Plants</Text>
                 </LinkOverlay>
             </GridItem>
             
