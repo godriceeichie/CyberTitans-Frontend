@@ -1,12 +1,12 @@
 import { Box, Grid, GridItem, Heading, LinkBox, LinkOverlay, Text } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import React from 'react'
-import floweringPlant from '../assets/flowered-plant.jpeg'
-import nonFloweringPlant from '../assets/nonflowering-plants.webp'
-import indoorPlant from '../assets/indoor-plant.jpg'
-import outdoorPlant from '../assets/outdoor-plants.jpeg'
-import succulentPlants from '../assets/succulent-plants.jpg'
-import medicinalPlant from '../assets/medicinal-plant.jpg'
+import floweringPlant from '../../assets/flowered-plant.jpeg'
+import nonFloweringPlant from '../../assets/nonflowering-plants.webp'
+import indoorPlant from '../../assets/indoor-plant.jpg'
+import outdoorPlant from '../../assets/outdoor-plants.jpeg'
+import succulentPlants from '../../assets/succulent-plants.jpg'
+import medicinalPlant from '../../assets/medicinal-plant.jpg'
 import { Link } from 'react-router-dom'
 
 const Categories = () => {
