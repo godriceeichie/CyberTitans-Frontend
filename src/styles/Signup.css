@@ -2,8 +2,8 @@
 /* font-family: 'Montserrat', sans-serif; */
 
 :root{
-    --blue: #003498;
-    --darkblue: #0e2c64;
+    --green: #47AD97;
+    --darkgreen: #23856D;
 }
 
 
@@ -37,7 +37,7 @@
 }
 .signupHeading h2{
     font-size: 35px;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     font-weight: 800;
 }
 .signupHeading p{
@@ -94,16 +94,16 @@
 .leftSignupWrapper form label{
     font-size: 14.5px;
 }
-.leftSignupWrapper form .inputWrapper input{
+/* .leftSignupWrapper form .inputWrapper input{
     padding: 10px 10px;
     border: 1px solid lightgray;
     box-shadow: 0px 0px 3px lightgray;
     border-radius: 5px;
     outline: none;
-}
+} */
 .leftSignupWrapper form .inputWrapper input:hover{
     box-shadow: 0px 0px 3px #90b2f7;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--green);
     
 }
 .leftSignupWrapper .checkboxWrapper{
@@ -117,18 +117,18 @@
 .leftSignupWrapper .checkboxWrapper input{
     cursor: pointer;
 }
-.leftSignupWrapper form button{
+/* .leftSignupWrapper form button{
     margin-top: 10px;
     padding:    10px 20px;
     width: 100%;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 4px;
-    background-color: var(--blue);
+    background-color: var(--green);
     color: white;
-}
+} */
 .leftSignupWrapper form button:hover{
-    background-color: var(--darkblue);
+    background-color: var(--darkgreen);
     cursor: pointer;
     transition: 500ms;
     transition-timing-function: ease-in-out;
@@ -139,7 +139,7 @@
     text-align: right;
 }
 .forgotpassword a{
-    color: rgb(3, 101, 198);
+    color: var(--darkgreen);
     text-decoration: none;
     cursor: pointer;
 }

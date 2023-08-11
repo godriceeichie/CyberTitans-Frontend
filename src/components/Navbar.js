@@ -28,8 +28,8 @@ const Navbar = () => {
                         <Button bg={'none'} hideFrom={'lg'} p={'0'}>
                             <Image src={menuIcon} />
                         </Button>
-                        <Link as={RouterLink} to={'/login'} ml={'.5rem'} hideBelow={'lg'} color={'#252B42'}>Login</Link>
-                        <Link as={RouterLink} to={'/signup'} ml={'.5rem'} hideBelow={'lg'} fontSize={'.875rem'} borderRadius={'.375rem'} bg={'brand.500'} color={'white'} py={'0.5rem'} px={'4'}>Create Account</Link>
+                        <Link as={RouterLink} to={'/auth/login'} ml={'.5rem'} hideBelow={'lg'} color={'#252B42'}>Login</Link>
+                        <Link as={RouterLink} to={'/auth/signup'} ml={'.5rem'} hideBelow={'lg'} fontSize={'.875rem'} borderRadius={'.375rem'} bg={'brand.500'} color={'white'} py={'0.5rem'} px={'4'}>Create Account</Link>
                     </Flex>
                 </Flex>
             </Box>

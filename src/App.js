@@ -14,8 +14,6 @@ function App() {
 						<Route index element={<Home />} />
 						<Route path="products" element={<Products />} />
 						<Route path="about" element={<About />} />
-						<Route path="login" element={<Login />} />
-						<Route path="signup" element={<Signup />} />
 						<Route path="contact" element={<Contact />} />
 						<Route path="account" element={<Account />} />
 						<Route path="faq" element={<Faq />} />
@@ -25,6 +23,10 @@ function App() {
 						<Route path="wishlist" element={<Wishlist />} />
 						<Route path="history" element={<History />} />
 						<Route path="userDashboard" element={<UserDashboard />} />
+					</Route>
+					<Route path="/auth">
+						<Route path="login" element={<Login />} />
+						<Route path="signup" element={<Signup />} />
 					</Route>
 				</Routes>
 			</Router>

@@ -127,7 +127,7 @@ const About = () => {
                             src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
                             alt='Kingsley Henshaw picture'
                             w={'100%'}
-                            height={'315px'}
+                            height={'330px'}
                             // height={'50%'}
                             />
                             <Stack p={'1.25rem'}>
@@ -146,7 +146,7 @@ const About = () => {
                             src={Sophia}
                             alt='Sophia Okosodo picture'
                             w={'100%'}
-                            height={'315px'}
+                            height={'330px'}
                             
                             />
                             <Stack p={'1.25rem'}>
@@ -165,7 +165,7 @@ const About = () => {
                             src={Wutche}
                             alt='Wutche Chikaome picture'
                             w={'100%'}
-                            height={'315px'}
+                            height={'330px'}
                             />
                             <Stack p={'1.25rem'}>
                                 <Heading size='md'>Wutche Chikaome</Heading>
@@ -183,7 +183,7 @@ const About = () => {
                             src={Fortune}
                             alt='Fortune Osuh picture'
                             w={'100%'}
-                            height={'315px'}
+                            height={'330px'}
                             />
                             <Stack p={'1.25rem'}>
                                 <Heading size='md'>Fortune Ken Osuh</Heading>
@@ -201,7 +201,7 @@ const About = () => {
                             src={Obinna}
                             alt='Obinna Nwabuisi picture'
                             w={'100%'}
-                            height={'315px'}
+                            height={'330px'}
                             />
                             <Stack p={'1.25rem'}>
                                 <Heading size='md'>Nwabuisi Obinna Divine</Heading>
@@ -219,7 +219,7 @@ const About = () => {
                             src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
                             alt='Godrice Eichie picture'
                             w={'100%'}
-                            height={'315px'}
+                            height={'330px'}
                             />
                             <Stack p={'1.25rem'}>
                                 <Heading size='md'>Godrice Eichie</Heading>
