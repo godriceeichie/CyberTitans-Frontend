@@ -49,6 +49,7 @@
     height: 40px;
     width: max-content;
     /* background-color: red; */
+    cursor: pointer;
     padding: 5px;
     border: 1px solid black;
 }
