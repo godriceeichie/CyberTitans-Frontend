@@ -9,7 +9,7 @@ import SearchBar from "./SearchBar"
 import { useState } from "react"
 import { ArrowBackIcon } from "@chakra-ui/icons"
 
-const Navbar = () => {
+const Navbar = ({handleCartModalOpen}) => {
     const [show, setShow] = useState(false);
     return(
         <Box pos={'sticky'} top={'0'} zIndex={'50'} bg={'white'} shadow={'base'}>
