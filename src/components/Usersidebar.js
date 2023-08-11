@@ -27,15 +27,6 @@ const Usersidebar = () => {
 				</span>{" "}
 				Orders
 			</NavLink>
-
-			<NavLink to={"/inbox"}>
-				{" "}
-				<span>
-					{" "}
-					<MdOutlineEmail className="icon" />{" "}
-				</span>{" "}
-				Inbox
-			</NavLink>
 			{/* <NavLink>
 						{" "}
 						<span>

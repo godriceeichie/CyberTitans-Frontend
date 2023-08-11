@@ -1,7 +1,6 @@
 /** @format */
 
 export { default as History } from "./userdashboard/History";
-export { default as Inbox } from "./userdashboard/Inbox";
 export { default as Order } from "./userdashboard/Order";
 export { default as Settings } from "./userdashboard/Settings";
 export { default as Wishlist } from "./userdashboard/Wishlist";

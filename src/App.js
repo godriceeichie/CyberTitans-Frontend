@@ -13,7 +13,6 @@ import {
 	Signup,
 	Account,
 	History,
-	Inbox,
 	Order,
 	Settings,
 	Wishlist,
@@ -36,7 +35,6 @@ function App() {
 						<Route path="account" element={<Account />} />
 						<Route path="faq" element={<Faq />} />
 						<Route path="accountmanagement" element={<Settings />} />
-						<Route path="inbox" element={<Inbox />} />
 						<Route path="orders" element={<Order />} />
 						<Route path="wishlist" element={<Wishlist />} />
 						<Route path="history" element={<History />} />
