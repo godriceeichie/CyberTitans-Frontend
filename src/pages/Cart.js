@@ -63,50 +63,6 @@ const Cart = ({ cartItems, setCartItems }) => {
           </div>
         ))}
       </div>
-       <div className='checkoutBox'>
-        <h3>Payment Info</h3>
-        <div className='paymentMethod'>
-          <label>
-            <input
-              type='radio'
-              value='creditCard'
-              checked={paymentMethod === 'creditCard'}
-              onChange={() => handlePaymentMethodChange('creditCard')}
-            />
-            Credit Card
-          </label>
-          <label>
-            <input
-              type='radio'
-              value='paypal'
-              checked={paymentMethod === 'paypal'}
-              onChange={() => handlePaymentMethodChange('paypal')}
-            />
-            Paypal
-          </label>
-        </div>
-        <input
-          type='text'
-          placeholder='User Name'
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <input
-          type='text'
-          placeholder='Card Number'
-          value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-        />
-        <input
-          type='text'
-          placeholder='Bank Name'
-          value={bankName}
-          onChange={(e) => setBankName(e.target.value)}
-        />
-        <button className='payButton' onClick={handlePayClick}>
-          Pay
-        </button>
-      </div>
       </div>
     </div>
   );
