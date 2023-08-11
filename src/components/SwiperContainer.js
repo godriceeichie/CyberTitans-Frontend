@@ -77,7 +77,7 @@ const SwiperContainer = () => {
                 </Flex>
                 <Flex gap={'10px'} alignItems={'center'}>
                   <Text fontWeight={'bold'} fontSize={'1rem'} color={'brand.600'}>$19.00</Text>
-                  <Text fontSize={'13px'} color={'#858585'}>$21.00</Text>
+                  <Text fontSize={'13px'} color={'#858585'} as={'s'}>$21.00</Text>
                 </Flex>
               </Stack>
             </CardFooter>

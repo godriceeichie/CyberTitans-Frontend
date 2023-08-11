@@ -35,8 +35,6 @@ function App() {
 						<Route index element={<Home />} />
 						<Route path="/products" element={<Products cartItems={cartItems} setCartItems={setCartItems} />} />
 						<Route path="about" element={<About />} />
-						<Route path="login" element={<Login />} />
-						<Route path="signup" element={<Signup />} />
 						<Route path="contact" element={<Contact />} />
 						<Route path="account" element={<Account />} />
 						<Route path="faq" element={<Faq />} />
@@ -54,6 +52,10 @@ function App() {
       				</Route>
 					<Route path="/admin/" element={<Adminroot />}>
 						<Route path="overview" element={<Overview />} />
+					</Route>
+					<Route path="/auth">
+						<Route path="login" element={<Login />} />
+						<Route path="signup" element={<Signup />} />
 					</Route>
 				</Routes>
 			</Router>

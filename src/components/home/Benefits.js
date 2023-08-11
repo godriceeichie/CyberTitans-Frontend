@@ -6,7 +6,7 @@ import qualityIcon from '../../assets/best-quality.svg'
 
 const Benefits = () => {
   return (
-    <Box as='section' p={'0'} px={{base: '10', lg: '48'}} my={'24'}>
+    <Box as='section' p={'0'} px={{base: '10', lg: '48'}} my={'16'}>
         <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)'}} gap={{base: '10', lg: '24'}} alignItems={'center'}>
             <GridItem as={Stack} gap={'1.54rem'} w={'100%'}>
                 <Image src={deliveryIcon} w={{base: '20', lg: '24'}}/>
