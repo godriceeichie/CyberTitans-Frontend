@@ -27,21 +27,7 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems(updatedCartItems);
   };
 
-    const [paymentMethod, setPaymentMethod] = useState('creditCard');
-  const [userName, setUserName] = useState('');
-  const [cardNumber, setCardNumber] = useState('');
-  const [bankName, setBankName] = useState('');
 
-  const handlePaymentMethodChange = (method) => {
-    setPaymentMethod(method);
-  };
-
-  const handlePayClick = () => {
-    // Handle payment logic here
-    // You can use the entered payment information to process the payment
-    // For this example, let's just show a success alert
-    alert('Payment successful!');
-  };
 
   return (
     <div className='cartContainer'>
@@ -59,14 +45,15 @@ const Cart = ({ cartItems, setCartItems }) => {
                             <span className='quantity'>{item.quantity}</span>
                             <button className='quantityButton' onClick={() => handleIncrement(index)}>+</button>
                         </div>
-                        <p>Total: ${item.totalPrice}</p>
+                        <p>Total: ${item.totalPrice} </p>
                         <button className='removeButton' onClick={() => handleRemoveItem(index)}>Remove</button>
-                        <Link as={RouterLink} to={'/checkout'}>
-                            <button className='checkoutButtonInItem'>Checkout</button>
-                        </Link>
                     </div>
                 </div>
+                
                 ))}
+                <Link as={RouterLink} to={'/checkout'}>
+                            <button className='checkoutButtonInItem'>Checkout</button>
+                        </Link>
             </div>
         </div>
     </div>
