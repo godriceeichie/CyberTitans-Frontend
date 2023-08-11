@@ -3,7 +3,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Root from "./layout/Root";
 
-import { About, Contact, Faq, Home, Shop, Login, Signup, UserDashboard, History, Inbox, Order, Settings, Wishlist, Products } from "./pages";
+import { About, Contact, Faq, Home, Login, Signup, UserDashboard, Account, History, Inbox, Order, Settings, Wishlist, Products } from "./pages";
 
 function App() {
 	return (
