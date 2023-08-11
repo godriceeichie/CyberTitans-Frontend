@@ -18,3 +18,4 @@ export {default as ProductDescriptionV} from "./ProductDescriptionV";
 export {default as ProductDescriptionVI} from "./ProductDescriptionVI";
 export {default as ProductDescriptionVII} from "./ProductDescriptionVII";
 export {default as ProductDescriptionVIII} from "./ProductDescriptionVIII";
+export { default as Adminsidemenu } from "./admincomp/Adminsidemenu";
