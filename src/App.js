@@ -1,6 +1,6 @@
 /** @format */
 
-import { BrowserRouter as Router, Routes, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState } from 'react';
 import Root from "./layout/Root";
 import Adminroot from "./layout/Adminroot";
@@ -26,6 +26,16 @@ import {
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
+	  const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State for cart modal
+
+	   const handleCartModalOpen = () => {
+    setIsCartModalOpen(true);
+  };
+
+  const handleCartModalClose = () => {
+    setIsCartModalOpen(false);
+  };
+
 	return (
 		<>
 			<Router>
@@ -44,12 +54,9 @@ function App() {
 						<Route path="wishlist" element={<Wishlist />} />
 						<Route path="history" element={<History />} />
 						<Route path="userDashboard" element={<UserDashboard />} />
-						<Route path="cart" element={<Cart />} />
+						<Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} handleCartModalOpen={handleCartModalOpen} />} />
 						<Route path="checkout" element={<Checkout />} />
 					</Route>
-					<Route path="/cart" element={<Root />}>
-        				<Route index element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
-      				</Route>
 					<Route path="/admin/" element={<Adminroot />}>
 						<Route path="overview" element={<Overview />} />
 					</Route>

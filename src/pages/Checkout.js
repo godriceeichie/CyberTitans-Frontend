@@ -4,7 +4,9 @@ import '../styles/Checkout.css'
 const Checkout = () => {
   return (
     <div className='checkoutContainer'>
+      <div className='checkoutChild'>
 
+      </div>
     </div>
   )
 }
