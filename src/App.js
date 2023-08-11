@@ -20,6 +20,7 @@ import {
 	UserDashboard,
 	Overview,
 	Cart,
+	UserRoot,
 } from "./pages";
 
 function App() {
@@ -42,12 +43,12 @@ function App() {
 						<Route path="orders" element={<Order />} />
 						<Route path="wishlist" element={<Wishlist />} />
 						<Route path="history" element={<History />} />
-						<Route path="userDashboard" element={<UserDashboard />} />
-						<Route path="cart" element={<Cart />} />
+						
+						
 					</Route>
-					<Route path="/cart" element={<Root />}>
-        				<Route index element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
-      				</Route>
+					<Route path="/user/" element={<UserRoot/>}>
+						<Route path="userDashboard" element={<UserDashboard />} />
+					</Route>
 					<Route path="/admin/" element={<Adminroot />}>
 						<Route path="overview" element={<Overview />} />
 					</Route>
