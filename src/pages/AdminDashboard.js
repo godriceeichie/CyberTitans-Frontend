@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Inbox = () => {
+const AdminDashboard = () => {
   return (
     <div>
-      <h1>Inbox</h1>
+      
     </div>
   );
 };
 
-export default Inbox;
+export default AdminDashboard;

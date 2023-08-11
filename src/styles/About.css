@@ -2,7 +2,7 @@
     /* font-family: 'Poppins', sans-serif; */
 :root{
     --blue: #003498;
-    --darkblue: #0e2c64;
+    --darkgreen: #23856D;
 }
 
 .aboutHero{
@@ -22,12 +22,12 @@
     width: 40%;
 }
 .leftAbout h2{
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     font-size: 40px;
     font-weight: 900;
 }
 .leftAbout h2 span{
-    color: var(--darkblue);
+    color: var(--darkgreen);
 }
 .leftAbout p{
     margin-bottom: 15px;
@@ -48,7 +48,7 @@
 }
 .leftAbout button:hover{
     cursor: pointer;
-    background-color: var(--darkblue);
+    background-color: var(--darkgreen);
     transition: 500ms;
     color: white;
 }
@@ -73,17 +73,18 @@
 }
 .missionWrapper .heading h2{
     font-size: 35px;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     font-weight: 800;
     text-align: center;
 }
 .missionWrapper .heading h2 span{
-    color: var(--darkblue);
+    color: var(--darkgreen);
 }
 .missionWrapper .heading p{
     font-size: 16px;
     width: 60%;
     text-align: center;
+    color: #999;
 }
 .missionCardsWrapper{
     width: 70%;
@@ -111,6 +112,17 @@
     margin-bottom: 10px;
 }
 
+.missionCards h3{
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #252B42;
+}
+
+.missionCards p{
+    font-size: 15px;
+    color: #737373;
+}
+
 .teamWrapper{
     padding: 100px 5%;
     padding-bottom: 0px;
@@ -128,17 +140,18 @@
 }
 .teamWrapper .heading h2{
     font-size: 35px;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     font-weight: 800;
     text-align: center;
 }
 .teamWrapper .heading h2 span{
-    color: var(--darkblue);
+    color: var(--darkgreen);
 }
 .teamWrapper .heading p{
     font-size: 16px;
     width: 60%;
     text-align: center;
+    color: #999;
 }
 .teamCardWrapper{
     display: flex;
@@ -270,7 +283,7 @@
         padding-bottom: 40px;
     }
     .missionWrapper .heading h2{
-        font-size: 25px;
+        font-size: 30px;
     }
     .leftAbout h2{
         font-size: 30px;
@@ -282,7 +295,7 @@
         width: 100%;   
     }
     .teamWrapper .heading h2{
-        font-size: 25px;
+        font-size: 30px;
     }
     .teamWrapper .heading p{
         font-size: 13px;

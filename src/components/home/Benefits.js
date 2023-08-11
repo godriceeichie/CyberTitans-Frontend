@@ -1,8 +1,8 @@
 import { Box, Flex, Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import deliveryIcon from '../assets/deliveryIcon.svg'
-import paymentIcon from '../assets/secure-payment-icon.svg'
-import qualityIcon from '../assets/best-quality.svg'
+import deliveryIcon from '../../assets/deliveryIcon.svg'
+import paymentIcon from '../../assets/secure-payment-icon.svg'
+import qualityIcon from '../../assets/best-quality.svg'
 
 const Benefits = () => {
   return (

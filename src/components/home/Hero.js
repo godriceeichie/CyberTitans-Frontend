@@ -1,6 +1,6 @@
 import { Box, Heading, Link, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
-import bg from '../assets/ekrem-osmanoglu-SqUZtDv3avM-unsplash.jpg'
+import bg from '../../assets/ekrem-osmanoglu-SqUZtDv3avM-unsplash.jpg'
 import { Link as RouterLink } from 'react-router-dom'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 
