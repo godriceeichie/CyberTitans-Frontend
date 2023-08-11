@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Cart.css';
-import Swal from 'sweetalert2';
 import { useState } from 'react';
 
 const Cart = ({ cartItems, setCartItems }) => {
@@ -26,47 +25,27 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems(updatedCartItems);
   };
 
-   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+    const [paymentMethod, setPaymentMethod] = useState('creditCard');
+  const [userName, setUserName] = useState('');
   const [cardNumber, setCardNumber] = useState('');
-  const [bankAccountNumber, setBankAccountNumber] = useState('');
-  const [address, setAddress] = useState('');
+  const [bankName, setBankName] = useState('');
 
-  const handleCheckoutClick = () => {
-    setShowCheckoutModal(true);
+  const handlePaymentMethodChange = (method) => {
+    setPaymentMethod(method);
   };
 
-  const handleCheckoutSubmit = () => {
-    if (!cardNumber || !bankAccountNumber || !address) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Please fill in all the fields!',
-      });
-      return;
-    }
-
-    // Handle submission logic here
-    // You can collect input data from the user and perform necessary actions
+  const handlePayClick = () => {
+    // Handle payment logic here
+    // You can use the entered payment information to process the payment
     // For this example, let's just show a success alert
-    Swal.fire({
-      icon: 'success',
-      title: 'Checkout Successful!',
-      text: 'Thank you for your purchase!',
-    });
-
-    // Reset cart after successful checkout
-    setCartItems([]);
-    setShowCheckoutModal(false);
-  };
-
-  const handleCloseModal = () => {
-    setShowCheckoutModal(false);
+    alert('Payment successful!');
   };
 
   return (
     <div className='cartContainer'>
       <h2>Your Cart</h2>
-      <div className='cartItems'>
+      <div className='cartChild'>
+        <div className='cartItems'>
         {cartItems.map((item, index) => (
           <div key={index} className='cartItem'>
             <img src={item.image} alt={item.name} />
@@ -84,41 +63,51 @@ const Cart = ({ cartItems, setCartItems }) => {
           </div>
         ))}
       </div>
-      
-      <button className='checkoutButton' onClick={handleCheckoutClick}>
-        Checkout
-      </button>
-
-      {/* Checkout Modal */}
-      {showCheckoutModal && (
-        <div className='checkoutModal'>
-          <div className='modalContent'>
-            <h3>Checkout</h3>
+       <div className='checkoutBox'>
+        <h3>Payment Info</h3>
+        <div className='paymentMethod'>
+          <label>
             <input
-              type='text'
-              placeholder='Card Number'
-              value={cardNumber}
-              onChange={(e) => setCardNumber(e.target.value)}
+              type='radio'
+              value='creditCard'
+              checked={paymentMethod === 'creditCard'}
+              onChange={() => handlePaymentMethodChange('creditCard')}
             />
+            Credit Card
+          </label>
+          <label>
             <input
-              type='text'
-              placeholder='Bank Account Number'
-              value={bankAccountNumber}
-              onChange={(e) => setBankAccountNumber(e.target.value)}
+              type='radio'
+              value='paypal'
+              checked={paymentMethod === 'paypal'}
+              onChange={() => handlePaymentMethodChange('paypal')}
             />
-            <input
-              type='text'
-              placeholder='Address'
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-            <div className='modalButtons'>
-              <button onClick={handleCheckoutSubmit}>Submit</button>
-              <button onClick={handleCloseModal}>Cancel</button>
-            </div>
-          </div>
+            Paypal
+          </label>
         </div>
-      )}
+        <input
+          type='text'
+          placeholder='User Name'
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='Card Number'
+          value={cardNumber}
+          onChange={(e) => setCardNumber(e.target.value)}
+        />
+        <input
+          type='text'
+          placeholder='Bank Name'
+          value={bankName}
+          onChange={(e) => setBankName(e.target.value)}
+        />
+        <button className='payButton' onClick={handlePayClick}>
+          Pay
+        </button>
+      </div>
+      </div>
     </div>
   );
 };

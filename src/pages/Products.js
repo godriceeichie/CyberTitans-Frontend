@@ -14,11 +14,12 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'; // Import SweetAlert2 library
+import { useToast } from '@chakra-ui/react';
 
 
 const Products = ({ cartItems, setCartItems }) => {
-   const [selectedCategory, setSelectedCategory] = useState('All');
-
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const toast = useToast()
   const products = [
   {
     id: 1,
@@ -94,15 +95,23 @@ const Products = ({ cartItems, setCartItems }) => {
   const handleAddToCart = (product) => {
     setCartItems([...cartItems, product]);
     // Show SweetAlert2 alert when a product is added to cart
-    Swal.fire({
-      icon: 'success',
-      title: 'Added to Cart',
-      text: `${product.name} has been added to your cart.`,
-      timer: 2000, // Display for 2 seconds
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-    });
+    // Swal.fire({
+    //   icon: 'success',
+    //   title: 'Added to Cart',
+    //   text: `${product.name} has been added to your cart.`,
+    //   timer: 2000, // Display for 2 seconds
+    //   toast: true,
+    //   position: 'top-end',
+    //   showConfirmButton: false,
+    // });
+    toast({
+      title: 'Added to cart',
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+      position: 'top'
+    }
+    )
   };
   return (
     <div>
