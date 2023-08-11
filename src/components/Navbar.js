@@ -12,8 +12,8 @@ import { ArrowBackIcon } from "@chakra-ui/icons"
 const Navbar = () => {
     const [show, setShow] = useState(false);
     return(
-        <Box pos={'sticky'} top={'0'} zIndex={'50'}>
-            <Box px={{base: '6', lg: '12'}}  py={'4'} w={'100%'} bg={'white'} shadow={'base'} >
+        <Box pos={'sticky'} top={'0'} zIndex={'50'} bg={'white'} shadow={'base'}>
+            <Box px={{base: '6', lg: '12'}}  py={'4'} w={'100%'}  maxW={'1500px'} mx={'auto'}>
                 <Flex justifyContent={'space-between'} align={'center'}>
                     <Logo show={show}/>
                     <ArrowBackIcon display={show ? 'block' : 'none'} onClick={() => setShow(!show)}/>

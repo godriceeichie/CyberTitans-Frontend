@@ -18,6 +18,7 @@ import { FiShoppingCart } from 'react-icons/fi'
 const SwiperContainer = () => {
   return (
     <Swiper
+    
       slidesPerView={1  }
       grabCursor={true}
       spaceBetween={20}

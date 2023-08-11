@@ -9,7 +9,8 @@ const FeaturedPlants = () => {
       w={"100%"}
       p={"0"}
       my={"24"}
-      px={{ base: "10", lg: "24" }}
+      px={"10"}
+      maxW={'1500px'} mx={'auto'}
     >
       <Flex flexDirection={{base: 'column', lg: 'row'}} gap={'1.75rem'}>
         <FeaturedPlant  data={{price: '$30', category: 'Outdoor'}}/>
