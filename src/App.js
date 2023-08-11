@@ -2,8 +2,25 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Root from "./layout/Root";
-
-import { About, Contact, Faq, Home, Login, Signup, UserDashboard, Account, History, Inbox, Order, Settings, Wishlist, Products } from "./pages";
+import Adminroot from "./layout/Adminroot";
+import {
+	About,
+	Contact,
+	Faq,
+	Home,
+	Shop,
+	Login,
+	Signup,
+	Account,
+	History,
+	Inbox,
+	Order,
+	Settings,
+	Wishlist,
+	Products,
+	UserDashboard,
+	Overview,
+} from "./pages";
 
 function App() {
 	return (
@@ -25,6 +42,9 @@ function App() {
 						<Route path="wishlist" element={<Wishlist />} />
 						<Route path="history" element={<History />} />
 						<Route path="userDashboard" element={<UserDashboard />} />
+					</Route>
+					<Route path="/admin/" element={<Adminroot />}>
+						<Route path="overview" element={<Overview />} />
 					</Route>
 				</Routes>
 			</Router>
