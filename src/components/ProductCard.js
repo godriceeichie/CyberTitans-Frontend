@@ -26,20 +26,19 @@ const ProductCard = ({id, name, image, price }) => {
         opacity: 1
       }}}>
         <LinkBox position={'relative'}>
-          <LinkOverlay display={'block'}>
+          <LinkOverlay as={RouterLink}  display={'block'} >
             <Image src={image} w={'100%'}/>
           </LinkOverlay>
           <Box className='hover-icons' bgColor={'white'} p={'5px'} position={'absolute'} bottom={'15px'} transition={'.6s'} right={'0'} opacity={'0'} visibility={'hidden'}>
             <List>
               <ListItem>
-                <Link as={RouterLink} to={'/productdescription'}>
+                
+                <Link as={RouterLink} to={`/product/${name}`}>
                   <IconButton icon={<AiOutlineEye size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'}  background={'none'} transition={'.6s'}/>
                 </Link>
               </ListItem>
               <ListItem>
-                <Link as={RouterLink}>
-                  <IconButton icon={<AiOutlineHeart size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'}  background={'none'} transition={'.6s'}/>
-                </Link>
+                <IconButton icon={<AiOutlineHeart size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'}  background={'none'} transition={'.6s'}/>
               </ListItem>
               <ListItem>
                 <Link as={RouterLink}>

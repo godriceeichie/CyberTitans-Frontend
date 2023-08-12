@@ -4,9 +4,11 @@ import products from '../../data/products'
 import ProductCard from '../ProductCard'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import instance from '../../config/api'
+import useProductsContext from '../../hooks/useProducts'
 
 const ProductList = () => {
-  const [products, setProducts] = useState([])
+  // const [products, setProducts] = useState([])
+  const { products, setProducts} = useProductsContext()
   useEffect(() => {
     instance.get('/api/v1/user/getAllProducts')
       .then((response) => {

@@ -11,9 +11,10 @@ const HamburgerMenu = ({isOpen, onClose, onOpen, btnRef}) => {
             placement='right'
             onClose={onClose}
             finalFocusRef={btnRef}
+            
         >
             <DrawerOverlay />
-            <DrawerContent>
+            <DrawerContent hideBelow={'lg'}>
                 <Flex alignItems={'center'} >
                     <DrawerCloseButton alignSelf={'center'}/>
                     <DrawerHeader>

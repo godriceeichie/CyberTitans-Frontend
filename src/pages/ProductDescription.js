@@ -13,14 +13,39 @@ import {
     Button,
     background
 } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
-import React from 'react'
+import { Link, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import useProductsContext from '../hooks/useProducts'
+import instance from '../config/api'
+
 
 const ProductDescription = () => {
+  const [item, setItem] = useState();
+  const {id} = useParams()
+  const {products, setProducts } = useProductsContext()
+  const filterProduct =  () => {
+    return products.find(({productName}) => productName === id)
+  }
+  let filteredItem
+  useEffect(() => {
+    instance.get(`/api/v1/user/getSingleProduct/${id}`)
+    .then((response) => {
+      console.log(response.data.content)
+      setItem(response.data.content)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    
+  }, [id]);
+
+  if(!item){
+    return <p>Loading...</p>
+  }
   return (
     <div style={{ display: 'flex', AlignItems: 'center', justifyContent: 'center', flexDirection: 'column', BackgroundColor: 'red'}}>
         <Box bgColor={'#f9f9f9'} px={'12'} py={'2'}>
-
+        {/* <Button onClick={()=>setItem(item + 1)}>{item[0].productName}</Button> */}
         <Breadcrumb>
           <BreadcrumbItem>
             <BreadcrumbLink as={Link} to='/' color={'brand.500'} fontWeight={'semibold'}>
@@ -47,7 +72,7 @@ const ProductDescription = () => {
         />
         <Box padding={['1rem', '2rem']} flexGrow={1}>
           <Heading as='h1' size='xl' mb='1rem'>
-            Product Name
+            {/* {filteredItem.productName} */}
           </Heading>
           <Text fontSize='lg' color='gray.600' mb='1rem'>
             Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
