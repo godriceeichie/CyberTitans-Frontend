@@ -20,23 +20,13 @@ import {
 	Products,
 	UserDashboard,
 	Overview,
-	Cart,
 	Checkout,
 	Forgotpassword,
 	ProductDescription
 } from "./pages";
 
 function App() {
-	const [cartItems, setCartItems] = useState([]);
-	  const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State for cart modal
-
-	   const handleCartModalOpen = () => {
-    setIsCartModalOpen(true);
-  };
-
-  const handleCartModalClose = () => {
-    setIsCartModalOpen(false);
-  };
+	
 
 	return (
 		<>
