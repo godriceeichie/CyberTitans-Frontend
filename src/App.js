@@ -20,22 +20,13 @@ import {
 	Products,
 	UserDashboard,
 	Overview,
-	Cart,
 	Checkout,
-	Forgotpassword
+	Forgotpassword,
+	ProductDescription
 } from "./pages";
 
 function App() {
-	const [cartItems, setCartItems] = useState([]);
-	  const [isCartModalOpen, setIsCartModalOpen] = useState(false); // State for cart modal
-
-	   const handleCartModalOpen = () => {
-    setIsCartModalOpen(true);
-  };
-
-  const handleCartModalClose = () => {
-    setIsCartModalOpen(false);
-  };
+	
 
 	return (
 		<>
@@ -44,7 +35,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Root />}>
 						<Route index element={<Home />} />
-						<Route path="products" element={<Products cartItems={cartItems} setCartItems={setCartItems} />} />
+						<Route path="products" element={<Products />} />
 						<Route path="about" element={<About />} />
 						<Route path="contact" element={<Contact />} />
 						<Route path="account" element={<Account />} />
@@ -55,8 +46,8 @@ function App() {
 						<Route path="wishlist" element={<Wishlist />} />
 						<Route path="history" element={<History />} />
 						<Route path="userDashboard" element={<UserDashboard />} />
-						<Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} handleCartModalOpen={handleCartModalOpen} />} />
 						<Route path="checkout" element={<Checkout />} />
+						<Route path="product/:id" element={<ProductDescription />} />
 						
 					</Route>
 					<Route path="/admin/" element={<Adminroot />}>

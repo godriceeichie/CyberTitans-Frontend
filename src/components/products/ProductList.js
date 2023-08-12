@@ -1,11 +1,24 @@
 import { Box, Flex, Grid, GridItem, Heading, Menu, MenuButton, MenuItem, MenuList, Text, useCheckbox } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import products from '../../data/products'
 import ProductCard from '../ProductCard'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import instance from '../../config/api'
+import useProductsContext from '../../hooks/useProducts'
 
 const ProductList = () => {
-  
+  // const [products, setProducts] = useState([])
+  const { products, setProducts} = useProductsContext()
+  useEffect(() => {
+    instance.get('/api/v1/user/getAllProducts')
+      .then((response) => {
+        console.log(response.data.content)
+        setProducts([...response.data.content])
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, []);
   return (
     <Box px={{lg: '8'}}>
       <Heading fontSize={'2xl'}>
@@ -41,10 +54,10 @@ const ProductList = () => {
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            products.map(({index, image, name, price, discountPrice}) => {
+            products.map(({id, image, productName, productPrice }) => {
               return(
-                <GridItem w={'100%'} key={index}>
-                  <ProductCard name={name} image={image} price={price} discountPrice={discountPrice} />
+                <GridItem w={'100%'} key={id}>
+                  <ProductCard id={id} name={productName} image={image} price={productPrice} />
                 </GridItem>
               )
             })

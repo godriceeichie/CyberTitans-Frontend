@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Image, Link, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, Image, Link, Text, useDisclosure } from "@chakra-ui/react"
 import "../styles/Navbar.css"
 import { Link as RouterLink, NavLink } from "react-router-dom"
 import searchIcon from '../assets/searchIcon.svg'
@@ -9,11 +9,14 @@ import SearchBar from "./SearchBar"
 import { useRef, useState } from "react"
 import { ArrowBackIcon } from "@chakra-ui/icons"
 import HamburgerMenu from "./HamburgerMenu"
+import Cart from "./Cart"
 
-const Navbar = ({handleCartModalOpen}) => {
+const Navbar = ({cartOnOpen, cartIsOpen,  cartOnClose }) => {
     const [show, setShow] = useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = useRef()
+    const cartRef = useRef()
+    const hamburgerRef = useRef()
+    
     return(
         <Box pos={'sticky'} top={'0'} zIndex={'50'} bg={'white'} shadow={'base'}>
             <Box px={{base: '6', lg: '12'}}  py={'4'} w={'100%'}  maxW={'1500px'} mx={'auto'}>
@@ -31,12 +34,11 @@ const Navbar = ({handleCartModalOpen}) => {
                         {/* <Button bg={'none'} p={'0'} hideFrom={'lg'} onClick={() => setShow(!show)}>
                             <Image src={searchIcon} width={'20px'}/>
                         </Button> */}
-                        <Link as={RouterLink} to={'/cart'}>
-                            <Button bg={'none'} p={'0'}>
-                                <Image src={cartIcon} width={'20px'}/>
-                            </Button>
-                        </Link>
-                        <Button ref={btnRef} onClick={onOpen} bg={'none'} hideFrom={'lg'} p={'0'}>
+                        <Button bg={'none'} p={'0'} ref={cartRef} onClick={cartOnOpen}>
+                            <Image src={cartIcon} width={'20px'}/>
+                            <Text>0</Text>
+                        </Button>
+                        <Button ref={hamburgerRef} onClick={onOpen} bg={'none'} hideFrom={'lg'} p={'0'}>
                             <Image src={menuIcon} />
                         </Button>
                         <Link as={RouterLink} to={'/auth/login'} ml={'.5rem'} hideBelow={'lg'} color={'#252B42'}>Login</Link>
@@ -96,7 +98,8 @@ const Navbar = ({handleCartModalOpen}) => {
                         </Link>
                     </Flex>
                 </Flex>
-                <HamburgerMenu isOpen={isOpen} onClose={onClose} onOpen={onOpen} btnRef={btnRef}/>
+                <Cart  cartRef={cartRef} isOpen={cartIsOpen} onClose={cartOnClose} onOpen={cartOnOpen}/>
+                <HamburgerMenu isOpen={isOpen} onClose={onClose} onOpen={onOpen} btnRef={hamburgerRef}/>
             </Box>
             
         </Box>
