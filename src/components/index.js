@@ -11,5 +11,3 @@ export {default as Footer} from "./Footer";
 export {default as Navbar} from "./Navbar";
 export {default as Testimonials} from "./Testimonials";
 export { default as Adminsidemenu } from "./admincomp/Adminsidemenu";
-export { default as Filter } from './products/Filter'
-export { default as ProductList} from './products/ProductList'
