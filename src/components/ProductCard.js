@@ -5,8 +5,20 @@ import { ViewIcon } from '@chakra-ui/icons'
 import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai'
 import { FiShoppingCart } from 'react-icons/fi'
 import filledStar from '../assets/filledStar.svg'
+import useCartContext from '../hooks/useCartContext'
+import instance from '../config/api'
 
-const ProductCard = ({name, image, price, discountPrice}) => {
+
+const ProductCard = ({id, name, image, price }) => {
+  const { cart, dispatch } = useCartContext()
+  const addToCart = (id, name, image, price) => {
+    instance.post(`/api/v1/cart/add-to-cart/${id}`, {
+      headers: {
+        'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+      }
+    })
+    // dispatch({type: 'ADD', payload: {name, image, price}})
+  }
   return (
     <Card variant={'outline'} _hover={{'.hover-icons': {
         right: '15px',
@@ -31,7 +43,7 @@ const ProductCard = ({name, image, price, discountPrice}) => {
               </ListItem>
               <ListItem>
                 <Link as={RouterLink}>
-                  <IconButton icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/>
+                  <IconButton onClick={() => addToCart(name, image, price, id)} icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/>
                 </Link>
               </ListItem>
               
@@ -50,9 +62,7 @@ const ProductCard = ({name, image, price, discountPrice}) => {
             </Flex>
             <Flex gap={'10px'} alignItems={'center'}>
               <Text fontWeight={'bold'} fontSize={'1rem'} color={'brand.600'}>{price}</Text>
-              {
-                discountPrice && <Text fontSize={'13px'} color={'#858585'} as={'s'}>{discountPrice}</Text>
-              }
+              
             </Flex>
           </Stack>
         </CardFooter>

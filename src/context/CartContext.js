@@ -23,7 +23,7 @@ const CartContextProvider = ({children}) => {
         cart: null
     })
   return (
-    <CartContext.Provider>
+    <CartContext.Provider value={{...state, dispatch}}>
         {
             children
         }
