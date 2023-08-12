@@ -16,7 +16,7 @@ const Testimonials = () => {
             w={"100%"}
             p={"0"}
             my={"24"}
-            px={"24"}
+            px={{base: '12', lg: '24'}}
         >
             <Box position={'relative'} zIndex={'1'}>
                 <Heading 

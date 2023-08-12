@@ -21,7 +21,7 @@ const HamburgerMenu = ({isOpen, onClose, onOpen, btnRef}) => {
                     </DrawerHeader>
                 </Flex>
         
-                <DrawerBody>
+                <DrawerBody mt={'2'}>
                     <Stack divider={<StackDivider />} spacing={'4'}>
                         <NavLink to={'/'} className={'navbar__link'}>Home</NavLink>
                         <NavLink to={'/products'} className={'navbar__link'}>Products</NavLink>
