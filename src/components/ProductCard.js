@@ -1,28 +1,12 @@
-import React from 'react';
-import {
-  Box,
-  Card,
-  CardBody,
-  CardFooter,
-  Flex,
-  Heading,
-  IconButton,
-  Image,
-  Link,
-  LinkBox,
-  LinkOverlay,
-  List,
-  ListItem,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
-import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai';
-import { FiShoppingCart } from 'react-icons/fi';
-import filledStar from '../assets/filledStar.svg';
+import { Box, Card, CardBody, CardFooter, Flex, Heading, IconButton, Image, Link, LinkBox, LinkOverlay, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react'
+import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
+import { ViewIcon } from '@chakra-ui/icons'
+import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai'
+import { FiShoppingCart } from 'react-icons/fi'
+import filledStar from '../assets/filledStar.svg'
 
-const ProductCard = ({name, image, price, discountPrice}) => {
-   
+const ProductCard = ({name, image, price, discountPrice, addToCart}) => {
   return (
     <Card variant={'outline'} _hover={{'.hover-icons': {
         right: '15px',
@@ -47,17 +31,7 @@ const ProductCard = ({name, image, price, discountPrice}) => {
               </ListItem>
               <ListItem>
                 <Link as={RouterLink}>
-                   <IconButton
-              icon={<FiShoppingCart size={'1rem'}/>}
-              _hover={{ color: 'white', background: 'brand.500' }}
-              width={'36px'}
-              height={'36px'}
-              textAlign={'center'}
-              borderRadius={'100%'}
-              background={'none'}
-              transition={'.6s'}
-              // onClick={handleAddToCart} 
-            />
+                  <IconButton icon={<FiShoppingCart size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'} onClick={handleAddToCart} />
                 </Link>
               </ListItem>
               
