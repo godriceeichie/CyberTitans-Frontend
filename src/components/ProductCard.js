@@ -1,5 +1,5 @@
 import { Box, Card, CardBody, CardFooter, Flex, Heading, IconButton, Image, Link, LinkBox, LinkOverlay, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { ViewIcon } from '@chakra-ui/icons'
 import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai'
@@ -11,14 +11,18 @@ import instance from '../config/api'
 
 const ProductCard = ({id, name, image, price }) => {
   const { cart, dispatch } = useCartContext()
+  const [product, setProduct] = useState({})
   const addToCart = (id, name, image, price) => {
     instance.post(`/api/v1/cart/add-to-cart/${id}`, {
       headers: {
         'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
       }
     })
-    // dispatch({type: 'ADD', payload: {name, image, price}})
+    
   }
+  // const getProduct = (id) => {
+    
+  // }
   return (
     <Card variant={'outline'} _hover={{'.hover-icons': {
         right: '15px',
@@ -33,7 +37,7 @@ const ProductCard = ({id, name, image, price }) => {
             <List>
               <ListItem>
                 
-                <Link as={RouterLink} to={`/product/${name}`}>
+                <Link as={RouterLink} to={`/product/${id}`}>
                   <IconButton icon={<AiOutlineEye size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'}  background={'none'} transition={'.6s'}/>
                 </Link>
               </ListItem>
@@ -42,7 +46,7 @@ const ProductCard = ({id, name, image, price }) => {
               </ListItem>
               <ListItem>
                 <Link as={RouterLink}>
-                  <IconButton onClick={() => addToCart(name, image, price, id)} icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/>
+                  {/* <IconButton onClick={() => addToCart(name, image, price, id)} icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/> */}
                 </Link>
               </ListItem>
               
