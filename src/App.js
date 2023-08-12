@@ -44,7 +44,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Root />}>
 						<Route index element={<Home />} />
-						<Route path="products" element={<Products cartItems={cartItems} setCartItems={setCartItems} />} />
+						<Route path="products" element={<Products />} />
 						<Route path="about" element={<About />} />
 						<Route path="contact" element={<Contact />} />
 						<Route path="account" element={<Account />} />
@@ -55,7 +55,6 @@ function App() {
 						<Route path="wishlist" element={<Wishlist />} />
 						<Route path="history" element={<History />} />
 						<Route path="userDashboard" element={<UserDashboard />} />
-						<Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} handleCartModalOpen={handleCartModalOpen} />} />
 						<Route path="checkout" element={<Checkout />} />
 						
 					</Route>

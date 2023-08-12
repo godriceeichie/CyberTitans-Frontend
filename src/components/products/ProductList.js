@@ -1,11 +1,20 @@
 import { Box, Flex, Grid, GridItem, Heading, Menu, MenuButton, MenuItem, MenuList, Text, useCheckbox } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import products from '../../data/products'
 import ProductCard from '../ProductCard'
 import { ChevronDownIcon } from '@chakra-ui/icons'
+import instance from '../../config/api'
 
 const ProductList = () => {
-  
+  useEffect(() => {
+    instance.get('/api/v1/user/getAllProducts')
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, []);
   return (
     <Box px={{lg: '8'}}>
       <Heading fontSize={'2xl'}>
