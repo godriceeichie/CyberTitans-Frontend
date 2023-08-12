@@ -20,7 +20,7 @@ const ProductCard = ({name, image, price, discountPrice}) => {
           <Box className='hover-icons' bgColor={'white'} p={'5px'} position={'absolute'} bottom={'15px'} transition={'.6s'} right={'0'} opacity={'0'} visibility={'hidden'}>
             <List>
               <ListItem>
-                <Link as={RouterLink}>
+                <Link as={RouterLink} to={'/productdescription'}>
                   <IconButton icon={<AiOutlineEye size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'}  background={'none'} transition={'.6s'}/>
                 </Link>
               </ListItem>
