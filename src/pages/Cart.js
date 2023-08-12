@@ -1,14 +1,22 @@
 import React from 'react';
-import '../styles/Cart.css';
-import { Link as RouterLink } from "react-router-dom"
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import {
+  VStack,
+  HStack,
+  Container,
+  Box,
+  Heading,
+  Text,
+  Button,
+  Image,
+} from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Cart = ({ cartItems, setCartItems }) => {
   const handleQuantityChange = (index, newQuantity) => {
     const updatedCartItems = [...cartItems];
     updatedCartItems[index].quantity = newQuantity;
-    updatedCartItems[index].totalPrice = updatedCartItems[index].price * newQuantity;
+    updatedCartItems[index].totalPrice =
+      updatedCartItems[index].price * newQuantity;
     setCartItems(updatedCartItems);
   };
 
@@ -27,36 +35,59 @@ const Cart = ({ cartItems, setCartItems }) => {
     setCartItems(updatedCartItems);
   };
 
-
-
   return (
-    <div className='cartContainer'>
-      <h2>Your Cart</h2>
-        <div className='cartChild'>
-            <div className='cartItems'>
-                {cartItems.map((item, index) => (
-                <div key={index} className='cartItem'>
-                    <img src={item.image} alt={item.name} />
-                    <div className='cartItemDetails'>
-                        <h3>{item.name}</h3>
-                        <p>${item.price}</p>
-                        <div className='quantityControls'>
-                            <button className='quantityButton' onClick={() => handleDecrement(index)}>-</button>
-                            <span className='quantity'>{item.quantity}</span>
-                            <button className='quantityButton' onClick={() => handleIncrement(index)}>+</button>
-                        </div>
-                        <p>Total: ${item.totalPrice} </p>
-                        <button className='removeButton' onClick={() => handleRemoveItem(index)}>Remove</button>
-                    </div>
-                </div>
-                
-                ))}
-                <Link as={RouterLink} to={'/checkout'}>
-                            <button className='checkoutButtonInItem'>Checkout</button>
-                        </Link>
-            </div>
-        </div>
-    </div>
+    <VStack spacing="8" align="stretch" p="8">
+      <Heading as="h2" size="xl">
+        Your Cart
+      </Heading>
+      <Box>
+        {cartItems.map((item, index) => (
+          <HStack
+            key={index}
+            spacing="4"
+            p="4"
+            shadow="md"
+            borderWidth="1px"
+            borderRadius="md"
+            align="center"
+          >
+            <Image src={item.image} alt={item.name} w="100px" h="100px" />
+            <VStack align="flex-start" spacing="1">
+              <Text fontSize="xl" fontWeight="semibold">
+                {item.name}
+              </Text>
+              <Text>${item.price}</Text>
+              <HStack spacing="1">
+                <Button size="sm" onClick={() => handleDecrement(index)}>
+                  -
+                </Button>
+                <Text>{item.quantity}</Text>
+                <Button size="sm" onClick={() => handleIncrement(index)}>
+                  +
+                </Button>
+              </HStack>
+              <Text>Total: ${item.totalPrice}</Text>
+              <Button
+                colorScheme="red"
+                size="sm"
+                onClick={() => handleRemoveItem(index)}
+              >
+                Remove
+              </Button>
+            </VStack>
+          </HStack>
+        ))}
+      </Box>
+      <Button
+        as={RouterLink}
+        to="/checkout"
+        colorScheme="teal"
+        size="lg"
+        alignSelf="flex-end"
+      >
+        Checkout
+      </Button>
+    </VStack>
   );
 };
 
