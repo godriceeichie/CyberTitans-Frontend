@@ -11,12 +11,12 @@ const ProductList = () => {
       <Heading fontSize={'2xl'}>
         Products
       </Heading>
-      <Flex justifyContent={'space-between'} alignItems={'center'}>
-        <Text my={'3'} color={'secondTextColor.400'}>Over 100+ plants and accesories here, find it now!</Text>
-        <Menu>
+      <Flex direction={{base: 'column', lg: 'row'}} justifyContent={'space-between'} alignItems={{lg: 'center'}}>
+        <Text my={'3'} color={'secondTextColor.400'} fontSize={{base: 'sm', lg: 'md'}}>Over 100+ plants and accesories here, find it now!</Text>
+        <Menu >  
           <MenuButton
             px={4}
-            py={2}
+            py={1}
             transition='all 0.2s'
             borderRadius='md'
             borderWidth='1px'
@@ -24,9 +24,10 @@ const ProductList = () => {
             _hover={{ bg: 'brand.500', '.sort-by': {color: 'white'} }}
             // _expanded={{ bg: 'blue.400' }}
             _focus={{ boxShadow: 'outline' }}
+            w={'auto'}
             
           >
-            <Flex alignItems={'center'} gap={'1'}>
+            <Flex alignItems={'center'} justifyContent={{base: 'space-between', lg: 'normal'}} gap={'1'}>
               <Text className='sort-by' color={'brand.500'} fontWeight={'medium'}>Sort By</Text> 
               <ChevronDownIcon />
             </Flex>
