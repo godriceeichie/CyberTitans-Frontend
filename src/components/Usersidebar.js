@@ -27,35 +27,12 @@ const Usersidebar = () => {
 				</span>{" "}
 				Orders
 			</NavLink>
-
-			<NavLink to={"/inbox"}>
-				{" "}
-				<span>
-					{" "}
-					<MdOutlineEmail className="icon" />{" "}
-				</span>{" "}
-				Inbox
-			</NavLink>
-			{/* <NavLink>
-						{" "}
-						<span>
-							<MdOutlineRateReview className="icon" />
-						</span>{" "}
-						Pending Reviews
-					</NavLink> */}
 			<NavLink to={"/wishlist"}>
 				{" "}
 				<span>
 					<AiOutlineHeart className="icon" />
 				</span>{" "}
 				Wishlist
-			</NavLink>
-			<NavLink to={"/history"}>
-				{" "}
-				<span>
-					<GrHistory className="icon history" />
-				</span>{" "}
-				History
 			</NavLink>
 			<NavLink to={"/accountmanagement"}>Account Management</NavLink>
 		</div>

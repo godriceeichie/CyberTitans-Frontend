@@ -1,0 +1,19 @@
+.ordermenu {
+	width: 75%;
+	background-color: rgb(241, 241, 241);
+	height: 600px;
+	padding: 40px 2%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 6%;
+}
+.ord-p{
+    font-size: 25px;
+    font-weight: 700;
+}
+.pagination{
+    /* background-color: red; */
+    display: flex;
+    gap: 3%;
+}
