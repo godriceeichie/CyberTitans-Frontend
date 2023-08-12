@@ -1,13 +1,13 @@
 import { Link as RouterLink } from "react-router-dom"
-import "../styles/Signup.css"
-import google from "../images/google.png"
+import "../../styles/Signup.css"
+import google from "../../images/google.png"
 import { Button, Checkbox, Flex, FormControl, IconButton, Image, Input, InputGroup, InputRightElement, Link, Text } from "@chakra-ui/react"
 import { useState } from "react"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 
 const Signup = () => {
     const [show, setShow] = useState(false)
-    return<>
+    return<>        
         <div className="signupWrapper">
         <div className="leftSignup">
             <div className="leftSignupWrapper">
