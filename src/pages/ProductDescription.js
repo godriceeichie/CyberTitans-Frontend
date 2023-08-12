@@ -72,6 +72,9 @@ const ProductDescription = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur est et
             consectetur. Curabitur facilisis ac urna ut cursus. Etiam varius urna arcu, nec
             dignissim erat scelerisque in.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur est et
+            consectetur. Curabitur facilisis ac urna ut cursus. Etiam varius urna arcu, nec
+            dignissim erat scelerisque in.
           </Text>
         </Box>
       </Box>
