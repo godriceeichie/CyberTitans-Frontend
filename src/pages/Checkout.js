@@ -67,7 +67,7 @@ const Checkout = () => {
   };
 
   return (
-    <Container maxW="lg" py="8" display='flex' >
+    <Container maxW='2xl' display='flex'  bg={'yellow.400'}>
       <Stack spacing="6" height={'80vh'} backgroundColor={'blue'}>
         <Heading as="h1" size="xl" mb="4">
         Checkout
