@@ -26,24 +26,11 @@ const Signup = () => {
             </div>
         
             <form action="">
-                {/* <div className="inputWrapper">
-                    <label for="">First Name:</label>
-                    <input type="text"/>
-                </div>
-                <div className="inputWrapper">
-                    <label for="">Last Name:</label>
-                    <input type="text"/>
-                </div>
-                <div className="inputWrapper">
-                    <label for="">Email Address:</label>
-                    <input type="text"/>
-                </div>
-                <div className="inputWrapper">
-                    <label for="">Password:</label>
-                    <input type="text"/>
-                </div> */}
                 <FormControl>
-                    <Input placeholder='your@email.com' p={'0'} px={'1.5'} _placeholder={{fontStyle: 'normal', padding: '0'}}/>
+                    <Input type="text" placeholder='Username' p={'0'} px={'1.5'} _placeholder={{fontStyle: 'normal', padding: '0'}}/>
+                </FormControl>
+                <FormControl>
+                    <Input type="email" placeholder='your@email.com' p={'0'} px={'1.5'} _placeholder={{fontStyle: 'normal', padding: '0'}}/>
                 </FormControl>
                 <FormControl w={'100%'}>
                     <InputGroup>
@@ -55,7 +42,6 @@ const Signup = () => {
                 </FormControl>
                 <Flex alignItems={'center'} justifyContent={'space-between'}>
                     <Checkbox colorScheme="green" size={'sm'}>I agree to the terms and condition</Checkbox>
-                    <Link as={RouterLink} href="" color={'brand.500'} fontWeight={'medium'}>Forgot Password?</Link>
                 </Flex>
                 {/* <button type="submit">Submit</button> */}
                 <Button 

@@ -40,7 +40,7 @@ const Login = () => {
                         </InputGroup>
                     </FormControl>
                     <div className="forgotpassword">
-                        <Link as={RouterLink} href="">Forgot Password?</Link>
+                        <Link as={RouterLink} to={'/auth/forgot-password'}>Forgot Password?</Link>
                     </div>
                     {/* <button type="submit">Submit</button> */}
                     <Button 
