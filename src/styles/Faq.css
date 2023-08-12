@@ -103,9 +103,13 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   }
   
-.hero-3 .box h1{
+.hero-3 .box span{
   font-size: 40px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-items:center ;
+  justify-content: center;
+  display: flex;
+  margin-top: 75px;
 }
 
 .fbutton{
@@ -118,6 +122,7 @@
   margin-top: 30px;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 440px;
   transition: background 0.2s ease;
 }
 
@@ -155,6 +160,23 @@
     }
   }
 
+
+  @media screen and (max-width: 402px) {
+    .hero h1{
+      font-size: 10px;
+    }
+ 
+  }
+
+
+
+
+
+
+
+
+
+
   @media screen and (max-width: 375px) {
     .hero-right .h1c{
       margin-left: 20px;
@@ -172,11 +194,17 @@
   }
   @media screen and (max-width: 720px) {
     .hero1 h1 {
-      font-size: 10px;
-      background-color: #90EE83;
-      margin-bottom:10px ;
-      /* padding-bottom: 30px; */
-   
+      font-size: 0.5rem;
+      /* background-color: #90EE83; */
+    }
+
+    .hero-3 span{
+      font-size: 30%;
+     
+    }
+
+    .fbutton{
+      margin-right: 69px;
     }
    
   }

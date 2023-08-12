@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Stack } from '@chakra-ui/react'
+import { Button, Flex, Heading, Stack, filter } from '@chakra-ui/react'
 import React from 'react'
 import FilterAccordion from '../FilterAccordion'
 
@@ -17,4 +17,4 @@ const Filter = () => {
   )
 }
 
-export default Filter
+export default Filter;

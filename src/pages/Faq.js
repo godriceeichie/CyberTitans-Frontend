@@ -46,7 +46,7 @@ const Faq = () => {
 
       <section className='hero-3'>
         <div className='box'>
-            <h1>Still can’t find the answer to your question?</h1>
+            <span>Still can’t find the answer to your question?</span>
             <buttton className="fbutton">visit our help center</buttton>
 
         </div>
