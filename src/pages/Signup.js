@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom"
+import { Link as RouterLink } from "react-router-dom"
 import "../styles/Signup.css"
 import google from "../images/google.png"
+import { Button, Checkbox, Flex, FormControl, IconButton, Image, Input, InputGroup, InputRightElement, Link, Text } from "@chakra-ui/react"
+import { useState } from "react"
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 
 const Signup = () => {
-
+    const [show, setShow] = useState(false)
     return<>
         <div className="signupWrapper">
         <div className="leftSignup">
@@ -20,7 +23,7 @@ const Signup = () => {
             </div>
         
             <form action="">
-                <div className="inputWrapper">
+                {/* <div className="inputWrapper">
                     <label for="">First Name:</label>
                     <input type="text"/>
                 </div>
@@ -35,14 +38,29 @@ const Signup = () => {
                 <div className="inputWrapper">
                     <label for="">Password:</label>
                     <input type="text"/>
-                </div>
-                <div className="checkboxWrapper">
-                    <input type="checkbox" name="" id=""/>
-                    <p>I agree to the terms and condition</p>
-                </div>
-                <button type="submit">Submit</button>
+                </div> */}
+                <FormControl>
+                    <Input placeholder='your@email.com' p={'0'} px={'1.5'} _placeholder={{fontStyle: 'normal', padding: '0'}}/>
+                </FormControl>
+                <FormControl w={'100%'}>
+                    <InputGroup>
+                        <Input placeholder='Enter password' px={'1.5'} _placeholder={{fontStyle: 'normal', padding: '0'}} boxShadow={'sm'} type={show ? 'text' : 'password'} name='password' />
+                        <InputRightElement>
+                            <IconButton onClick={() => setShow(!show)} icon={show ? <AiOutlineEyeInvisible /> : <AiOutlineEye />} />
+                        </InputRightElement>
+                    </InputGroup>
+                </FormControl>
+                <Flex alignItems={'center'} justifyContent={'space-between'}>
+                    <Checkbox colorScheme="green" size={'sm'}>I agree to the terms and condition</Checkbox>
+                    <Link as={RouterLink} href="" color={'brand.500'} fontWeight={'medium'}>Forgot Password?</Link>
+                </Flex>
+                {/* <button type="submit">Submit</button> */}
+                <Button w={'100%'} bgColor={'brand.500'} color={'#fff'} mt={'5'}>Sign Up</Button>
             </form>
-            <p className="loginLink">Already have an account? <NavLink  to="/signin">login</NavLink></p>
+            <Flex gap={'.25rem  '} fontWeight={'medium'}>
+                <Text>Already have an account?</Text>
+                <Link as={RouterLink} to={'/auth/login'} color={'brand.500'}>Login</Link>
+            </Flex>
             </div>
         </div>
     

@@ -9,7 +9,8 @@
 
 .navbar__link{
     position: relative;
-    color: #9BA4B5;
+    /* color: #9BA4B5; */
+    color: #737373;
     font-weight: 500;
     /* line-height: 120%;  */
     letter-spacing: -0.00563rem;
