@@ -10,7 +10,10 @@ import {
   Radio,
   Button,
   useToast,
+  Image,
+  Flex
 } from '@chakra-ui/react';
+import check from '../images/obinna.jpg'
 
 const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState('creditCard');
@@ -64,11 +67,11 @@ const Checkout = () => {
   };
 
   return (
-    <Container maxW="lg" py="8">
-      <Heading as="h1" size="xl" mb="4">
+    <Container maxW="lg" py="8" display='flex' >
+      <Stack spacing="6" height={'80vh'} backgroundColor={'blue'}>
+        <Heading as="h1" size="xl" mb="4">
         Checkout
-      </Heading>
-      <Stack spacing="6">
+        </Heading>
         <Input
           placeholder="User Name"
           value={userName}
@@ -98,6 +101,9 @@ const Checkout = () => {
           Pay
         </Button>
       </Stack>
+      <Box backgroundColor={'green.400'}>
+        <Image src="" alt="Image Alt Text" />
+      </Box>
     </Container>
   );
 };
