@@ -13,10 +13,21 @@ import {
     Button,
     background
 } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
-import React from 'react'
+import { Link, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import useProductsContext from '../hooks/useProducts'
 
 const ProductDescription = () => {
+  const [product, setProduct] = useState([])
+  const {id} = useParams()
+  const {products, setProducts } = useProductsContext()
+  useEffect(() => {
+    setProduct(
+      products.filter(({ productName }) => productName === id)
+    )
+    console.log(id)
+    console.log(product)
+  }, [id]);
   return (
     <div style={{ display: 'flex', AlignItems: 'center', justifyContent: 'center', flexDirection: 'column', BackgroundColor: 'red'}}>
         <Box bgColor={'#f9f9f9'} px={'12'} py={'2'}>
