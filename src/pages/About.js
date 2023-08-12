@@ -29,7 +29,7 @@ const About = () => {
                     <Flex direction={'column'} gap={'2'} alignItems={{base: 'center', lg: 'flex-start'}}>
                         <Heading as={'h2'} color={'textColor.400'} fontSize={{base: '3xl', lg: '4xl'}} fontWeight={'bold'}>
                             Who We 
-                            <Text as={'span'} color={'brand.600'}> Are</Text>
+                            <Text as={'span'} color={'brand.500'}> Are</Text>
                         </Heading>
                         <Text fontSize={{base: 'md'}} textAlign={{base: 'center', lg: 'left'}} color={'#999'} letterSpacing={'-0.0075rem'} lineHeight={'160%'} as={'p'}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta corporis aut repellendus porro eius quia eaque explicabo laudantium necessitatibus, aliquam inventore modi in perspiciatis? Earum repellat illum velit quam deleniti!
@@ -41,9 +41,9 @@ const About = () => {
                             px={'20px'} 
                             bgColor={'white'} 
                             fontWeight={'semibold'} 
-                            color={'brand.600'} 
+                            color={'brand.500'} 
                             borderWidth={'2px'} 
-                            borderColor={'brand.600'} 
+                            borderColor={'brand.500'} 
                             borderRadius={'5px'}
                             transition={'.5s'}
                             _hover={{color: 'white', bgColor: 'brand.600'}}
@@ -52,31 +52,8 @@ const About = () => {
                         </Button>
                     </Flex >
                 </Box>
-                {/* <div className="leftAbout">
-                    <h2>WHO WE <span>ARE</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta corporis aut repellendus porro eius quia eaque explicabo laudantium necessitatibus, aliquam inventore modi in perspiciatis? Earum repellat illum velit quam deleniti!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia facere veritatis explicabo quisquam. Veritatis explicabo dignissimos esse, reiciendis, ratione, cumque eius sint natus velit dolore beatae voluptatum non perspiciatis aut.</p>
-                    <button>Get in touch</button>
-                </div> */}
             </Flex>
         </Box>
-
-        {/* <Box as="section" my={'24'} py={'0'} px={'6'} >
-            <Flex direction={'column'} gap={'12'}>
-                <Stack direction={'column'} gap={'5px'} alignItems={'center'} >
-                    <Heading fontSize={{base: '2xl', lg: '4xl'}}  >
-                        Why <Text as={'span'} color={'brand.600'}> Choose</Text> Us
-                    </Heading>
-                    <Text w={{base: '100%', lg: '60%'}} textAlign={'center'} color={'#999'}>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis dolores enim hic atque, ipsum corporis, quia autem temporibus suscipit sit.
-                    </Text>
-                </Stack>
-                <Flex flexWrap={'wrap'} w={{base: '100%', lg: '70%'}} direction={{base: 'column', lg: 'row'}}>
-
-                </Flex>
-            </Flex>
-        </Box> */}
-
 
         <section className="missionWrapper">
             <div className="heading">

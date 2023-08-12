@@ -3,14 +3,14 @@
 
 :root{
     --green: #47AD97;
-    --darkgreen: #23856D;
+    --darkgreen: #659e38;
 }
 
 
 .signupWrapper{
     display: flex;
     height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
 }
 .leftSignup{
     width: 48%;
@@ -41,7 +41,7 @@
     font-weight: 800;
 }
 .signupHeading p{
-    font-size: 13px;
+    font-size: 15px;
     color: rgb(99, 99, 99);
 }
 .signupHeading button{
@@ -127,21 +127,24 @@
     background-color: var(--green);
     color: white;
 } */
-.leftSignupWrapper form button:hover{
+/* .leftSignupWrapper form button:hover{
     background-color: var(--darkgreen);
     cursor: pointer;
     transition: 500ms;
     transition-timing-function: ease-in-out;
     border-radius: 25px;
-}
+} */
 .forgotpassword{
     width: 100%;
     text-align: right;
+   
 }
 .forgotpassword a{
-    color: var(--darkgreen);
     text-decoration: none;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #659e38
 }
 .loginLink{
     width: 100%;
@@ -157,7 +160,7 @@
 .rightSignupWrapper{
     width: 52%;
     background-color: gray;
-    background-image: url(https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80);
+    background-image: url(../assets/indoor-plant-removebg.png);
     background-size: cover;
     background-position: center;
 }

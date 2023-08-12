@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Link, LinkOverlay, Text, VStack, Image, Heading } from '@chakra-ui/react'
+import { Box, Center, Flex, Link, LinkOverlay, Text, VStack, Image, Heading, Icon } from '@chakra-ui/react'
 import React from 'react'
 import contactHeroImg from '../../assets/OBJECTS.svg'
 import twitterIcon from '../../assets/mdi_twitter.svg'
@@ -6,7 +6,9 @@ import whatsappIcon from '../../assets/ri_whatsapp-fill.svg'
 import instagramIcon from '../../assets/ri_instagram-fill.svg'
 import facebookIcon from '../../assets/ri_facebook-fill.svg'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-
+import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai'
+import { RiWhatsappFill } from 'react-icons/ri'
+import { FaFacebookF } from 'react-icons/fa'
 
 const ContactHero = () => {
   return (
@@ -28,25 +30,27 @@ const ContactHero = () => {
                 </Flex >
                 <VStack align={'left'} hideBelow={'lg'}>
                     <Flex align={'center'} gap={'4'}>
-                        <img src={twitterIcon} alt="" />
+                        <Icon boxSize={'8'} color={'brand.500'} as={AiOutlineTwitter} />
+                        {/* <AiOutlineTwitter color={'brand.500'}/> */}
                         <Link href='https://www.twitter.com/' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
                             Twitter <ExternalLinkIcon />
                         </Link>
                     </Flex>
                     <Flex align={'center'} gap={'4'}>
-                        <img src={whatsappIcon} alt="" />
+                        {/* <img src={whatsappIcon} alt="" /> */}
+                        <Icon boxSize={'7'} color={'brand.500'} as={RiWhatsappFill}/>
                         <Link href='https://www.whatsapp.com/' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
                             Whatsapp <ExternalLinkIcon />
                         </Link>
                     </Flex>
                     <Flex align={'center'} gap={'4'}>
-                        <img src={instagramIcon} alt="" />
+                        <Icon boxSize={'7'} color={'brand.500'} as={AiFillInstagram}/>
                         <Link href='https://www.instagram.com/' isExternal fontWeight={'medium'} display={'flex'} alignItems={'center'} gap={'4'}>
                             Instagram <ExternalLinkIcon />
                         </Link>
                     </Flex>
                     <Flex align={'center'} gap={'4'}>
-                        <img src={facebookIcon} alt="" />
+                        <Icon boxSize={'7'} color={'brand.500'} as={FaFacebookF} />
                         <Link href='https://www.facebook.com/' isExternal fontWeight={'medium'}  display={'flex'} alignItems={'center'} gap={'4'}>
                             Facebook <ExternalLinkIcon />
                         </Link>
