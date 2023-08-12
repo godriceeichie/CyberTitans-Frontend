@@ -3,10 +3,10 @@ import {
     BreadcrumbItem,
     Breadcrumb,
     BreadcrumbLink,
-    Card,
+    Container,
     Image,
-    Stack, 
-    CardBody,
+    Flex, 
+    Divider,
     Heading,
     Text,
     CardFooter,
@@ -18,7 +18,7 @@ import React from 'react'
 
 const ProductDescription = () => {
   return (
-    <div style={{ display: 'flex', AlignItems: 'center', justifyContent: 'center', flexDirection: 'column', BackgroundColor: 'red', height: '100vh'}}>
+    <div style={{ display: 'flex', AlignItems: 'center', justifyContent: 'center', flexDirection: 'column', BackgroundColor: 'red'}}>
         <Box bgColor={'#f9f9f9'} px={'12'} py={'2'}>
 
         <Breadcrumb>
@@ -37,36 +37,48 @@ const ProductDescription = () => {
           </BreadcrumbItem> */}
         </Breadcrumb>
       </Box>
-      <Card
-  direction={{ base: 'column', sm: 'row' }}
-  overflow='hidden'
-  variant='outline'
-  width={'80%'}
->
-  <Image
-    objectFit='cover'
-    maxW={{ base: '100%', sm: '200px' }}
-    src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
-    alt='Caffe Latte'
-  />
-
-  <Stack>
-    <CardBody>
-      <Heading size='md'>The perfect latte</Heading>
-
-      <Text py='2'>
-        Caffè latte is a coffee beverage of Italian origin made with espresso
-        and steamed milk.
-      </Text>
-    </CardBody>
-
-    <CardFooter>
-      <Button variant='solid' colorScheme='blue'>
-        Buy Latte
-      </Button>
-    </CardFooter>
-  </Stack>
-</Card>
+       <Container maxW='1200px' padding='2rem'>
+      <Box display='flex' flexDirection={['column', 'row']}>
+        <Image
+          src='https://via.placeholder.com/300'
+          alt='Product Image'
+          width={['100%', '40%']}
+          objectFit='cover'
+        />
+        <Box padding={['1rem', '2rem']} flexGrow={1}>
+          <Heading as='h1' size='xl' mb='1rem'>
+            Product Name
+          </Heading>
+          <Text fontSize='lg' color='gray.600' mb='1rem'>
+            Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </Text>
+          <Text fontSize='xl' color='green.600' mb='1rem'>
+            $99.99
+          </Text>
+          <Button colorScheme='blue' size='lg' mb='1rem'>
+            Add to Cart
+          </Button>
+          <Flex alignItems='center'>
+            <Text fontWeight='bold' mr='1rem'>
+              Availability:
+            </Text>
+            <Text color='green.600'>In Stock</Text>
+          </Flex>
+          <Divider my='1rem' />
+          <Text fontSize='lg' fontWeight='bold'>
+            Product Details
+          </Text>
+          <Text fontSize='md' color='gray.600' mt='0.5rem'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur est et
+            consectetur. Curabitur facilisis ac urna ut cursus. Etiam varius urna arcu, nec
+            dignissim erat scelerisque in.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur est et
+            consectetur. Curabitur facilisis ac urna ut cursus. Etiam varius urna arcu, nec
+            dignissim erat scelerisque in.
+          </Text>
+        </Box>
+      </Box>
+    </Container>
     </div>
     
   )
