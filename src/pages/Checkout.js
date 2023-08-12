@@ -67,20 +67,26 @@ const Checkout = () => {
       isClosable: true,
     });
   };
+  const [useDefaultAddress, setUseDefaultAddress] = useState(true);
 
+  const handleUseDefaultAddressChange = (value) => {
+    setUseDefaultAddress(value === 'yes');
+  };
   return (
-    <Container maxW='80%' display='flex' alignItems={'center'} height='90vh' justifyContent='center'>
-       <Stack spacing="6" height={'80vh'} width='50%' gap='40px' display='flex' align='flex-start'>
+    <Container maxW='80%' display='flex' alignItems={'center'} height='120vh' justifyContent='space-evenly'>
+       <Stack spacing="6" height={'100%'}  width='50%' gap='40px' display='flex' align='flex-start' marginTop='12rem'>
       <Heading as="h1" fontSize="30px" mb="4">
         Payment details
       </Heading>
       <Input
         width='80%'
+        // height='15rem'
         placeholder="User Name"
         // Other input props here
       />
       <Input
       width='80%'
+      // height='15rem'
         placeholder="Email Address" // 1. Email Address input
         // Input props here
       />
@@ -123,6 +129,27 @@ const Checkout = () => {
         />
       </Flex>
     </Box>
+    <Box>
+        {/* 7. Use Default Address */}
+        <p>Use Default Address:</p>
+        <RadioGroup value={useDefaultAddress ? 'yes' : 'no'} onChange={handleUseDefaultAddressChange}>
+          <Stack spacing="2">
+            <Radio value="yes">Yes</Radio>
+            <Radio value="no">No</Radio>
+          </Stack>
+        </RadioGroup>
+      </Box>
+
+      {/* Conditional rendering of the address form */}
+      {!useDefaultAddress && (
+        <Box  display={'flex'} alignItems={'center'} justifyContent={'space-between'} flexDirection={'column'} height={'12rem'}>
+          {/* 8. Address Form */}
+          <Input width='90%' placeholder="City" />
+          <Input width='90%' placeholder="State" />
+          <Input width='90%' placeholder="Country" />
+          <Input width='90%' placeholder="Postal Number" />
+        </Box>
+      )}
       <Box>
         {/* 4. Subtotal and Fee */}
        <Box display='flex' alignItems="center" justifyContent='center'>
