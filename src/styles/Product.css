@@ -6,6 +6,7 @@
     justify-content: center;
     flex-direction: column;
         padding: 100px 0;
+        /* background-color: red; */
 }
 .productMain h1{
         margin-bottom: 8px;
@@ -17,7 +18,7 @@
 .productMain h1::after{
     position: absolute;
     content: '';
-    background: #24856D;
+    background: #659E38;
     bottom: 0;
     left: 0;
     right: 0;
@@ -89,7 +90,7 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
    /* overflow-y: scroll; */
     height: max-content;
     /* background-color: red; */
@@ -99,22 +100,22 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    height: 648px;
-    width: 100%;
+    height: max-content;
+    width: 330px;
     transition: .3s ease-in-out;
         position: relative;
-    /* background-color: blue; */
+    /* background-color: rgb(149, 255, 0); */
     /* border: 1px solid black; */
 }
 
 .listedProduct img{
-    height: 80%;
-    width: 399px;
+    height: 430px;
+        width: 330px;
     border: 1px solid #f0f0f0;
 }
 .description{
-    height: 20%;
-    width: 399px;
+    height: 114px;
+    width: 330px;
     padding: 17px 20px 16px;
     border: 1px solid #f0f0f0;
     /* background-color: #24856D; */
@@ -128,14 +129,14 @@ display: flex;
         font-weight: 700;
         line-height: 22px;
         margin-right: 10px;
-        color: #24856D;
+        color: #659E38;
 }
 .cart{
     position: absolute;
     height: 118px;
     /* top: 0; */
-    bottom: 150px;
-    right: 40px;
+    bottom: 130px;
+    right: 20px;
     width: 50px;
     background-color: white;
     /* z-index: 999; */
@@ -143,6 +144,8 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    transition: display 0.5s ease-in-out;
+        /* Added transition */
 }
 .cart div{
     /* background-color: green; */
@@ -152,9 +155,12 @@ display: flex;
     display: flex;
     align-items: center;
     justify-content: center;
+
+transition: background-color 0.5s ease-in-out;
+    /* Added transition */
 }
 .cart div:hover{
-    background-color: #24856D;
+    background-color: #659E38;
     color: white;
 }
 .listedProduct:hover .cart {
