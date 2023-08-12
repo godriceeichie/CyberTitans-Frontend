@@ -12,8 +12,6 @@ const Forgotpassword = () => {
                 <input className='oop' type='email' name='' id='email' placeholder='Reset via Email'></input>
                 <input className='oop2' type='email' name='' id='SMS' placeholder='Reset via SMS'></input>
                 <button className='btn' type='submit'  value="forget">submit</button>
-            
-
                 </div>
             </div>
         </section>
