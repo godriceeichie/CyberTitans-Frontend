@@ -7,13 +7,14 @@ import instance from '../../config/api'
 import useProductsContext from '../../hooks/useProducts'
 
 const ProductList = () => {
-  // const [products, setProducts] = useState([])
+  // const [products, setProducts] = useState([]) 
   const { products, setProducts} = useProductsContext()
   useEffect(() => {
     instance.get('/api/v1/user/getAllProducts')
       .then((response) => {
         console.log(response.data.content)
         setProducts([...response.data.content])
+        console.log(products)
       })
       .catch(err => {
         console.log(err)
@@ -54,10 +55,10 @@ const ProductList = () => {
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            products.map(({id, image, productName, productPrice }) => {
+            products.map(({productId, image, productName, productPrice }) => {
               return(
-                <GridItem w={'100%'} key={id}>
-                  <ProductCard id={id} name={productName} image={image} price={productPrice} />
+                <GridItem w={'100%'} key={productId}>
+                  <ProductCard id={productId} name={productName} image={image} price={productPrice} />
                 </GridItem>
               )
             })
