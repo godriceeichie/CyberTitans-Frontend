@@ -26,7 +26,7 @@ const Hero = () => {
                             
                             Delivering <Text as={'span'} color={'brand.500'}>Happiness</Text>
                         </Heading>
-                        <Text color={'#9BA4B5'} fontSize={{base: 'md',md: 'lg'}} fontWeight={'medium'} textAlign={{base: 'center', md: 'left'}}> Embark on a Journey Through Our Exquisite Collection of Plants and Enchanting Plant Accessories</Text>
+                        <Text color={'#9BA4B5'} fontSize={{base: 'md',lg: 'lg'}} fontWeight={'medium'} textAlign={{base: 'center', md: 'left'}}> Embark on a Journey Through Our Exquisite Collection of Plants and Enchanting Plant Accessories</Text>
                     </VStack>
                     <SearchBar />
                     
