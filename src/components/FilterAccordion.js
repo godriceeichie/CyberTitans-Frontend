@@ -4,7 +4,7 @@ import React from 'react'
 const FilterAccordion = () => {
   return (
     <Accordion defaultIndex={[0]} allowMultiple  w={'100%'} borderRight={'1px solid #D8D8D8'}>
-        <AccordionItem border={'none'} mb={'1'}>
+        <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
                     <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
@@ -20,7 +20,7 @@ const FilterAccordion = () => {
                 </Stack>
             </AccordionPanel>
         </AccordionItem>
-        <AccordionItem border={'none'} mb={'1'}>
+        <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
                     <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
@@ -40,11 +40,11 @@ const FilterAccordion = () => {
                 </Stack>
             </AccordionPanel>
         </AccordionItem>
-        <AccordionItem border={'none'} mb={'1'}>
+        <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
                     <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
-                        Color
+                        Light
                     </Box>
                     <AccordionIcon />
                 </AccordionButton>
@@ -59,7 +59,47 @@ const FilterAccordion = () => {
                 </Stack>
             </AccordionPanel>
         </AccordionItem>
-        <AccordionItem border={'none'} >
+        <AccordionItem border={'none'} mb={'3.5'}>
+            <h2>
+                <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
+                    <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
+                        Growth Habits
+                    </Box>
+                    <AccordionIcon />
+                </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+                <Stack>
+                    <Checkbox colorScheme='green'>Tree</Checkbox>
+                    <Checkbox colorScheme='green'>Shrub</Checkbox>
+                    <Checkbox colorScheme='green'>Herbaceous</Checkbox>
+                    <Checkbox colorScheme='green'>Vine</Checkbox>
+                    <Checkbox colorScheme='green'>Climber</Checkbox>
+                    <Checkbox colorScheme='green'>Creeping</Checkbox>
+                    <Checkbox colorScheme='green'>Spreading</Checkbox>
+                </Stack>
+            </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem border={'none'} mb={'3.5'}>
+            <h2>
+                <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
+                    <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
+                        Water Requirements
+                    </Box>
+                    <AccordionIcon />
+                </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+                <Stack>
+                    <Checkbox colorScheme='green'>Drought-Tolerant</Checkbox>
+                    <Checkbox colorScheme='green'>Low-Water</Checkbox>
+                    <Checkbox colorScheme='green'>Moderate-Water</Checkbox>
+                    <Checkbox colorScheme='green'>High-Water</Checkbox>
+                    <Checkbox colorScheme='green'>Wetland</Checkbox>
+                </Stack>
+            </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
                     <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>

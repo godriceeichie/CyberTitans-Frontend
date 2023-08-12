@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import CartContextProvider from './context/CartContext';
+import ProductsContextProvider from './context/ProductsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -31,7 +33,11 @@ const theme = extendTheme({colors, fonts})
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <CartContextProvider>
+        <ProductsContextProvider>
+          <App />
+        </ProductsContextProvider>
+      </CartContextProvider>
     </ChakraProvider>
   </React.StrictMode>
 );
