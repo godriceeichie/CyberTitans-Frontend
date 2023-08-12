@@ -4,7 +4,7 @@ import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra
 const FeaturedPlant = ({data}) => {
   return (
     <Card
-        direction={{ base: "column", sm: "row" }}
+        direction={{ base: "column-reverse", sm: "row" }}
         overflow="hidden"
         variant="filled"
         bgColor={'#f9f9f9'}

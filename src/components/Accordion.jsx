@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/accordion.css'
 import useOpenController from './useOpenController';
+import { faEnvelope, faCircleChevronDown, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'    
 
  export const Accordion = ({section, key}) => {
     const {isOpen, toggle } =useOpenController(false);
@@ -23,7 +25,8 @@ export const ExpandableColumn = ({question, isOpen, toggle}) =>{
         <div className="column-container" onClick={toggle}>
         <div className='column-text'>{question}</div>
         <button className='expendable-button'>
-           <span class="material-symbols-outlined" style={{transform:'rotate(${isOpen ? 180 : 0}deg)' , transition: "all 0.25s"}}> expand_more</span>
+           {/* <span class="material-symbols-outlined" style={{transform:'rotate(${isOpen ? 180 : 0}deg)' , transition: "all 0.25s"}}> expand_more</span> */}
+           <FontAwesomeIcon icon={faCaretDown} />
         </button>
     </div>
         
