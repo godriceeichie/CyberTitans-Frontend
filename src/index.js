@@ -7,15 +7,15 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const fonts = {
-  body: "Poppins, sans-serif",
-  heading: "Poppins, sans-serif",
-  mono: "Poppins, sans-serif", 
+  body: "Plus Jakarta Sans, sans-serif",
+  heading: "Plus Jakarta Sans, sans-serif",
+  mono: "Plus Jakarta Sans, sans-serif", 
   cursive: "Lobster Two, cursive;"
 }
 
 const colors = {
   brand: {
-    500: "#47AD97",
+    500: "#659e38",
     600: "#23856D"
   },
   textColor:{

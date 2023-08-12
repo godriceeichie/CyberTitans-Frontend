@@ -1,0 +1,13 @@
+.checkoutContainer{
+    height: 90vh;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkoutChild{
+    height: 90%;
+    width: 90%;
+    background-color: red;
+}

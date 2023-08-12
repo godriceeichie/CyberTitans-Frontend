@@ -5,9 +5,9 @@ import { SearchIcon } from '@chakra-ui/icons'
 
 const SearchBar = ({show}) => {
   return (
-    <Flex w={show ? '90%' : '40%'} hideBelow={show ? '' : 'lg'} >
-        <Input placeholder='Search for plants and plant accesories..' _placeholder={{fontStyle: 'normal'}} type='search' borderLeftRadius={'40px'} borderRightRadius={'0'}  w={'90%'}/>
-        <IconButton borderLeftRadius={'0'} borderRightRadius={'40px'} bgColor={'brand.500'} icon={<SearchIcon color={'white'}/>}/>
+    <Flex w={{md: '80%'}} >
+      <Input placeholder='Search for plants and plant accesories..' _placeholder={{fontStyle: 'normal', padding: '0'}} type='search' borderLeftRadius={'0.375rem'} borderRightRadius={'0'}  w={'90%'}/>
+      <IconButton borderLeftRadius={'0'} borderRightRadius={'0.375rem'} bgColor={'brand.500'} icon={<SearchIcon color={'white'}/>}/>
     </Flex>
   )
 }
