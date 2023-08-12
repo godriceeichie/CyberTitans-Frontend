@@ -127,13 +127,13 @@
     background-color: var(--green);
     color: white;
 } */
-.leftSignupWrapper form button:hover{
+/* .leftSignupWrapper form button:hover{
     background-color: var(--darkgreen);
     cursor: pointer;
     transition: 500ms;
     transition-timing-function: ease-in-out;
     border-radius: 25px;
-}
+} */
 .forgotpassword{
     width: 100%;
     text-align: right;

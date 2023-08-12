@@ -14,7 +14,10 @@ const Signup = () => {
             <div className="signupHeading">
                 <h2>Create your account</h2>
                 <p>Let's get started with (company name) and give you the best experience</p>
-                <button><span><img src={google} alt="" /></span> &nbsp; Sign up with google</button>
+                <Button fontWeight={'medium'}>
+                    <Image src={google} mr={'1.5'}/>
+                    Sign up with Google
+                </Button>
             </div>
             <div className="or">
                 <hr/>
@@ -55,7 +58,53 @@ const Signup = () => {
                     <Link as={RouterLink} href="" color={'brand.500'} fontWeight={'medium'}>Forgot Password?</Link>
                 </Flex>
                 {/* <button type="submit">Submit</button> */}
-                <Button w={'100%'} bgColor={'brand.500'} color={'#fff'} mt={'5'}>Sign Up</Button>
+                <Button 
+                    w={'100%'} 
+                    bgColor={'brand.500'} 
+                    color={'#fff'} 
+                    mt={'5'}
+                    position={'relative'}
+                    bg={'black'}
+                    zIndex={'1'}
+                    transition={'0.4s'}
+                    _before={{
+                        width: '100%',
+                        height: '100%',
+                        content: '""',
+                        margin: 'auto',
+                        position: 'absolute',
+                        top: '0%',
+                        left: '0%',
+                        background: 'brand.500',
+                        transition: '0.52s',
+                        zIndex: -1,
+                        borderRadius: '5px'
+                        
+                    }}
+                    _after={{
+                        width: '100%',
+                        height: '100%',
+                        content: '""',
+                        margin: 'auto',
+                        position: 'absolute',
+                        top: '0%',
+                        left: '0%',
+                        background: 'brand.500',
+                        transition: '0.52s',
+                        zIndex: '-1',
+                        borderRadius: '5px'
+                    }}
+                    _hover={
+                        {
+                            _before:{
+                                transform: 'rotateX(90deg)'
+                            },
+                            _after: {
+                                transform: 'rotateY(90deg)'
+                            }
+                        }
+                    }
+                >Sign Up</Button>
             </form>
             <Flex gap={'.25rem  '} fontWeight={'medium'}>
                 <Text>Already have an account?</Text>

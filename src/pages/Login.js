@@ -42,11 +42,61 @@ const Login = () => {
                         <Link as={RouterLink} href="">Forgot Password?</Link>
                     </div>
                     {/* <button type="submit">Submit</button> */}
-                    <Button w={'100%'} bgColor={'brand.500'} color={'#fff'}>Login</Button>
+                    <Button 
+                        w={'100%'} 
+                        bgColor={'brand.500'} 
+                        color={'#fff'}
+                        position={'relative'}
+                        bg={'black'}
+                        zIndex={'1'}
+                        transition={'0.4s'}
+                        _before={{
+                            width: '100%',
+                            height: '100%',
+                            content: '""',
+                            margin: 'auto',
+                            position: 'absolute',
+                            top: '0%',
+                            left: '0%',
+                            background: 'brand.500',
+                            transition: '0.52s',
+                            zIndex: -1,
+                            borderRadius: '5px'
+                            
+                        }}
+                        _after={{
+                            width: '100%',
+                            height: '100%',
+                            content: '""',
+                            margin: 'auto',
+                            position: 'absolute',
+                            top: '0%',
+                            left: '0%',
+                            background: 'brand.500',
+                            transition: '0.52s',
+                            zIndex: '-1',
+                            borderRadius: '5px'
+                        }}
+                        _hover={
+                            {
+                                _before:{
+                                    transform: 'rotateX(90deg)'
+                                },
+                                _after: {
+                                    transform: 'rotateY(90deg)'
+                                }
+                            }
+                        }
+                    >Login</Button>
                 </form>
                 <Flex gap={'.25rem  '} fontWeight={'medium'}>
                     <Text>Don't have an account?</Text>
-                    <Link as={RouterLink} to={'/auth/signup'} color={'brand.500'}> Sign Up</Link>
+                    <Link 
+                        as={RouterLink} 
+                        to={'/auth/signup'} 
+                        color={'brand.500'}
+                        
+                    > Sign Up</Link>
                 </Flex>
                 {/* <p className="loginLink">Don't have an account? <NavLink to="/signup">Create your account</NavLink></p> */}
             </div>
