@@ -31,7 +31,7 @@ const ProductCard = ({name, image, price, discountPrice, addToCart}) => {
               </ListItem>
               <ListItem>
                 <Link as={RouterLink}>
-                  <IconButton icon={<FiShoppingCart size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'} onClick={handleAddToCart} />
+                  <IconButton icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/>
                 </Link>
               </ListItem>
               
