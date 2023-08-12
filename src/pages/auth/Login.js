@@ -1,9 +1,10 @@
 import { Link as RouterLink, NavLink } from "react-router-dom"
-import "../styles/Signup.css"
-import google from "../images/google.png"
+import "../../styles/Signup.css"
+import google from "../../images/google.png"
 import { Button, Flex, FormControl, IconButton, Image, Input, InputGroup, InputRightElement, Link, Text } from "@chakra-ui/react"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useState } from "react"
+
 
 const Login = () => {
     const [show, setShow] = useState(false)

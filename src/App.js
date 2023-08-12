@@ -22,6 +22,7 @@ import {
 	Overview,
 	Cart,
 	Checkout,
+	Forgotpassword
 } from "./pages";
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
 						<Route path="userDashboard" element={<UserDashboard />} />
 						<Route path="cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} handleCartModalOpen={handleCartModalOpen} />} />
 						<Route path="checkout" element={<Checkout />} />
+						
 					</Route>
 					<Route path="/admin/" element={<Adminroot />}>
 						<Route path="overview" element={<Overview />} />
@@ -63,6 +65,7 @@ function App() {
 					<Route path="/auth">
 						<Route path="login" element={<Login />} />
 						<Route path="signup" element={<Signup />} />
+						<Route path='forgot-password' element={<Forgotpassword />}/>
 					</Route>
 				</Routes>
 			</Router>
