@@ -22,7 +22,8 @@ import {
 	Overview,
 	Cart,
 	Checkout,
-	Forgotpassword
+	Forgotpassword,
+	ProductDescription
 } from "./pages";
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
 						<Route path="history" element={<History />} />
 						<Route path="userDashboard" element={<UserDashboard />} />
 						<Route path="checkout" element={<Checkout />} />
+						<Route path="productdescription" element={<ProductDescription />} />
 						
 					</Route>
 					<Route path="/admin/" element={<Adminroot />}>
