@@ -1,8 +1,8 @@
 import { Link as RouterLink, NavLink } from "react-router-dom"
 import "../../styles/Signup.css"
 import google from "../../images/google.png"
-import { Button, Flex, FormControl, IconButton, Image, Input, InputGroup, InputRightElement, Link, Text } from "@chakra-ui/react"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
+import { Button, Flex, FormControl, IconButton, Image, Input, InputGroup, InputRightElement, Link, Text, Box } from "@chakra-ui/react"
+import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineArrowLeft } from "react-icons/ai"
 import { useState } from "react"
 
 
@@ -10,6 +10,11 @@ const Login = () => {
     const [show, setShow] = useState(false)
     return<>
         <div className="signupWrapper">
+            <Box position='absolute' top='1rem' left='1rem'>
+          <Button as={RouterLink} to='/'>
+            <AiOutlineArrowLeft />
+          </Button>
+        </Box>
             <div className="leftSignup">
             <div className="leftSignupWrapper">
                 <div className="signupHeading">
