@@ -18,9 +18,12 @@ const SwiperContainer = () => {
       }}
       loop={true}
       breakpoints={{
-          769: {
+        769: {
+          slidesPerView: 3,
+        },
+        1200: {
           slidesPerView: 4,
-          },
+        }
       }}
       modules={[Keyboard, Navigation, A11y]}
       className="mySwiper"
