@@ -5,10 +5,13 @@ import ProductCard from '../ProductCard'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import instance from '../../config/api'
 import useProductsContext from '../../hooks/useProducts'
+import queryAtom from '../../states/atoms/queryAtom'
+import { useRecoilState } from 'recoil'
 
 const ProductList = () => {
   const [isLoading, setIsLoading] = useState(true) 
   const { products, setProducts} = useProductsContext()
+  const [query, setQuery]= useRecoilState(queryAtom)
   useEffect(() => {
     instance.get('/api/v1/user/getAllProducts')
       .then((response) => {
@@ -56,7 +59,7 @@ const ProductList = () => {
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            isLoading ? <Spinner color='brand.500'/> :  products.map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
+            isLoading ? <Spinner color='brand.500'/> :  products.filter((product) => product.productName.toLowerCase().includes(query)).map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
               return(
                 <GridItem w={'100%'} key={productId}>
                   <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description} categoryName={categoryName} growthHabit={growthHabit} lightLevel={lightLevel} productType={productType} waterRequirement={waterRequirement}/>
