@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Heading, Menu, MenuButton, MenuItem, MenuList, Text, useCheckbox } from '@chakra-ui/react'
+import { Box, Flex, Grid, GridItem, Heading, Menu, MenuButton, MenuItem, MenuList, Spinner, Text, useCheckbox } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import products from '../../data/products'
 import ProductCard from '../ProductCard'
@@ -7,7 +7,7 @@ import instance from '../../config/api'
 import useProductsContext from '../../hooks/useProducts'
 
 const ProductList = () => {
-  // const [products, setProducts] = useState([]) 
+  const [isLoading, setIsLoading] = useState(true) 
   const { products, setProducts} = useProductsContext()
   useEffect(() => {
     instance.get('/api/v1/user/getAllProducts')
@@ -15,6 +15,7 @@ const ProductList = () => {
         console.log(response.data.content)
         setProducts([...response.data.content])
         console.log(products)
+        setIsLoading(false)
       })
       .catch(err => {
         console.log(err)
@@ -55,10 +56,10 @@ const ProductList = () => {
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            products.map(({productId, image, productName, productPrice }) => {
+            isLoading ? <Spinner color='brand.500'/> :  products.map(({productId, image, productName, productPrice, description }) => {
               return(
                 <GridItem w={'100%'} key={productId}>
-                  <ProductCard id={productId} name={productName} image={image} price={productPrice} />
+                  <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description}/>
                 </GridItem>
               )
             })

@@ -6,6 +6,7 @@ import { BsShop } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 import { GrHistory } from "react-icons/gr";
+import { BsFillPersonFill } from "react-icons/bs"
 import { NavLink } from "react-router-dom";
 
 const Usersidebar = () => {
@@ -16,7 +17,7 @@ const Usersidebar = () => {
 				<span>
 					<FaUserAstronaut className="icon" />
 				</span>{" "}
-				Account
+				<p>Account</p>
 			</NavLink>
 
 			<NavLink to={"/orders"}>
@@ -25,16 +26,22 @@ const Usersidebar = () => {
 					{" "}
 					<BsShop className="icon" />{" "}
 				</span>{" "}
-				Orders
+				<p>Orders</p>
 			</NavLink>
 			<NavLink to={"/wishlist"}>
 				{" "}
 				<span>
 					<AiOutlineHeart className="icon" />
 				</span>{" "}
-				Wishlist
+				<p>Wishlist</p>
 			</NavLink>
-			<NavLink to={"/accountmanagement"}>Account Management</NavLink>
+			<NavLink to={"/accountmanagement"}>
+				{" "}
+				<span>
+					<BsFillPersonFill className="icon"/>
+				</span>
+				<p>Profile</p>
+				</NavLink>
 		</div>
 	);
 };

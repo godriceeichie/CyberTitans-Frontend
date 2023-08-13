@@ -6,7 +6,7 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
 
-const Cart = ({isOpen, onClose, onOpen, btnRef}) => {
+const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
   const [qty, setQty] = useState(0)
   
   return (
@@ -16,7 +16,7 @@ const Cart = ({isOpen, onClose, onOpen, btnRef}) => {
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
-        finalFocusRef={btnRef}
+        finalFocusRef={cartRef}
         size={'md'}
       >
         <DrawerOverlay />
