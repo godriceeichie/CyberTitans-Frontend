@@ -2,12 +2,18 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import React, { useEffect, useState } from 'react'
 import productTypeAtom from '../states/atoms/productTypeAtom'
 import { useRecoilState } from 'recoil'
+import plantCategoryAtom from '../states/atoms/plantCategoryAtom'
+import minPriceAtom from '../states/atoms/minPriceAtom'
+import maxPriceAtom from '../states/atoms/maxPriceAtom'
 
 const FilterAccordion = () => {
     const handleChange = (value) => {
         console.log(value)
     }
     const [productType, setProductType] = useRecoilState(productTypeAtom)
+    const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
+    const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
+    const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
     useEffect(() => {
         console.log(productType)
     }, [productType])
@@ -25,7 +31,7 @@ const FilterAccordion = () => {
             <AccordionPanel pb={4}>
                 <RadioGroup onChange={setProductType} value={productType} >
                     <Stack spacing={5}>
-                        <Radio colorScheme='green' value='PLANT '>
+                        <Radio colorScheme='green' value='PLANT'>
                             Plants
                         </Radio>
                         <Radio colorScheme='green' value='ACCESORIES'>
@@ -46,7 +52,7 @@ const FilterAccordion = () => {
             </h2>
             <AccordionPanel pb={4}>
                 <Stack>
-                <RadioGroup>
+                <RadioGroup onChange={setPlantCategory} value={plantCategory}>
                     <Stack spacing={5}>
                         <Radio colorScheme='green' value='Flowering'>
                             Flowering
@@ -81,7 +87,10 @@ const FilterAccordion = () => {
                 </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-            <RangeSlider defaultValue={[120, 240]} min={0} max={300} step={30} onChangeEnd={(val) => console.log(val)}>
+            <RangeSlider defaultValue={[0, 240]} min={0} max={300} step={30} onChangeEnd={(val) => {
+                setMinPrice(val[0])
+                setMaxPrice(val[1])
+            }}>
                 <RangeSliderTrack bg='green.100'>
                     <RangeSliderFilledTrack bg='green.400' />
                 </RangeSliderTrack>
