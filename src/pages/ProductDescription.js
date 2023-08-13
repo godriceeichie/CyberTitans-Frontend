@@ -117,6 +117,20 @@ const ProductDescription = (props) => {
     useEffect(() => {
 
     }, [qty])
+
+    const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    // Fetch reviews for the specific product using its id
+    instance.get(`/api/v1/reviews/${id}`)
+      .then((response) => {
+        setReviews(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [id]);
+
   return (
     <div style={{ display: 'flex', AlignItems: 'center', justifyContent: 'center', flexDirection: 'column', BackgroundColor: 'red'}}>
         <Box bgColor={'#f9f9f9'} px={'12'} py={'2'}>
@@ -149,8 +163,8 @@ const ProductDescription = (props) => {
           <Heading as='h1' size='xl' mb='1rem'>
             {product.productName}
           </Heading>
-          <Text fontSize='lg' color='gray.600' mb='1rem'>
-            Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <Text fontSize='lg' color='gray.600' mb='1rem' fontWeight='bold'>
+            Name of product
           </Text>
           <Text fontSize='xl' color='green.600' mb='1rem'>
             $99.99
@@ -181,6 +195,20 @@ const ProductDescription = (props) => {
               product.description
             }
           </Text>
+          <Divider my='1rem' />
+          <Text fontSize='lg' fontWeight='bold'>
+            Reviews
+          </Text>
+           {reviews.map((review, index) => (
+            <Box key={index} my='1rem'>
+              <Text fontSize='md' color='gray.600' fontWeight='bold'>
+                {review.username}
+              </Text>
+              <Text fontSize='md' color='gray.600' mt='0.5rem'>
+                {review.comment}
+              </Text>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Container>
