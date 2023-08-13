@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, Flex, Heading, IconButton, Image, Link, LinkBox, LinkOverlay, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react'
+import { Box, Card, CardBody, CardFooter, Flex, Heading, IconButton, Image, Link, LinkBox, LinkOverlay, List, ListIcon, ListItem, Stack, Text, useToast } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { ViewIcon } from '@chakra-ui/icons'
@@ -9,36 +9,39 @@ import useCartContext from '../hooks/useCartContext'
 import instance from '../config/api'
 
 
-const ProductCard = ({id, name, image, price, description }) => {
-  const { cart, dispatch } = useCartContext()
+const ProductCard = ({id, name, image, price, description, categoryName, growthHabit, lightLevel, productType, waterRequirement }) => {
+  // const { cart, dispatch } = useCartContext()
   const [product, setProduct] = useState({})
-  const addToCart = ( name, price, id, description) => {
-    instance.post(`/api/v1/cart/add-to-cart/1`,{
-      id: 0,
-      productId: 1,
-      productName: "Aloe Vera Plant",
-      productImage: " ",
-      productSize: " ",
-      description: "string",
-      quantity: 0,
-      unitPrice: 0,
-      subTotal: 0,
-      cartId: 0
-    },{
-      headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
-      }
-    })
-    .then((response) => {
-      console.log(response.data)
-    })
-    .catch((err) => {
-      console.log(err)
-      console.log(name,  price, id, description)
-    })
+  const toast = useToast()
+  
+  const addToCart = ( name, price, id, qty, totalPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement ) => {
+    if (!JSON.parse(localStorage.getItem('cart'))) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+    // localStorage.setItem('cart', JSON.stringify([]));
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    const item = cart.find(({id}) => id == id)
+    if(item){
+      item.qty++
+    }
+    else{
+      let cartItem={name, price, id, qty, totalPrice: (qty > 0) ? qty * price : price, description, categoryName, growthHabit, lightLevel, productType, waterRequirement}
+      cart.push(cartItem)
+      
+      localStorage.setItem('cart', JSON.stringify(cart))
+      toast({
+        title: 'Added to cart',
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+        position: 'top'
+      })
+    }
     
+    
+    console.log(cart)
   }
-  // const getProduct = (id) => {
+  
     
   // }
   return (
@@ -63,7 +66,7 @@ const ProductCard = ({id, name, image, price, description }) => {
                 <IconButton icon={<AiOutlineHeart size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'}  background={'none'} transition={'.6s'}/>
               </ListItem>
               <ListItem>
-                <IconButton onClick={() => addToCart(name, price, id, description)} icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/>
+                <IconButton onClick={() => addToCart(name, price, id, 0, price, description, categoryName, growthHabit, lightLevel, productType, waterRequirement)} icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/>
               </ListItem>
               
             </List>

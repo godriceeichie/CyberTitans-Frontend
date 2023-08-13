@@ -22,7 +22,7 @@ const PlantCategories = () => {
     <Box as='section' my={'24'} p={'0'} px={{base: '10', lg:'48'}}>
         <Heading 
             textAlign={'center'} 
-            mb={'10'} 
+            mb={'3'}
             fontWeight={'semibold'} 
             fontSize={'2xl'}
             position={'relative'}
@@ -42,7 +42,10 @@ const PlantCategories = () => {
         >
             Featured Categories
         </Heading>
-        <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)'}} templateRows={{md: 'repeat(3, 1fr)'}} gap={'6'}>
+        <Text fontSize={{base: 'md'}} textAlign={'center'} color={'#999'} letterSpacing={'-0.0075rem'} lineHeight={'160%'} as={'p'}>
+            Explore a curated range of featured categories that embody the essence of our passion for plants. Each category offers a unique blend of nature's wonders, thoughtfully selected to transform your surroundings into a thriving oasis. 
+        </Text>
+        <Grid mt={'10'} templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)'}} templateRows={{md: 'repeat(3, 1fr)'}} gap={'6'}>
             <GridItem as={LinkBox} borderRadius={{base: '2xl', md: 'none'}} position={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'} height={'36'}>
                 <LinkOverlay 
                     as={Link} 

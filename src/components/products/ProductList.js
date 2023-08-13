@@ -56,10 +56,10 @@ const ProductList = () => {
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            isLoading ? <Spinner color='brand.500'/> :  products.map(({productId, image, productName, productPrice, description }) => {
+            isLoading ? <Spinner color='brand.500'/> :  products.map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
               return(
                 <GridItem w={'100%'} key={productId}>
-                  <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description}/>
+                  <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description} categoryName={categoryName} growthHabit={growthHabit} lightLevel={lightLevel} productType={productType} waterRequirement={waterRequirement}/>
                 </GridItem>
               )
             })
