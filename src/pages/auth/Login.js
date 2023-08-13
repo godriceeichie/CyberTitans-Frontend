@@ -115,7 +115,7 @@ const Login = () => {
                     <div className="signupHeading">
                         <h2>Welcome back!</h2>
                         <p>Enter your credentials to access your account</p>
-                        <Button fontWeight={'medium'} onClick={handleGoogleLogin}>
+                        <Button fontWeight={'medium'} >
                             <Image src={google} mr={'1.5'} />
                             Log in with Google
                         </Button>
