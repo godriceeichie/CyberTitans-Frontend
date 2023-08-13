@@ -10,20 +10,35 @@ import { useRecoilState } from 'recoil'
 
 const ProductList = () => {
   const [isLoading, setIsLoading] = useState(true) 
-  const { products, setProducts} = useProductsContext()
   const [query, setQuery]= useRecoilState(queryAtom)
+  const { products, setProducts} = useProductsContext()
+  const [filteredProducts, setFilteredProducts] = useState(products)
+  const [filteredItems, setFilteredItems] = useState(products.filter((product) => product.productName.toLowerCase().indexOf(query.toLowerCase()) !== -1))
+  
+  console.log(filteredProducts)
+
   useEffect(() => {
     instance.get('/api/v1/user/getAllProducts')
       .then((response) => {
-        console.log(response.data.content)
+        // console.log(response.data.content)
         setProducts([...response.data.content])
-        console.log(products)
+        setFilteredProducts(products)
+        // setFilteredProducts([...response.data.content])
+        // console.log(products)
         setIsLoading(false)
       })
       .catch(err => {
         console.log(err)
       })
+    
   }, []);
+  useEffect(()=>{
+    
+      // setFilteredItems(products.filter((product) => product.productName.toLowerCase().includes(query)))
+      setFilteredProducts(filteredItems)
+    
+  }, [query]) 
+ 
   return (
     <Box px={{lg: '8'}}>
       <Heading fontSize={'2xl'}>
@@ -59,7 +74,7 @@ const ProductList = () => {
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            isLoading ? <Spinner color='brand.500'/> :  products.filter((product) => product.productName.toLowerCase().includes(query)).map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
+            isLoading ? <Spinner color='brand.500'/> :  filteredProducts.map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
               return(
                 <GridItem w={'100%'} key={productId}>
                   <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description} categoryName={categoryName} growthHabit={growthHabit} lightLevel={lightLevel} productType={productType} waterRequirement={waterRequirement}/>

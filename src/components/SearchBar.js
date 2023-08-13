@@ -10,6 +10,7 @@ const SearchBar = () => {
   const [query, setQuery]= useRecoilState(queryAtom)
   const handleInputChange = (e) => {
     setQuery(e.target.value)
+    console.log(query)
   }
   return (
     <Flex w={{base: '100%', lg: '80%'}} >
