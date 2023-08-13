@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { Link as RouterLink } from 'react-router-dom';
 import { Button, Flex, FormControl, IconButton, Image, Input, InputGroup, InputRightElement, Link, Text, Box } from '@chakra-ui/react';
-import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineArrowLeft } from 'react-icons/ai';
+import { AiOutlineEye, AiOutlineEyeInvisible, AiOutlineHome } from 'react-icons/ai';
 import axios from 'axios';
 import google from '../../images/google.png';
 import '../../styles/Signup.css';
@@ -112,7 +112,7 @@ const Login = () => {
         <div className="signupWrapper">
             <Box position='absolute' top='1rem' left='1rem'>
           <Button as={RouterLink} to='/'>
-            <AiOutlineArrowLeft />
+            <AiOutlineHome />
           </Button>
         </Box>
             <div className="leftSignup">
