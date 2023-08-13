@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Checkbox, Flex, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Stack } from '@chakra-ui/react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Checkbox, Flex, Radio, RadioGroup, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Stack, useCheckbox } from '@chakra-ui/react'
 import React from 'react'
 
 const FilterAccordion = () => {
@@ -31,74 +31,31 @@ const FilterAccordion = () => {
             </h2>
             <AccordionPanel pb={4}>
                 <Stack>
-                    <Checkbox colorScheme='green'>Flowering</Checkbox>
-                    <Checkbox colorScheme='green'>Non-flowering</Checkbox>
-                    <Checkbox colorScheme='green'>Indoor</Checkbox>
-                    <Checkbox colorScheme='green'>Outdoor</Checkbox>
-                    <Checkbox colorScheme='green'>Succulents</Checkbox>
-                    <Checkbox colorScheme='green'>Medicinal</Checkbox>
+                <RadioGroup>
+                    <Stack spacing={5}>
+                        <Radio colorScheme='red' value='Flowering'>
+                            Flowering
+                        </Radio>
+                        <Radio colorScheme='green' value='Non-flowering'>
+                            Non-flowering
+                        </Radio>
+                        <Radio colorScheme='green' value='Indoor'>
+                            Indoor
+                        </Radio>
+                        <Radio colorScheme='green' value='Outdoor'>
+                            Outdoor
+                        </Radio>
+                        <Radio colorScheme='green' value='Succulent'>
+                            Succulents
+                        </Radio>
+                        <Radio colorScheme='green' value='Medicinal'>
+                            Medicinal
+                        </Radio>
+                    </Stack>
+                </RadioGroup>
                 </Stack>
             </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem border={'none'} mb={'3.5'}>
-            <h2>
-                <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
-                    <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
-                        Light
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-                <Stack>
-                    <Checkbox colorScheme='green'>Green</Checkbox>
-                    <Checkbox colorScheme='green'>Red</Checkbox>
-                    <Checkbox colorScheme='green'>Blue</Checkbox>
-                    <Checkbox colorScheme='green'>Yellow</Checkbox>
-                    <Checkbox colorScheme='green'>Purple</Checkbox>
-                </Stack>
-            </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem border={'none'} mb={'3.5'}>
-            <h2>
-                <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
-                    <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
-                        Growth Habits
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-                <Stack>
-                    <Checkbox colorScheme='green'>Tree</Checkbox>
-                    <Checkbox colorScheme='green'>Shrub</Checkbox>
-                    <Checkbox colorScheme='green'>Herbaceous</Checkbox>
-                    <Checkbox colorScheme='green'>Vine</Checkbox>
-                    <Checkbox colorScheme='green'>Climber</Checkbox>
-                    <Checkbox colorScheme='green'>Creeping</Checkbox>
-                    <Checkbox colorScheme='green'>Spreading</Checkbox>
-                </Stack>
-            </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem border={'none'} mb={'3.5'}>
-            <h2>
-                <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
-                    <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
-                        Water Requirements
-                    </Box>
-                    <AccordionIcon />
-                </AccordionButton>
-            </h2>
-            <AccordionPanel pb={4}>
-                <Stack>
-                    <Checkbox colorScheme='green'>Drought-Tolerant</Checkbox>
-                    <Checkbox colorScheme='green'>Low-Water</Checkbox>
-                    <Checkbox colorScheme='green'>Moderate-Water</Checkbox>
-                    <Checkbox colorScheme='green'>High-Water</Checkbox>
-                    <Checkbox colorScheme='green'>Wetland</Checkbox>
-                </Stack>
-            </AccordionPanel>
-        </AccordionItem>
+        </AccordionItem>    
         <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
