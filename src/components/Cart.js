@@ -4,11 +4,10 @@ import { Link, Link as RouterLink } from 'react-router-dom';
 import aloevera from '../assets/aloe-vera-img.webp'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import cartAtom from '../states/atoms/cart';
 
 
 const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
-  
+  const [products, setProducts] = useState([])
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('user') ) || []
     setProducts(cart)
