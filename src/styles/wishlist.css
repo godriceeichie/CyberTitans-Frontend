@@ -1,0 +1,160 @@
+:root {
+	--accountcolor: #47ad97;
+}
+
+.accountwrp {
+	background-color: rgb(245, 245, 245);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	gap: 10px;
+}
+
+.sidemenu {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 25%;
+	height: 550px;
+	padding-left: 4rem;
+	padding-top: 40px;
+}
+
+.sidemenu a {
+	font-size: 17px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 3% 3%;
+	width: 80%;
+	border-radius: 10px;
+}
+.sidemenu a:hover{
+	background-color: #659E38;
+	color: white;
+	transition: 0.4s;
+}
+
+.icon {
+	font-size: 23px;
+}
+
+.history {
+	font-size: 20px;
+}
+
+.wishmenu {
+	width: 75%;
+	background-color:rgb(245, 245, 245);
+	height: 600px;
+	padding: 40px 2%;
+    /* border: 1px solid black; */
+}
+
+.acntoverview {
+	font-size: 2rem;
+	color: var(--accountcolor);
+}
+.wishmenu p{
+    font-size: 25px;
+    font-weight: 700;   
+    margin-bottom: 20px;
+}
+.wish-con{
+    width: 100%;
+    height: 90%;
+    /* border: 1px solid black; */
+    /* gap: 5%; */
+    overflow-y: scroll;
+}
+.wish-con::-webkit-scrollbar{
+    background-color: transparent;
+}
+.wishbx{
+    width: 100%;
+    height: 110px;
+    /* border: 1px solid black; */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1%;
+}
+.img-hld{
+    width: 20%;
+    height: 90%;
+    border: 1px solid black;
+}
+.txt-hld{
+    width: 55%;
+    height: 90%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.itm-nm{
+    font-size: 15px !important;
+    width: 90%;
+    height: 35%;
+    /* background-color: red; */
+    padding-left: 3%;
+}
+.itm-dsc{
+    font-size: 10px !important;
+    width: 90%;
+    height: 55%;
+    /* background-color: red; */
+    padding-left: 3%;
+}
+.icn-hld{
+    width: 20%;
+    height: 90%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+}
+.itm-prc{
+    font-size: 20px !important;
+}
+.atc{
+    width: 60%;
+    height: 30%;
+    font-size: 12px;
+    background-color: #659E38;
+    border-radius: 5px;
+    color: white;
+}
+
+@media screen and (max-width: 891px) {
+    .atc{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .wishmenu{
+        width: 87%;
+    }
+}
+
+@media screen and (max-width:504px) {
+    .itm-nm{
+        font-size: 10px !important;
+    }
+    .itm-dsc{
+        height: 60%;
+        font-size: 9px !important;
+    }
+    .atc{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:411px) {
+    .atc{
+        font-size: 8px;
+    }
+}

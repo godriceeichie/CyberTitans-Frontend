@@ -10,17 +10,19 @@
 	height: 100vh;
 	display: flex;
 	gap: 10px;
+	overflow-x: hidden;
 }
 
 .sidemenu {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	width: 25%;
+	width: 20%;
 	/* background-color: rgb(252, 249, 249); */
-	height: 550px;
-	padding-left: 4rem;
+	height: 600px;
+	padding-left: 2.5rem;
 	padding-top: 40px;
+	border-right: 1px solid rgb(219, 219, 219);
 }
 
 .sidemenu a {
@@ -29,7 +31,9 @@
 	align-items: center;
 	gap: 10px;
 	padding: 3% 3%;
-	width: 80%;
+	width: 90%;
+	font-size: 14px;
+	font-weight: 700;
 	border-radius: 10px;
 }
 .sidemenu a:hover{
@@ -48,9 +52,10 @@
 
 .contentmenu {
 	width: 75%;
-	background-color: rgb(241, 241, 241);
+	background-color: rgb(245, 245, 245);
 	height: 600px;
 	padding: 40px 2%;
+	/* border: 1px solid black; */
 }
 
 .acntoverview {
@@ -183,4 +188,67 @@ tfoot td{
 	border: none;
 	font-weight: bold;
 	font-family: inherit;
+}
+@media screen and (max-width: 990px) {
+	.sidemenu{
+		padding-left: 1.5rem;
+	}
+	.acc-vw{
+		height: 600px;
+	}
+	.top-bx{
+		height: 32%;
+		flex-direction: column;
+	}
+	.lft-sd{
+		width: 100%;
+	}
+	.wlc{
+		justify-content: center;
+	}
+	.rgt-sd{
+		width: 100%;
+	}
+	.tot{
+		width: 30%;
+	}
+	.table-cont{
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 806px) {
+	.table-cont{
+		overflow-x: scroll;
+	}
+	tbody{
+		font-size: 10px;
+	}
+	.rgt-sd{
+		display: none;
+	}
+}
+
+@media  screen and (max-width:639px){
+	.sidemenu{
+		width: 10%;
+		padding-left: 0rem;
+		display: flex;
+		align-items: center;
+	}
+	.sidemenu p{
+		display: none;
+	}
+	.sidemenu a{
+		width: 65%;
+		padding: 5% 0%;
+		display: flex;
+		justify-content: center !important;
+	}
+	.icon{
+		font-size: 13px;
+	}
+	.contentmenu{
+		width: 87%;
+	}
 }
