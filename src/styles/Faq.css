@@ -1,283 +1,272 @@
-
-
-  .hero1{
-    /* margin-top: 170px; */
-    height:300px;
-    width: 100%;
-    margin-top: 50px;
-    /* background-color: #90EE83; */
-   
-    background-image: url(https://uploads-ssl.webflow.com/6453bf08503f6d73d5ffe98e/6464a1cd5d0d2c49f4d64ffd_bulb_FAQs.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-   
-  
-    
-  }
-
-  .hero1 h1{
-    font-size: 60px;
-    margin-left: 70px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-
-  .hero1-left{
-    width: 50%;
-  }
-
-
-
-.imageh{
+.hero1 {
+  height: 300px;
   width: 100%;
+  margin-top: 50px;
+  background-image: url(https://uploads-ssl.webflow.com/6453bf08503f6d73d5ffe98e/6464a1cd5d0d2c49f4d64ffd_bulb_FAQs.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  overflow-x: hidden;
+}
 
+.hero1 p {
+  font-size: 60px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.hero1 span{
+  color: #649e38f0 ;
+}
+
+.hero1-left {
+  width: 50%;
+  padding: 0px 0px 0px 50px;
+}
+
+.imageh {
+  width: 100%;
   margin-bottom: 70px;
-  
-
 }
 
-
-  .hero2{
- 
-   height: 500px;
- 
-    width: 100%;
-    display: flex;
-  
-  
-
-  
-  }
-
-  .hero2-right{
-    width: 50%;
-    height: 500px;
-    margin-bottom: 170px;
-   
-  }
-
-  .hero2-right h1{
-    margin-left: 90px;
-    margin-top: 50px;
- 
-  }
-
-  .question-fields{
-    width: 50%;
-    height: 500px;
-    margin-left: 90px;
- 
-  
-  
-  }
-
-
-  .hero2-left{
-    width: 50%;
-    height: 300px;
-    margin-bottom: 170px;
-  }
-
-  .hero2-left h1{
-    margin-left: 90px;
-    margin-top: 50px;
-  }
-
-  .hero-3{
-    width: 100%;
-    height: 300px;
-    margin-bottom: 40px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding-bottom: 30px;
-    margin-top: 80px;
-    
-  }
-
-  .hero-3 .box{
-    width: 100%;
-    height: 300px;
-    background-color: rgba(0, 128, 0, 0.349);
-    margin-bottom: 140px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-.hero-3 .box span{
-  font-size: 40px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  align-items:center ;
-  justify-content: center;
+.hero2 {
+  width: 100%;
   display: flex;
-  margin-top: 75px;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  padding: 40px 0px;
+  margin-bottom: 30px;
+  position: relative;
 }
 
-.fbutton{
-  height: 50px;
-  width: 20%;
-  background-color:  rgba(0, 128, 0, 0.559);
+.hero2-right  {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-direction:column ;
+  border: 1px solid #649e3877;
+  border-radius: 10px;
+  padding: 30px 0px;
+}
+
+
+.hero2-right span{
+  color: #649e38f0 ;
+}
+
+
+.hero2-right h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.3rem;
+}
+
+.question-fields {
+  width: 60%;
+ 
+}
+
+.hero2-left h1 {
+  margin-left: 90px;
+  margin-top: 50px;
+}
+
+.hero-3 {
+  width: 100%;
+  max-height: 300px;
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 30px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 440px;
-  transition: background 0.2s ease;
+  overflow: hidden;
+  margin-bottom: 50px;
 }
 
+.hero-3 .box {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 130px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  background-color: rgba(0, 128, 0, 0.349);
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-3 .box span {
+  font-size: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+}
+
+.fbutton {
+  padding: 13px 20px;
+  background-color: rgba(0, 128, 0, 0.559);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 1rem;
+}
+
+.fbutton h4{
+  font-size: 1rem;
+}
 
 .fbutton:hover,
 .fbutton:focus {
-  background: linear-gradient(45deg, #90EE90, #90EE83); 
+  background: linear-gradient(45deg, #90ee90, #90ee83);
 }
 
-
-
-  @media screen and (max-width: 1050px) {
-    .hero-right{
-      margin-left: 10px;
-    }
-    .hero-right .h1c{
-      margin-left: 0px;
-    }
+@media screen and (max-width: 1203px) {
+  .hero-3 .box span{
+    font-size: 2rem;
   }
-  
-  @media screen and (max-width: 760px) {
-    .hero-left {
-      display: none;
+  .fbuttton{
+    font-size: 0.55rem;
+  }
+}
+@media screen and (max-width:988px) {
+  .hero1{
+    max-height: 200px;
+  }
+}
+@media screen and (max-width: 888px) {
+  .hero-3 .box span{
+    font-size: 1.5rem;
+  }
+  .fbutton h4{
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 953px) {
+  .hero-3 .box{
+    height: 200px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .hero1-left p {
+    font-size: 40px;
   }
 
-  .hero h1{
-    font-size: 10px;
-    display: none;
+  .hero-3{
+    max-height: 200px;
   }
-    .hero-right{
+  .hero-3 .box span{
+    font-size: 1rem;
+  }
+  .fbutton{
+    padding: 8px 18px;
+  }
+}
+
+@media screen and (max-width: 941px) {
+  .hero1 .hero1-left p {
+    font-size: 39px;
+  }
+}
+
+@media screen and (max-width:635px) {
+  .hero1 .hero1-left p {
+    font-size: 37px;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  .question-fields{
+     width: 85%;
+     font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .hero1-left{
     width: 100%;
-   background-image: url(https://images.unsplash.com/photo-1580595999172-787970a962d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80);
- 
-  
-    }
   }
-
-
-  @media screen and (max-width: 402px) {
-    .hero h1{
-      font-size: 10px;
-    }
- 
+  .hero1 .hero1-left p {
+    font-size: 35px;
   }
-
-
-
-
-
-
-
-
-
-
-  @media screen and (max-width: 375px) {
-    .hero-right .h1c{
-      margin-left: 20px;
-    }
-    .hero-right h1{
-      font-size: 20px;
+  .hero-3 .box span{
+    font-size: 0.75rem;
   }
-  }
-
-  @media screen and (max-width: 953px) {
-    .hero1 h1{
-      font-size: 39px;
-    }
-   
-  }
-  @media screen and (max-width: 720px) {
-    .hero1 h1 {
-      font-size: 0.5rem;
-      /* background-color: #90EE83; */
-    }
-
-    .hero-3 span{
-      font-size: 30%;
-     
-    }
-
-    .fbutton{
-      margin-right: 69px;
-    }
-   
-  }
-
-  @media screen and (max-width: 941px) {
-    .hero1 h1{
-      font-size: 39px;
-    }
-   
-  }
-
-
-
-
-
-  @media screen and (max-width: 807px) {
-    .hero1 h1{
-      font-size: 45px;
-    }
-
-    /* .hero-3 h1{
-      font-size: 10px;
-      margin-left: 30px;
-      background-color: aqua;
-    } */
-    
-  }
-
-  @media screen and (max-width: 679px) {
-    .hero2{
-      flex-direction: column;
-      height: 1000px;
-    }
-    .hero2-right{
-      width: 100%;
-      
-    }
-
-    .hero2-left{
-      width: 100%;
-    }
-
-    .hero2-left h1{
-      margin-top: 80px;
-      margin-bottom: 20px;
-     
-    }
-
-    
-
-    .hero-3{
-      flex-direction: column;
-      height: 500px;
-    }
-
-    .hero-3 .container1{
-      width: 100%;
-    }
-
-    
-    .hero-3 .container2{
-      width: 100%;
-    }
-
+  .fbutton{
+    padding: 7px 17px;
   }
   
-  
-  
+  .hero2-right{
+    width: 88%;
+  }
+  .question-fields{
+    width: 85%;
+    font-size: 0.7rem;
+ }
+}
 
-  
-    
-  
+@media screen and (max-width:350px) {
+  .hero1-left p{
+    font-size: 30px;
+  }
+  .hero h1 {
+    font-size: 10px;
+  }
+  .hero-3 .box span{
+    font-size: 0.6rem;
+  }
+  .fbutton h4{
+    font-size: 0.6rem;
+  }
+  .hero1{
+    max-height: 150px;
+  }
+  .hero2{
+    padding: 20px 0px;
+  }
+}
 
-/* accordian-test */
+@media screen and (max-width:330px) {
+  .question-fields{
+    width: 85%;
+    font-size: 0.6rem;
+    font-weight: 600;
+ }
+ .hero2-right h1{
+  font-size: 1rem;
+ }
+ .hero2-right{
+  width: 95%;
+}
 
+}
 
+@media screen and (max-width:285px) {
+  .hero1-left p{
+    font-size: 25px;
+  }
+  .hero h1 {
+    font-size: 10px;
+  }
+  .hero-3 .box span{
+    font-size: 0.45rem;
+    font-weight: 900;
+  }
+  .fbutton h4{
+    font-size: 0.5rem;
+  }
+  .hero1 .hero1-left p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width:222px) {
+  .hero1-left p{
+    font-size: 20px;
+  }
+}
