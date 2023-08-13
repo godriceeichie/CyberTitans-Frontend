@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { Link as RouterLink } from 'react-router-dom';
@@ -7,20 +8,103 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import axios from 'axios';
 import google from '../../images/google.png';
 import '../../styles/Signup.css';
+import Cookies from 'js-cookie';
+import instance from '../../config/api';
 
 const Login = () => {
     const [show, setShow] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [status, setStatus] = useState(true)
+    const navigate = useNavigate()
 
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //         const response = await axios.post('http://localhost:8081/api/v1/auth/login', {
-    //             usernameOrEmail: email, // Assuming you're using email for login
-    //             password
-    //         });
+    const handleSubimt = (e) => {
+        e.preventDefault();
+        setStatus(false)
 
+        instance.post("/api/v1/auth/login", {
+            usernameOrEmail: email, // Assuming you're using email for login
+            password
+        })
+        .then((res) => {
+            console.log(res)
+            if(res.status == 401){
+                setStatus(true)
+                return Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "User does not exist"
+                  });
+            }else{
+                setStatus(true)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: "Login Successfull",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                Cookies.set("USER_TOKEN", res.data)
+                  setTimeout(() => {
+                      navigate("/account");
+                  }, 1500)
+            }
+        }).catch(error => {
+            console.log(error) 
+            setStatus(true)
+        })
+    }
+
+    // const handleGogleLogin = (e) => {
+    //     e.preventDefault();
+    //     setStatus(false)
+
+    //     axios.get("https://www.googleapis.com/oauth2")
+    //     .then((res) => {
+    //         console.log(res)
+    //         if(res.status == 401){
+    //             setStatus(true)
+    //             Swal.fire({
+    //                 icon: 'error',
+    //                 title: 'Oops...',
+    //                 text: res.data.message
+    //               });
+    //         }else{
+    //             Swal.fire({
+    //                 icon: 'success',
+    //                 title: 'Success',
+    //                 text: "Login Successfull",
+    //                 showConfirmButton: false,
+    //                 timer: 1500
+    //             });
+    //             Cookies.set("USER_TOKEN", res.data)
+    //             //   setTimeout(() => {
+    //             //       navigate("/account");
+    //             //   }, 1500)
+    //         }
+    //     }).catch(error => {
+    //         console.log(error.message) 
+    //         setStatus(true)
+    //     })
+    // }
+
+    // const handleGoogleLogin = () => {
+    //     axios
+    //         .get('https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=openid%20profile%20email')
+    //         .then(res => {
+    //             console.log(res.data)
+    //         }).catch(error => {
+    //             console.log(error) 
+    //             console.log('Error logging in with Google:');
+    //             // display an error message to the user
+    //             Swal.fire({
+    //               icon: 'error',
+    //               title: 'Oops...',
+    //               text: "There was an error logging in. Please try again later."
+    //               });
+    //         })
+    //       // wait for 500ms before setting isLoading to false
+        
     //     }
 
 
@@ -31,7 +115,7 @@ const Login = () => {
                     <div className="signupHeading">
                         <h2>Welcome back!</h2>
                         <p>Enter your credentials to access your account</p>
-                        <Button fontWeight={'medium'}>
+                        <Button fontWeight={'medium'} >
                             <Image src={google} mr={'1.5'} />
                             Log in with Google
                         </Button>
@@ -81,6 +165,7 @@ const Login = () => {
                             position={'relative'}
                             bg={'black'}
                             zIndex={'1'}
+                            disabled={status ? true : false}
                             transition={'0.4s'}
                             _before={{
                                 width: '100%',
@@ -116,9 +201,9 @@ const Login = () => {
                                     transform: 'rotateY(90deg)'
                                 }
                             }}
-                            // onClick={handleSubmit}
+                            onClick={handleSubimt}
                         >
-                            Login
+                            {status ? "Login" : "Processing"}
                         </Button>
                     </form>
                     <Flex gap={'.25rem  '} fontWeight={'medium'}>

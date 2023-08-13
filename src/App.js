@@ -24,6 +24,7 @@ import {
 	Forgotpassword,
 	ProductDescription
 } from "./pages";
+import ImageUpload from "./components/ImageUpload";
 
 function App() {
 	
@@ -48,6 +49,7 @@ function App() {
 						<Route path="userDashboard" element={<UserDashboard />} />
 						<Route path="checkout" element={<Checkout />} />
 						<Route path="product/:id" element={<ProductDescription />} />
+						<Route path="image-upload" element={<ImageUpload />} />
 						
 					</Route>
 					<Route path="/admin/" element={<Adminroot />}>
