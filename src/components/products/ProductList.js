@@ -8,8 +8,6 @@ import queryAtom from '../../states/atoms/queryAtom';
 import ProductCard from '../ProductCard';
 import plantCategoryAtom from '../../states/atoms/plantCategoryAtom';
 import productTypeAtom from '../../states/atoms/productTypeAtom';
-import minPriceAtom from '../../states/atoms/minPriceAtom';
-import maxPriceAtom from '../../states/atoms/maxPriceAtom';
 
 
 
@@ -21,8 +19,7 @@ const ProductList = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
   const [productType, setProductType] = useRecoilState(productTypeAtom)
-  const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
-  const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
+ 
 
   useEffect(() => {
     // Load products from local storage

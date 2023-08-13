@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react'
 import productTypeAtom from '../states/atoms/productTypeAtom'
 import { useRecoilState } from 'recoil'
 import plantCategoryAtom from '../states/atoms/plantCategoryAtom'
-import minPriceAtom from '../states/atoms/minPriceAtom'
-import maxPriceAtom from '../states/atoms/maxPriceAtom'
 
 const FilterAccordion = () => {
     const handleChange = (value) => {
@@ -12,8 +10,6 @@ const FilterAccordion = () => {
     }
     const [productType, setProductType] = useRecoilState(productTypeAtom)
     const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
-    const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
-    const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
     useEffect(() => {
         console.log(productType)
     }, [productType])
@@ -77,7 +73,7 @@ const FilterAccordion = () => {
                 </Stack>
             </AccordionPanel>
         </AccordionItem>    
-        <AccordionItem border={'none'} mb={'3.5'}>
+        {/* <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
                     <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
@@ -98,7 +94,7 @@ const FilterAccordion = () => {
                 <RangeSliderThumb boxSize={6} index={1} />
             </RangeSlider>
             </AccordionPanel>
-        </AccordionItem>
+        </AccordionItem> */}
 
     </Accordion>
   )
