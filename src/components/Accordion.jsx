@@ -22,11 +22,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const ExpandableColumn = ({question, isOpen, toggle}) =>{
     return(
-        <div className="column-container" onClick={toggle}>
+    <div className="column-container" onClick={toggle}>
         <div className='column-text'>{question}</div>
         <button className='expendable-button'>
-           {/* <span class="material-symbols-outlined" style={{transform:'rotate(${isOpen ? 180 : 0}deg)' , transition: "all 0.25s"}}> expand_more</span> */}
-           <FontAwesomeIcon icon={faCaretDown} />
+           <FontAwesomeIcon className='arrowicon' icon={faCaretDown} />
         </button>
     </div>
         

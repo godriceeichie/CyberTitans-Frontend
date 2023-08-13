@@ -1,23 +1,44 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Checkbox, Flex, Radio, RadioGroup, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Stack, useCheckbox } from '@chakra-ui/react'
-import React from 'react'
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Checkbox, Flex, Radio, RadioGroup, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Stack, useRadioGroup } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import productTypeAtom from '../states/atoms/productTypeAtom'
+import { useRecoilState } from 'recoil'
+import plantCategoryAtom from '../states/atoms/plantCategoryAtom'
+import minPriceAtom from '../states/atoms/minPriceAtom'
+import maxPriceAtom from '../states/atoms/maxPriceAtom'
 
 const FilterAccordion = () => {
+    const handleChange = (value) => {
+        console.log(value)
+    }
+    const [productType, setProductType] = useRecoilState(productTypeAtom)
+    const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
+    const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
+    const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
+    useEffect(() => {
+        console.log(productType)
+    }, [productType])
   return (
     <Accordion defaultIndex={[0]} allowMultiple  w={'100%'} borderRight={'1px solid #D8D8D8'}>
         <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
                     <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
-                        Category
+                        Product Type
                     </Box>
                     <AccordionIcon />
                 </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-                <Stack>
-                    <Checkbox colorScheme='green'>Plants</Checkbox>
-                    <Checkbox colorScheme='green'>Accessories</Checkbox>
-                </Stack>
+                <RadioGroup onChange={setProductType} value={productType} >
+                    <Stack spacing={5}>
+                        <Radio colorScheme='green' value='PLANT'>
+                            Plants
+                        </Radio>
+                        <Radio colorScheme='green' value='ACCESORIES'>
+                            Accessories
+                        </Radio>
+                    </Stack>
+                </RadioGroup>
             </AccordionPanel>
         </AccordionItem>
         <AccordionItem border={'none'} mb={'3.5'}>
@@ -31,9 +52,9 @@ const FilterAccordion = () => {
             </h2>
             <AccordionPanel pb={4}>
                 <Stack>
-                <RadioGroup>
+                <RadioGroup onChange={setPlantCategory} value={plantCategory}>
                     <Stack spacing={5}>
-                        <Radio colorScheme='red' value='Flowering'>
+                        <Radio colorScheme='green' value='Flowering'>
                             Flowering
                         </Radio>
                         <Radio colorScheme='green' value='Non-flowering'>
@@ -66,7 +87,10 @@ const FilterAccordion = () => {
                 </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-            <RangeSlider defaultValue={[120, 240]} min={0} max={300} step={30} onChangeEnd={(val) => console.log(val)}>
+            <RangeSlider defaultValue={[0, 240]} min={0} max={300} step={30} onChangeEnd={(val) => {
+                setMinPrice(val[0])
+                setMaxPrice(val[1])
+            }}>
                 <RangeSliderTrack bg='green.100'>
                     <RangeSliderFilledTrack bg='green.400' />
                 </RangeSliderTrack>

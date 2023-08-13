@@ -1,26 +1,78 @@
-import { Box, Flex, Grid, GridItem, Heading, Menu, MenuButton, MenuItem, MenuList, Spinner, Text, useCheckbox } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-import products from '../../data/products'
-import ProductCard from '../ProductCard'
-import { ChevronDownIcon } from '@chakra-ui/icons'
-import instance from '../../config/api'
-import useProductsContext from '../../hooks/useProducts'
+import React, { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { Box, Flex, Grid, GridItem, Heading, Menu, MenuButton, MenuItem, MenuList, Spinner, Text } from '@chakra-ui/react';
+import { ChevronDownIcon } from '@chakra-ui/icons';
+import instance from '../../config/api';
+import useProductsContext from '../../hooks/useProducts';
+import queryAtom from '../../states/atoms/queryAtom';
+import ProductCard from '../ProductCard';
+import plantCategoryAtom from '../../states/atoms/plantCategoryAtom';
+import productTypeAtom from '../../states/atoms/productTypeAtom';
+import minPriceAtom from '../../states/atoms/minPriceAtom';
+import maxPriceAtom from '../../states/atoms/maxPriceAtom';
+
+
+
 
 const ProductList = () => {
-  const [isLoading, setIsLoading] = useState(true) 
-  const { products, setProducts} = useProductsContext()
+  const [isLoading, setIsLoading] = useState(true);
+  const [query] = useRecoilState(queryAtom);
+  const { products, setProducts } = useProductsContext();
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
+  const [productType, setProductType] = useRecoilState(productTypeAtom)
+  const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
+  const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
+
+  useEffect(() => {
+    // Load products from local storage
+    const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
+    setProducts(storedProducts);
+    setFilteredProducts(storedProducts);
+    setIsLoading(false);
+  }, []);
+
   useEffect(() => {
     instance.get('/api/v1/user/getAllProducts')
       .then((response) => {
-        console.log(response.data.content)
-        setProducts([...response.data.content])
-        console.log(products)
-        setIsLoading(false)
+        setProducts(response.data.content);
+
+        // Update local storage with fetched data
+        localStorage.setItem('products', JSON.stringify(response.data.content));
+
+        setIsLoading(false);
       })
       .catch(err => {
-        console.log(err)
-      })
+        console.log(err);
+      });
   }, []);
+
+  useEffect(() => {
+    const filteredItems = products.filter(product => product.productName.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    if(query){
+      setFilteredProducts(filteredItems);
+    }
+  }, [query, products]);
+  useEffect(() => {
+    const filteredItems = products.filter(product => product.categoryName === plantCategory);
+    if(plantCategory){
+      setFilteredProducts(filteredItems);
+    }
+  }, [plantCategory, products]);
+  useEffect(() => {
+    const filteredItems = products.filter(product => product.productType === productType);
+    if(productType){
+      setFilteredProducts(filteredItems);
+    }
+  }, [productType, products]);
+  useEffect(() => {
+    const filteredItems = products.filter(product => product.productType === productType);
+    if(productType){
+      setFilteredProducts(filteredItems);
+    }
+  }, [minPrice, maxPrice, products]);
+
+ 
   return (
     <Box px={{lg: '8'}}>
       <Heading fontSize={'2xl'}>
@@ -56,10 +108,10 @@ const ProductList = () => {
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            isLoading ? <Spinner color='brand.500'/> :  products.map(({productId, image, productName, productPrice, description }) => {
+            isLoading ? <Spinner color='brand.500'/> :  filteredProducts.map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
               return(
                 <GridItem w={'100%'} key={productId}>
-                  <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description}/>
+                  <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description} categoryName={categoryName} growthHabit={growthHabit} lightLevel={lightLevel} productType={productType} waterRequirement={waterRequirement}/>
                 </GridItem>
               )
             })

@@ -12,21 +12,86 @@ import {
     CardFooter,
     Button,
     background,
-    IconButton
+    IconButton,
+    useToast
 } from '@chakra-ui/react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import useProductsContext from '../hooks/useProducts'
 import instance from '../config/api'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
+import useCartContext from '../hooks/useCartContext'
+import cartAtom from '../states/atoms/cart'
+import { useRecoilState } from 'recoil'
 
 
 const ProductDescription = (props) => {
+  const {cart,dispatch}= useCartContext()
+  const [cartData, setCartData] = useRecoilState(cartAtom)
 
   const {id} = useParams()
-  const location =useLocation()
   const [product, setProduct] = useState({}) 
-  const [qty, setQty] = useState(0)
+  const [qty, setQty] = useState(1)
+  const toast = useToast()
+
+  // const reduceQty = (productid) => {
+  //   console.log('reduce')
+  //   let cart = JSON.parse(localStorage.getItem('cart'));
+  //   let item = cart.find(({ id }) => id === productid);
+  //   if (item && item.qty > 0) {
+  //     item.qty--;
+  //     setQty(item.qty);
+  //     console.log("Decreased qty:", item.qty);
+  //   }
+  
+  // }
+  // const increaseQty = (productid) => {
+  //   console.log('increase')
+  //   let cart = JSON.parse(localStorage.getItem('cart'));
+  //   let item = cart.find(({ id }) => id === productid);
+  //   if (item) {
+  //     item.qty++;
+  //     setQty(item.qty);
+  //     console.log("Increased qty:", item.qty);
+  //   }
+  // }
+
+  const addToCart = ( name, price, id, qty, totalPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement ) => {
+    if (!JSON.parse(localStorage.getItem('cart'))) {
+      localStorage.setItem('cart', JSON.stringify([]));
+    }
+    
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    const item = cart.find(({productId}) => productId === id)
+    if(item){
+      return toast({
+        title: 'Already in cart',
+        status: 'info',
+        duration: 2000,
+        isClosable: true,
+        position: 'top'
+      })
+    }
+    else{
+      let cartItem={name, price, productId: id, qty, totalPrice: (qty > 0) ? qty * price : price, description, categoryName, growthHabit, lightLevel, productType, waterRequirement}
+      cart.push(cartItem)
+      localStorage.setItem('cart', JSON.stringify(cart))
+      setCartData([cartItem, ...cartData])
+      console.log(cartData)
+      toast({
+        title: 'Added to cart',
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+        position: 'top'
+      })
+    }
+    
+  
+    
+    
+    // console.log(cart)
+  }
 
   useEffect(() => {
     console.log(id)
@@ -44,9 +109,28 @@ const ProductDescription = (props) => {
       .catch(err => {
         console.log(err)
       })
+      // let cart = JSON.parse(localStorage.getItem('cart'));
+      // setQty(cart.qty)
   }, []);
+ 
 
-  
+    useEffect(() => {
+
+    }, [qty])
+
+    const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    // Fetch reviews for the specific product using its id
+    instance.get(`/api/v1/reviews/${id}`)
+      .then((response) => {
+        setReviews(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [id]);
+
   return (
     <div style={{ display: 'flex', AlignItems: 'center', justifyContent: 'center', flexDirection: 'column', BackgroundColor: 'red'}}>
         <Box bgColor={'#f9f9f9'} px={'12'} py={'2'}>
@@ -79,8 +163,8 @@ const ProductDescription = (props) => {
           <Heading as='h1' size='xl' mb='1rem'>
             {product.productName}
           </Heading>
-          <Text fontSize='lg' color='gray.600' mb='1rem'>
-            Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <Text fontSize='lg' color='gray.600' mb='1rem' fontWeight='bold'>
+            Name of product
           </Text>
           <Text fontSize='xl' color='green.600' mb='1rem'>
             $99.99
@@ -91,7 +175,7 @@ const ProductDescription = (props) => {
               <Text fontSize={'lg'} fontWeight={'medium'}>{qty}</Text>
               <IconButton bg={'none'} _hover={{bg: 'none'}} onClick={() => setQty(qty + 1)}  icon={<AiOutlinePlus />}/>
             </Box>
-            <Button colorScheme='blue' size='lg' mb='1rem'>
+            <Button colorScheme='blue' size='lg' mb='1rem' onClick={() => addToCart(product.productName, product.productPrice, product.productId, qty, product.productPrice, product.description, product.categoryName, product.growthHabit, product.lightLevel, product.productType, product.waterRequirement)}>
               Add to Cart
             </Button>
           </Flex>
@@ -111,6 +195,20 @@ const ProductDescription = (props) => {
               product.description
             }
           </Text>
+          <Divider my='1rem' />
+          <Text fontSize='lg' fontWeight='bold'>
+            Reviews
+          </Text>
+           {reviews.map((review, index) => (
+            <Box key={index} my='1rem'>
+              <Text fontSize='md' color='gray.600' fontWeight='bold'>
+                {review.username}
+              </Text>
+              <Text fontSize='md' color='gray.600' mt='0.5rem'>
+                {review.comment}
+              </Text>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Container>
