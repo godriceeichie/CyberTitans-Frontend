@@ -16,7 +16,7 @@ const Navbar = ({cartOnOpen, cartIsOpen,  cartOnClose }) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cartRef = useRef()
     const hamburgerRef = useRef()
-    
+    const [cartLength, setCartLength] = useState()
     return(
         <Box pos={'sticky'} top={'0'} zIndex={'50'} bg={'white'} shadow={'base'}>
             <Box px={{base: '6', lg: '12'}}  py={'4'} w={'100%'}  maxW={'1500px'} mx={'auto'}>
@@ -36,7 +36,7 @@ const Navbar = ({cartOnOpen, cartIsOpen,  cartOnClose }) => {
                         </Button> */}
                         <Button bg={'none'} p={'0'} ref={cartRef} onClick={cartOnOpen}>
                             <Image src={cartIcon} width={'20px'}/>
-                            <Text>0</Text>
+                            <Text>{cartLength}</Text>
                         </Button>
                         <Button ref={hamburgerRef} onClick={onOpen} bg={'none'} hideFrom={'lg'} p={'0'}>
                             <Image src={menuIcon} />
@@ -98,7 +98,7 @@ const Navbar = ({cartOnOpen, cartIsOpen,  cartOnClose }) => {
                         </Link>
                     </Flex>
                 </Flex>
-                <Cart  cartRef={cartRef} isOpen={cartIsOpen} onClose={cartOnClose} onOpen={cartOnOpen}/>
+                <Cart setCartLength={setCartLength}  cartRef={cartRef} isOpen={cartIsOpen} onClose={cartOnClose} onOpen={cartOnOpen}/>
                 <HamburgerMenu isOpen={isOpen} onClose={onClose} onOpen={onOpen} hamburgerRef={hamburgerRef}/>
             </Box>
             

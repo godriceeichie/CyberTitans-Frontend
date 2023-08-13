@@ -6,7 +6,7 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
 
-const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
+const Cart = ({isOpen, onClose, onOpen, cartRef, setCartLength}) => {
   
   const [cartItems, setCartItems] = useState([]);
 
@@ -14,7 +14,23 @@ const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
     // Fetch cart items from local storage and set the state
     const storedCartItems = JSON.parse(localStorage.getItem('cart')) || [];
     setCartItems(storedCartItems);
+    
   }, []); // Empty dependen
+  useEffect(() => {
+    setCartLength(cartItems.reduce((total, item) => total + item.qty, 0))
+  }, [cartItems])
+  const calculateTotalPrice = () => {
+    let total = 0;
+    for (const item of cartItems) {
+      total += item.totalPrice;
+    }
+    return total;
+  };
+
+  const removeItemFromCart = (productId) => {
+    const updatedCart = cartItems.filter((item) => item.productId !== productId);
+    setCartItems(updatedCart);
+  }
   return (
     <>
 
@@ -36,7 +52,7 @@ const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
             {
               cartItems.map(({productId, name, price, totalPrice, qty}) => {
                 return(
-                  <Flex gap={'2rem'} key={productId}>
+                  <Flex gap={'2rem'} key={productId} mb={'5'}>
                     <Image h={'150px'} src={aloevera}/>
                     <Stack justifyContent={'space-between'} w={'100%'}>
                       <Flex justifyContent={'space-between'} >
@@ -52,7 +68,7 @@ const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
                           <Text fontSize={'lg'} fontWeight={'medium'}>{qty}</Text>
                           <IconButton bg={'none'} _hover={{bg: 'none'}}   icon={<AiOutlinePlus />}/>
                         </Box>
-                        <Button>
+                        <Button onClick={() => removeItemFromCart(productId)}>
                           Remove
                         </Button>
                       </Flex>
@@ -66,8 +82,8 @@ const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
           <DrawerFooter px={'4'} py={'3'} display={'block'} clipPath={'none'}>
             <Stack >
               <Flex justifyContent={'space-between'}>
-                <Text fontWeight={'semibold'}>Subtotal:</Text>
-                <Text fontWeight={'semibold'}>$20.00</Text>
+                <Text fontWeight={'semibold'}>Total Price:</Text>
+                <Text fontWeight={'semibold'}>{`$${calculateTotalPrice()}.00`}</Text>
               </Flex>
               <Link as={RouterLink} to={'/checkout'}>
               <Button bgColor='brand.500' color={'white'}>Checkout</Button>
