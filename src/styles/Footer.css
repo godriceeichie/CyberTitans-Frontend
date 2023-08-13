@@ -31,7 +31,8 @@ footer h2{
 }
 .leftFooter p{
     font-size: 14px;
-    color: rgb(84, 84, 84);
+    color: #737373;
+    font-weight: 500;
 }
 .leftFooter .socialIcons{
     display: flex;
@@ -48,6 +49,7 @@ footer h2{
 }
 .rightFooter h3{
     font-size: 16px;
+    font-weight: 600;
     /* margin-bottom: 10px; */
 }
 .rightFooter ul{
@@ -59,18 +61,24 @@ footer h2{
     list-style-type: none;
     font-size: 14px;
     color: rgb(84, 84, 84);
+    font-weight: 500;
+    color: #737373;
 }
-.rightFooter a{
+
+footer .navbar__link{
+    font-size: 14px;
+}
+/* .rightFooter a{
     list-style-type: none;
     font-size: 15px;
     text-decoration: none;
     color: rgb(84, 84, 84);
-    /* font-weight: 500; */
+    
 }
 .rightFooter a:hover{
     color: #003498;
     font-weight: 500;
-}
+} */
 .copyright{
     background-color: whitesmoke;
     padding: 0px 7%;
