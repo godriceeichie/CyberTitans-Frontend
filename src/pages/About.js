@@ -57,7 +57,7 @@ const About = () => {
 
         <section className="missionWrapper">
             <div className="heading">
-                <h2>WHY <span>CHOOSE</span> US</h2>
+                <h2>Why <span>Choose</span> Us</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis dolores enim hic atque, ipsum corporis, quia autem temporibus suscipit sit facilis dolor corrupti recusandae expedita ea? Ullam impedit perspiciatis adipisci.</p>
             </div>
             <div className="missionCardsWrapper">
@@ -86,7 +86,7 @@ const About = () => {
 
         <section className="teamWrapper">
             <div className="heading">
-                <h2>MEET THE <span>TEAM</span></h2>
+                <h2>Meet The <span> Team</span></h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat rerum quod excepturi recusandae, autem exercitationem neque ipsa nemo, cum explicabo praesentium dolores nam ratione magni reprehenderit quibusdam, est quam debitis.</p>
             </div>
             <Grid templateColumns={{base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'5'}>
@@ -207,41 +207,7 @@ const About = () => {
                         </CardBody>
                     </Card>
                 </GridItem>
-                {/* <div className="teamCard sophia">
-                    <img src={Sophia} alt="" />
-                    <div className="teamCardContent">
-                        <h3>Okosodo Sophia Osewe</h3>
-                        <p>STUDENT1373737</p>
-                    </div>
-                </div>
-                <div className="teamCard">
-                    <img src={Wutche} alt="" />
-                    <div className="teamCardContent">
-                        <h3>Wutche Chikaome</h3>
-                        <p>STUDENT1384506</p>
-                    </div>
-                </div>
-                <div className="teamCard">
-                    <img src={Fortune} alt="" />
-                    <div className="teamCardContent">
-                        <h3>Fortune Ken Osuh</h3>
-                        <p>STUDENT1383723</p>
-                    </div>
-                </div>
-                <div className="teamCard">
-                    <img src={Obinna} alt="" />
-                    <div className="teamCardContent">
-                        <h3>Nwabuisi Obinna Divine</h3>
-                        <p>STUDENT1343388</p>
-                    </div>
-                </div>
-                <div className="teamCard">
-                    <img src="" alt="" />
-                    <div className="teamCardContent">
-                        <h3>Godrice Eichie</h3>
-                        <p>STUDENT1422116</p>
-                    </div>
-                </div> */}
+                
             </Grid>
         </section>
 

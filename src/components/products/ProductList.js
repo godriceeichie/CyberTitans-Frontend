@@ -21,8 +21,8 @@ const ProductList = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
   const [productType, setProductType] = useRecoilState(productTypeAtom)
-  const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
-  const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
+  // const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
+  // const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
 
   useEffect(() => {
     // Load products from local storage
@@ -31,6 +31,35 @@ const ProductList = () => {
     setFilteredProducts(storedProducts);
     setIsLoading(false);
   }, []);
+
+  const sortByPriceAsc = () => {
+    instance.get('/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=asc&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00')
+    .then((response) => {
+      setFilteredProducts(response.data.content);
+
+      // Update local storage with fetched data
+      // localStorage.setItem('products', JSON.stringify(response.data.content));
+
+      setIsLoading(false);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+  const sortByPriceDesc = () => {
+    instance.get('/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00')
+    .then((response) => {
+      setFilteredProducts(response.data.content);
+
+      // Update local storage with fetched data
+      // localStorage.setItem('products', JSON.stringify(response.data.content));
+
+      setIsLoading(false);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
 
   useEffect(() => {
     instance.get('/api/v1/user/getAllProducts')
@@ -48,29 +77,61 @@ const ProductList = () => {
   }, []);
 
   useEffect(() => {
-    const filteredItems = products.filter(product => product.productName.toLowerCase().indexOf(query.toLowerCase()) !== -1);
     if(query){
-      setFilteredProducts(filteredItems);
+      instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=productName&filterParam=${query}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+        }})
+      .then((response) => {
+        setFilteredProducts(response.data.content);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+      });
     }
-  }, [query, products]);
+  }, [query]);
   useEffect(() => {
-    const filteredItems = products.filter(product => product.categoryName === plantCategory);
+    // const filteredItems = products.filter(product => product.categoryName === plantCategory);
     if(plantCategory){
-      setFilteredProducts(filteredItems);
+      instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=categoryName&filterParam=${plantCategory}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+        }})
+      .then((response) => {
+        setFilteredProducts(response.data.content);
+        // console.log(response.data.content)
+  
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+      });
     }
-  }, [plantCategory, products]);
+  }, [plantCategory]);
   useEffect(() => {
-    const filteredItems = products.filter(product => product.productType === productType);
     if(productType){
-      setFilteredProducts(filteredItems);
+      instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=productType&filterParam=${productType}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+        }})
+      .then((response) => {
+        setFilteredProducts(response.data.content);
+        // console.log(response.data.content)
+  
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+      });
     }
-  }, [productType, products]);
-  useEffect(() => {
-    const filteredItems = products.filter(product => product.productType === productType);
-    if(productType){
-      setFilteredProducts(filteredItems);
-    }
-  }, [minPrice, maxPrice, products]);
+  }, [productType]);
+  // useEffect(() => {
+  //   const filteredItems = products.filter(product => product.productType === productType);
+  //   if(productType){
+  //     setFilteredProducts(filteredItems);
+  //   }
+  // }, [minPrice, maxPrice, products]);
 
  
   return (
@@ -100,21 +161,20 @@ const ProductList = () => {
             </Flex>
           </MenuButton>
           <MenuList>
-            <MenuItem>Newest</MenuItem>
-            <MenuItem>Price: Low To High</MenuItem>
-            <MenuItem>Price: High To Low</MenuItem>
+            <MenuItem onClick={sortByPriceAsc}>Price: Low To High</MenuItem>
+            <MenuItem onClick={sortByPriceDesc}>Price: High To Low</MenuItem>
           </MenuList>
         </Menu>
       </Flex>
       <Grid templateColumns={{base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'4'} rowGap={'4'} mt={'3'}>
         {
-            isLoading ? <Spinner color='brand.500'/> :  filteredProducts.map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
+            isLoading ? <Spinner color='brand.500'/> :  (filteredProducts ? filteredProducts.map(({productId, image, productName, productPrice, description, categoryName, growthHabit, lightLevel, productType, waterRequirement  }) => {
               return(
                 <GridItem w={'100%'} key={productId}>
                   <ProductCard id={productId} name={productName} image={image} price={productPrice} description={description} categoryName={categoryName} growthHabit={growthHabit} lightLevel={lightLevel} productType={productType} waterRequirement={waterRequirement}/>
                 </GridItem>
               )
-            })
+            }): <Text>No Products Found</Text>)
         }
       </Grid>
     </Box>

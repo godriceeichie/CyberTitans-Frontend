@@ -23,8 +23,8 @@ const PlantCategories = () => {
         <Heading 
             textAlign={'center'} 
             mb={'3'}
-            fontWeight={'semibold'} 
-            fontSize={'2xl'}
+            fontWeight={'extrabold'} 
+            fontSize={'30px'}
             position={'relative'}
             pb={'7px'}
             _before={{
