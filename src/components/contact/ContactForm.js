@@ -13,7 +13,7 @@ const ContactForm = () => {
             </Box>
             <Box>
                 <form action="" style={{padding: '1.53rem'}}>
-                    <Stack gap={'1.69rem'}>
+                    <Stack borderRadius={'5px'} gap={'1.69rem'} boxShadow={'md'} p={'2.5'}>
                         <Flex flexDirection={{base: 'column', lg: 'row'}} gap={'4'}>
                             <FormControl>
                                 <FormLabel mb={{base: '0.87rem', lg: '2'}} color={'brand.500'} fontSize={{base: 'lg', lg: 'xl'}}>
@@ -40,8 +40,9 @@ const ContactForm = () => {
                             </FormLabel>
                             <Textarea px={'1.5'} placeholder='Your message here' _placeholder={{fontStyle: 'normal'}} type='text'/>
                         </FormControl>
+                        <Button mt={'9'} bg={'black'} borderRadius={'3xl'} color={'white'} fontSize={'md'} _hover={{bgColor: 'white', borderWidth: '1px', borderColor: 'black', color: 'black'}}>Send Message</Button>
                     </Stack>
-                    <Button mt={'9'} bg={'black'} borderRadius={'3xl'} color={'white'} fontSize={'md'}>Send Message</Button>
+                    
                 </form>
             </Box>
         </Flex>
