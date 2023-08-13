@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, CloseButton, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Heading, IconButton, Image, Input, Stack, StackDivider, Text, VStack } from '@chakra-ui/react'
-import { Link as RouterLink } from 'react-router-dom';
+import { Link, Link as RouterLink } from 'react-router-dom';
 import aloevera from '../assets/aloe-vera-img.webp'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
@@ -57,7 +57,9 @@ const Cart = ({isOpen, onClose, onOpen, cartRef}) => {
                 <Text fontWeight={'semibold'}>Subtotal:</Text>
                 <Text fontWeight={'semibold'}>$20.00</Text>
               </Flex>
+              <Link as={RouterLink} to={'/checkout'}>
               <Button bgColor='brand.500' color={'white'}>Checkout</Button>
+              </Link>
             </Stack>
           </DrawerFooter>
         </DrawerContent>
