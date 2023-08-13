@@ -3,29 +3,116 @@ import Usersidebar from './../../components/Usersidebar';
 import "../../styles/setting.css"
 import { FcShipped } from "react-icons/fc"
 import { BsFillLockFill } from "react-icons/bs"
+import Swal from 'sweetalert2';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const Settings = () => {
   const [displayEditProfile, setDisplayEditProfile] = useState(true);
   const [displayShipping, setDisplayShipping] = useState(false);
   const [displaySecurity, setDisplaySecurity] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    phoneNumber: "",
+  });
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleEditProfileClick = () => {
     setDisplayEditProfile(true);
     setDisplayShipping(false);
     setDisplaySecurity(false);
   };
-
   const handleShippingClick = () => {
     setDisplayEditProfile(false);
     setDisplayShipping(true);
     setDisplaySecurity(false);
   };
-
   const handleSecurityClick = () => {
     setDisplayEditProfile(false);
     setDisplayShipping(false);
     setDisplaySecurity(true);
   };
+  const token = Cookies.get("USER_TOKEN");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.patch(
+        "http://localhost:8081/api/v1/auth/update",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      if (response.status === 200) {
+        Swal.fire({
+          title: "Success",
+          text: "User details updated successfully",
+          icon: "success",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while updating user details",
+        icon: "error",
+      });
+    }
+  };
+
+  const handlePassword = async (e) => {
+    e.preventDefault();
+    try {
+      const token = Cookies.get("USER_TOKEN"); // Get the user token from the cookie
+
+      const response = await axios.patch(
+        "http://localhost:8081/api/v1/auth/updatePassword",
+        {
+          oldPassword,
+          newPassword,
+          confirmPassword,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+      if (response.status === 200) {
+        Swal.fire({
+          title: "Success",
+          text: "Password updated successfully",
+          icon: "success",
+        });
+        setOldPassword("");
+        setNewPassword("");
+        setConfirmPassword("");
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while updating the password",
+        icon: "error",
+      });
+    }
+  };
+
   return (
     <div className="accountwrp">
 				<Usersidebar   />
@@ -42,13 +129,13 @@ const Settings = () => {
                   <img src={"../../assets/aloe-vera-img.webp"} alt="" />
                 </div>
                 <div className='prf-frm'>
-                  <form>
-                    <input type="text" placeholder='Username'/>
-                    <input type="text" placeholder='Name'/>
-                    <input type="text" placeholder='Email'/>
-                    <input type="text" placeholder='D.O.B'/>
-                    <input type="text" placeholder='Address'/>
-                    <button>Edit Profile</button>
+                  <form onSubmit={handleSubmit}>
+                    <input type="text" placeholder='First Name' name="firstname" value={formData.firstname} onChange={handleChange}/>
+                    <input type="text" placeholder='lastName' name="lastname" value={formData.lastname} onChange={handleChange}/>
+                    <input type="text" placeholder='User Name' name="username" value={formData.username} onChange={handleChange}/>
+                    <input type="text" placeholder='Email'  name="email" value={formData.email} onChange={handleChange}/>
+                    <input type="text" placeholder='Phone Number' name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
+                    <button type="submit">Edit Profile</button>
                   </form>
                 </div>
               </div>
@@ -78,11 +165,11 @@ const Settings = () => {
                     <BsFillLockFill id='sec-i'/> 
                   </div>
               </div>
-              <form className='sec-frm-bx'>
-                  <input type="text" placeholder='Enter Old Password'/>
-                  <input type="password" placeholder='Enter New Password'/>
-                  <input type="password" placeholder='Confirm New Password'/>
-                  <button>Change Password</button>
+              <form className='sec-frm-bx' onSubmit={handlePassword}>
+                  <input type="text" placeholder='Enter Old Password' value={oldPassword} onChange={(e) => setOldPassword(e.target.value)}required/>
+                  <input type="password" placeholder='Enter New Password' value={newPassword} onChange={(e) => setNewPassword(e.target.value)}required/>
+                  <input type="password" placeholder='Confirm New Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}required/>
+                  <button type="submit">Change Password</button>
               </form>
                </div>
             ) : null}

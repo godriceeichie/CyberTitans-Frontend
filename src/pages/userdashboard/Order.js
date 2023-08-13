@@ -1,241 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Usersidebar from "../../components/Usersidebar";
+import axios from "axios";
 import "../../styles/order.css";
+import Cookies from "js-cookie";
 
 const Order = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  const baseUrl = "http://localhost:8081/api/v1/user"; // Update with your actual API URL
 
-  const orders = [
-    {
-      date: "2023-07-19",
-      transactionType: "Expensive Transaction",
-      description: "House Cleaning Tools",
-      amount: "$300",
-      category: "Domestic Appliance",
-      status: "Pending",
-    },
-    {
-      date: "2023-07-20",
-      transactionType: "Regular Transaction",
-      description: "Groceries",
-      amount: "$50",
-      category: "Food",
-      status: "Completed",
-    },
-    {
-      date: "2023-07-19",
-      transactionType: "Expensive Transaction",
-      description: "House Cleaning Tools",
-      amount: "$300",
-      category: "Domestic Appliance",
-      status: "Pending",
-    },
-    {
-      date: "2023-07-20",
-      transactionType: "Regular Transaction",
-      description: "Groceries",
-      amount: "$50",
-      category: "Food",
-      status: "Completed",
-    },
-    {
-      date: "2023-07-19",
-      transactionType: "Expensive Transaction",
-      description: "House Cleaning Tools",
-      amount: "$300",
-      category: "Domestic Appliance",
-      status: "Pending",
-    },
-    {
-      date: "2023-07-20",
-      transactionType: "Regular Transaction",
-      description: "Groceries",
-      amount: "$50",
-      category: "Food",
-      status: "Completed",
-    },
-    {
-      date: "2023-07-19",
-      transactionType: "Expensive Transaction",
-      description: "House Cleaning Tools",
-      amount: "$300",
-      category: "Domestic Appliance",
-      status: "Pending",
-    },
-    {
-      date: "2023-07-20",
-      transactionType: "Regular Transaction",
-      description: "Groceries",
-      amount: "$50",
-      category: "Food",
-      status: "Completed",
-    },
-    {
-      date: "2023-07-19",
-      transactionType: "Expensive Transaction",
-      description: "House Cleaning Tools",
-      amount: "$300",
-      category: "Domestic Appliance",
-      status: "Pending",
-    },
-    {
-      date: "2023-07-20",
-      transactionType: "Regular Transaction",
-      description: "Groceries",
-      amount: "$50",
-      category: "Food",
-      status: "Completed",
-    },
-    {
-      date: "2023-07-19",
-      transactionType: "Expensive Transaction",
-      description: "House Cleaning Tools",
-      amount: "$300",
-      category: "Domestic Appliance",
-      status: "Pending",
-    },
-    {
-      date: "2023-07-20",
-      transactionType: "Regular Transaction",
-      description: "Groceries",
-      amount: "$50",
-      category: "Food",
-      status: "Completed",
-    },
-	{
-		date: "2023-07-19",
-		transactionType: "Expensive Transaction",
-		description: "House Cleaning Tools",
-		amount: "$300",
-		category: "Domestic Appliance",
-		status: "Pending",
-	  },
-	  {
-		date: "2023-07-20",
-		transactionType: "Regular Transaction",
-		description: "Groceries",
-		amount: "$50",
-		category: "Food",
-		status: "Completed",
-	  },
-	  {
-		date: "2023-07-19",
-		transactionType: "Expensive Transaction",
-		description: "House Cleaning Tools",
-		amount: "$300",
-		category: "Domestic Appliance",
-		status: "Pending",
-	  },
-	  {
-		date: "2023-07-20",
-		transactionType: "Regular Transaction",
-		description: "Groceries",
-		amount: "$50",
-		category: "Food",
-		status: "Completed",
-	  },
-	  {
-		date: "2023-07-19",
-		transactionType: "Expensive Transaction",
-		description: "House Cleaning Tools",
-		amount: "$300",
-		category: "Domestic Appliance",
-		status: "Pending",
-	  },
-	  {
-		date: "2023-07-20",
-		transactionType: "Regular Transaction",
-		description: "Groceries",
-		amount: "$50",
-		category: "Food",
-		status: "Completed",
-	  },
-	  {
-		date: "2023-07-19",
-		transactionType: "Expensive Transaction",
-		description: "House Cleaning Tools",
-		amount: "$300",
-		category: "Domestic Appliance",
-		status: "Pending",
-	  },
-	  {
-		date: "2023-07-20",
-		transactionType: "Regular Transaction",
-		description: "Groceries",
-		amount: "$50",
-		category: "Food",
-		status: "Completed",
-	  },
-	  {
-		date: "2023-07-19",
-		transactionType: "Expensive Transaction",
-		description: "House Cleaning Tools",
-		amount: "$300",
-		category: "Domestic Appliance",
-		status: "Pending",
-	  },
-	  {
-		date: "2023-07-20",
-		transactionType: "Regular Transaction",
-		description: "Groceries",
-		amount: "$50",
-		category: "Food",
-		status: "Completed",
-	  },
-	  {
-		date: "2023-07-19",
-		transactionType: "Expensive Transaction",
-		description: "House Cleaning Tools",
-		amount: "$300",
-		category: "Domestic Appliance",
-		status: "Pending",
-	  },
-	  {
-		date: "2023-07-20",
-		transactionType: "Regular Transaction",
-		description: "Groceries",
-		amount: "$50",
-		category: "Food",
-		status: "Completed",
-	  },
-	  {
-		date: "2023-07-19",
-		transactionType: "Expensive Transaction",
-		description: "House Cleaning Tools",
-		amount: "$300",
-		category: "Domestic Appliance",
-		status: "Pending",
-	  },
-	  {
-		date: "2023-07-20",
-		transactionType: "Regular Transaction",
-		description: "Groceries",
-		amount: "$50",
-		category: "Food",
-		status: "Completed",
-	  },
-	  {
-      date: "2023-07-19",
-      transactionType: "Expensive Transaction",
-      description: "House Cleaning Tools",
-      amount: "$300",
-      category: "Domestic Appliance",
-      status: "Pending",
-    },
-    {
-      date: "2023-07-20",
-      transactionType: "Regular Transaction",
-      description: "Groceries",
-      amount: "$50",
-      category: "Food",
-      status: "Completed",
-    },
-  ];
+  const [orders, setOrders] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
 
-  const totalOrders = orders.length;
-  const totalPages = Math.ceil(totalOrders / itemsPerPage);
+  useEffect(() => {
+    fetchOrders();
+  }, [currentPage]);
 
+  const fetchOrders = async () => {
+    try {
+      const token = Cookies.get("USER_TOKEN");
+      const response = await axios.get(
+        `${baseUrl}/orders?pageNo=${currentPage}&pageSize=${itemsPerPage}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}` // Include the token in the headers
+          }
+        }
+      );
+
+      setOrders(response.data.orders);
+      setTotalPages(response.data.totalPages);
+    } catch (error) {
+      console.error("Error fetching orders:", error);
+    }
+  };
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const ordersToDisplay = orders.slice(startIndex, endIndex);
@@ -243,6 +41,7 @@ const Order = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
   return (
     <div className="accountwrp">
       <Usersidebar />
@@ -252,24 +51,23 @@ const Order = () => {
           <table>
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Transaction Type</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Category</th>
+                <th>Order ID</th>
+                <th>Date Ordered</th>
+                <th>Date Delivered</th>
+                <th>Total Amount</th>
                 <th>Status</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {ordersToDisplay.map((order, index) => (
-                <tr key={index}>
-                  <td>{order.date}</td>
+              {ordersToDisplay.map((order) => (
+                <tr key={order.id}>
+                  <td>{order.dateOrdered}</td>
                   <td>{order.transactionType}</td>
                   <td>{order.description}</td>
-                  <td>{order.amount}</td>
+                  <td>${order.totalPrice}</td>
                   <td>{order.category}</td>
-                  <td>{order.status}</td>
+                  <td>{order.orderStatus}</td>
                   <td>
                     <button>Cancel</button>
                   </td>
