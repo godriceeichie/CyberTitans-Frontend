@@ -145,6 +145,10 @@
 	padding: 2rem;
 	overflow-y: scroll;
 }
+.table-wrp::-webkit-scrollbar{
+	background-color: transparent !important;
+}
+
 .table-cont{
 	width: 100%;
 }
@@ -220,6 +224,9 @@ tfoot td{
 @media screen and (max-width: 806px) {
 	.table-cont{
 		overflow-x: scroll;
+	}
+	.table-cont::-webkit-scrollbar{
+		background-color: transparent;
 	}
 	tbody{
 		font-size: 10px;
