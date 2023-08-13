@@ -10,6 +10,7 @@ const FilterAccordion = () => {
     }
     const [productType, setProductType] = useRecoilState(productTypeAtom)
     const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
+    
     useEffect(() => {
         console.log(productType)
     }, [productType])
@@ -73,7 +74,7 @@ const FilterAccordion = () => {
                 </Stack>
             </AccordionPanel>
         </AccordionItem>    
-        {/* <AccordionItem border={'none'} mb={'3.5'}>
+        <AccordionItem border={'none'} mb={'3.5'}>
             <h2>
                 <AccordionButton _hover={{bg: 'none'}} pl={'0'}>
                     <Box as="span" flex='1' textAlign='left' fontWeight={'semibold'}>
@@ -94,7 +95,7 @@ const FilterAccordion = () => {
                 <RangeSliderThumb boxSize={6} index={1} />
             </RangeSlider>
             </AccordionPanel>
-        </AccordionItem> */}
+        </AccordionItem>
 
     </Accordion>
   )

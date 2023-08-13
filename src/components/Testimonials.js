@@ -26,8 +26,8 @@ const Testimonials = () => {
                 <Heading 
                     textAlign={'center'} 
                     mb={'10'} 
-                    fontWeight={'semibold'} 
-                    fontSize={'2xl'}
+                    fontWeight={'extrabold'} 
+                    fontSize={'30px'}
                     position={'relative'}
                     pb={'7px'}
                     _before={{
