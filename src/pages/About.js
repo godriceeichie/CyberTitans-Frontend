@@ -32,8 +32,7 @@ const About = () => {
                             <Text as={'span'} color={'brand.500'}> Are</Text>
                         </Heading>
                         <Text fontSize={{base: 'md'}} textAlign={{base: 'center', lg: 'left'}} color={'#999'} letterSpacing={'-0.0075rem'} lineHeight={'160%'} as={'p'}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta corporis aut repellendus porro eius quia eaque explicabo laudantium necessitatibus, aliquam inventore modi in perspiciatis? Earum repellat illum velit quam deleniti!
-                            Officia facere veritatis explicabo quisquam. Veritatis explicabo dignissimos esse, reiciendis, ratione.
+                            At PlantNest, we're passionate about bringing the beauty and benefits of nature to your living spaces. Our journey began with a simple vision: to transform homes, offices, and indoor environments by providing a diverse array of plants that liven up any setting. We understand that finding the perfect plant can be a time-consuming task, often requiring multiple trips to nurseries or stores. That's why we've embarked on a mission to make plant shopping convenient and enjoyable, all from the comfort of your own home.
                         </Text>
                         <Button 
                             mt={'4'} 
@@ -58,7 +57,7 @@ const About = () => {
         <section className="missionWrapper">
             <div className="heading">
                 <h2>Why <span>Choose</span> Us</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis dolores enim hic atque, ipsum corporis, quia autem temporibus suscipit sit facilis dolor corrupti recusandae expedita ea? Ullam impedit perspiciatis adipisci.</p>
+                <p>At PlantNest, we take pride in offering a unique and unparalleled plant shopping experience that sets us apart from the rest.</p>
             </div>
             <div className="missionCardsWrapper">
                 <div className="missionCards">
@@ -87,7 +86,7 @@ const About = () => {
         <section className="teamWrapper">
             <div className="heading">
                 <h2>Meet The <span> Team</span></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat rerum quod excepturi recusandae, autem exercitationem neque ipsa nemo, cum explicabo praesentium dolores nam ratione magni reprehenderit quibusdam, est quam debitis.</p>
+                <p>At PlantNest, our dedicated and passionate team works tirelessly to bring you the best gardening and plant-related experience. Each member contributes their unique skills and expertise, united by a common love for all things green. Allow us to introduce the faces behind PlantNest.</p>
             </div>
             <Grid templateColumns={{base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)'}} gap={'5'}>
                 {/* <div className="teamCard">
