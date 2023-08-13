@@ -6,13 +6,25 @@ import { BsFillLockFill } from "react-icons/bs"
 
 const Settings = () => {
   const [displayEditProfile, setDisplayEditProfile] = useState(true);
+  const [displayShipping, setDisplayShipping] = useState(false);
+  const [displaySecurity, setDisplaySecurity] = useState(false);
 
   const handleEditProfileClick = () => {
     setDisplayEditProfile(true);
+    setDisplayShipping(false);
+    setDisplaySecurity(false);
   };
 
   const handleShippingClick = () => {
     setDisplayEditProfile(false);
+    setDisplayShipping(true);
+    setDisplaySecurity(false);
+  };
+
+  const handleSecurityClick = () => {
+    setDisplayEditProfile(false);
+    setDisplayShipping(false);
+    setDisplaySecurity(true);
   };
   return (
     <div className="accountwrp">
@@ -20,9 +32,9 @@ const Settings = () => {
 				<div className="settmenu">
             <div className='set-con'>
               <div className='set-nav'>
-                <button onClick={handleEditProfileClick}>Edit Profile</button>
-                <button onClick={handleShippingClick}>Shipping</button>
-                <button>Security</button>
+              <button onClick={handleEditProfileClick} style={displayEditProfile ? { borderBottom: '2px solid #58c90293', transition: '0.7s' } : {}}>Edit Profile</button>
+              <button onClick={handleShippingClick} style={displayShipping ? { borderBottom: '2px solid #58c90293', transition: '0.7s' } : {}}>Shipping</button>
+                <button onClick={handleSecurityClick} style={displaySecurity ? { borderBottom: '2px solid #58c90293', transition: '0.7s' } : {}}>Security</button>
               </div>
               {displayEditProfile ? (
               <div className='edit-prf-bx'>
@@ -40,7 +52,8 @@ const Settings = () => {
                   </form>
                 </div>
               </div>
-              ) : (
+              ) : null}
+               {displayShipping ? (
               <div className='shp-ad-bx'>
               <div className='shp-img'>
                   <div className='shp-i-hld'>
@@ -57,7 +70,8 @@ const Settings = () => {
                   </form>
                 </div>
               </div>
-               )}
+              ) : null}
+              {displaySecurity ? (
                <div className='sec-ad-bx'>
                <div className='shp-img'>
                   <div className='shp-i-hld'>
@@ -71,6 +85,7 @@ const Settings = () => {
                   <button>Change Password</button>
               </form>
                </div>
+            ) : null}
             </div>
         </div>
       </div>

@@ -32,8 +32,8 @@
 .edit-prf-bx{
     width: 100%;
     height: 90%;
-    border: 1px solid black;
-    display: none;
+    /* border: 1px solid black; */
+    /* display: none; */
 }
 .prf-img{
     width: 100%;
@@ -85,7 +85,7 @@
     height: 90%;
     /* border: 1px solid black; */
     font-size: 30px;
-    display: none;
+    /* display: none; */
 }
 .shp-img{
     width: 100%;
