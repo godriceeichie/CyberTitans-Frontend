@@ -34,7 +34,7 @@ import filledStar from "../assets/filledStar.svg";
 import Review from "../components/Review";
 
 const ProductDescription = (props) => {
-  const { cart, dispatch } = useCartContext();
+  const { cartItems, dispatch } = useCartContext();
   const [cartData, setCartData] = useRecoilState(cartAtom);
 
   const { id } = useParams();
@@ -106,9 +106,11 @@ const ProductDescription = (props) => {
         waterRequirement,
       };
       cart.push(cartItem);
+      // dispatch({type: 'ADD', payload: cart})
       localStorage.setItem("cart", JSON.stringify(cart));
       setCartData([cartItem, ...cartData]);
       console.log(cartData);
+      console.log(cartItems)
       toast({
         title: "Added to cart",
         status: "success",
@@ -147,17 +149,17 @@ const ProductDescription = (props) => {
 
   const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    // Fetch reviews for the specific product using its id
-    instance
-      .get(`/api/v1/reviews/${id}`)
-      .then((response) => {
-        setReviews(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   // Fetch reviews for the specific product using its id
+  //   instance
+  //     .get(`/api/v1/reviews/${id}`)
+  //     .then((response) => {
+  //       setReviews(response.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [id]);
 
   return (
     <div
@@ -210,7 +212,9 @@ const ProductDescription = (props) => {
               {product.productName}
             </Heading>
             <Text fontSize="xl" color="green.600" mb="1rem">
-              $99.99
+              {
+                `$${product.productPrice}.00`
+              }
             </Text>
             <Flex gap={"1rem"} alignItems={"center"}>
               <Box
