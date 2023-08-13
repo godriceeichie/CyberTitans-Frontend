@@ -32,7 +32,8 @@
 .edit-prf-bx{
     width: 100%;
     height: 90%;
-    /* border: 1px solid black; */
+    border: 1px solid black;
+    display: none;
 }
 .prf-img{
     width: 100%;
@@ -79,6 +80,117 @@
     font-weight: 700;
 }
 
+.shp-ad-bx{
+    width: 100%;
+    height: 90%;
+    /* border: 1px solid black; */
+    font-size: 30px;
+    display: none;
+}
+.shp-img{
+    width: 100%;
+    height: 25%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shp-i-hld{
+    box-shadow: 3px 3px 5px grey;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#shp-i{
+    font-size: 80px !important;
+    /* width: 100px; */
+    /* height: 100px; */
+    border-radius: 50%;
+}
+.shp-frm{
+    width: 100%;
+    height: 45%;
+    /* border: 1px solid black; */
+}
+.shp-frm form{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2%;
+}
+.shp-frm form input{
+    border-bottom: 1px solid rgb(179, 179, 179);
+    background-color: transparent;
+    padding: 2% 0%;
+    margin-bottom: 20px;
+    outline: none;
+    width: 95%;
+}
+.shp-frm form input::placeholder{
+    font-size: 13px;
+}
+.shp-frm form button{
+    width: 35%;
+    height: 50%;
+    font-size: 12px;
+    border: 2px solid rgb(165, 165, 165);
+    border-radius: 5px;
+    background-color: #659E38;
+    color: white;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.sec-ad-bx{
+    width: 100%;
+    height: 90%;
+    /* border: 1px solid black; */
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5%;
+}
+#sec-i{
+    font-size: 80px !important;
+    /* width: 100px; */
+    /* height: 100px; */
+    border-radius: 50%;
+    color: #659E38;
+}
+.sec-frm-bx{
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.sec-frm-bx input{
+    width: 80%;
+    padding: 1%;
+    height: 15%;
+    outline: none;
+    border-bottom: 1px solid rgb(179, 179, 179);
+    background-color: transparent;
+    font-size: 15px;
+}
+.sec-frm-bx button{
+    border: 1px solid #6fb33c;
+    font-size: 15px;
+    padding: 0.5% 2%;
+    background-color: #659E38;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+}
+.sec-frm-bx input::placeholder{
+    font-size: 15px;
+    text-align: center;
+}
+
 @media screen and (max-width: 1012px) {
     .prf-img img{
         /* width: 20%; */
@@ -87,6 +199,20 @@
         display: grid;
         grid-template-columns: repeat(2,1fr);
         gap: 3%;
+    }
+    .shp-frm form{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 3%;
+    }
+}
+
+@media screen and (max-width:882px) {
+    .sec-frm-bx{
+        width: 65%;
+    }
+    .sec-frm-bx button{
+        font-size: 12px;
     }
 }
 
@@ -111,6 +237,44 @@
         width: 20%;
         padding: 1% 0%;
     }
+    #shp-i{
+        font-size: 30px;
+    }
+    .shp-frm{
+        height: 70%;
+    }
+    .shp-frm form{
+        height: 75%;
+        grid-template-columns: repeat(1,1fr);
+        gap: 7%;
+    }
+    .shp-frm form input{
+        margin-bottom: 5px;
+    }
+    .shp-frm form button{
+        height: 100% !important;
+        width: 20%;
+        font-size: 11px;
+    }
+    .shp-frm form button{
+        width: 20%;
+        padding: 1% 0%;
+    }
+    .sec-frm-bx{
+        width: 85%;
+    }
+    .sec-frm-bx input::placeholder{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:637px) {
+    .sec-ad-bx{
+        width: 100%;
+    }
+    .sec-frm-bx{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:600px){
@@ -124,6 +288,9 @@
 
 @media screen and (max-width: 477px) {
     .prf-frm form button{
+        width: 35%;
+    }
+    .shp-frm form button{
         width: 35%;
     }
 }
