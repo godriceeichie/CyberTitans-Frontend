@@ -11,12 +11,14 @@ import {
     Text,
     CardFooter,
     Button,
-    background
+    background,
+    IconButton
 } from '@chakra-ui/react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import useProductsContext from '../hooks/useProducts'
 import instance from '../config/api'
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 
 
 const ProductDescription = (props) => {
@@ -24,6 +26,7 @@ const ProductDescription = (props) => {
   const {id} = useParams()
   const location =useLocation()
   const [product, setProduct] = useState({}) 
+  const [qty, setQty] = useState(0)
 
   useEffect(() => {
     console.log(id)
@@ -82,9 +85,17 @@ const ProductDescription = (props) => {
           <Text fontSize='xl' color='green.600' mb='1rem'>
             $99.99
           </Text>
-          <Button colorScheme='blue' size='lg' mb='1rem'>
-            Add to Cart
-          </Button>
+          <Flex gap={'1rem'} alignItems={'center'}>
+            <Box height={'auto'} display={'flex'} alignItems={'center'} gap={'.5rem'} borderWidth={'2px'} borderColor={'brand.500'} px={'1.5'}>
+              <IconButton bg={'none'} _hover={{bg: 'none'}} onClick={() => setQty(qty - 1)}  icon={<AiOutlineMinus />}/>
+              <Text fontSize={'lg'} fontWeight={'medium'}>{qty}</Text>
+              <IconButton bg={'none'} _hover={{bg: 'none'}} onClick={() => setQty(qty + 1)}  icon={<AiOutlinePlus />}/>
+            </Box>
+            <Button colorScheme='blue' size='lg' mb='1rem'>
+              Add to Cart
+            </Button>
+          </Flex>
+          
           <Flex alignItems='center'>
             <Text fontWeight='bold' mr='1rem'>
               Availability:

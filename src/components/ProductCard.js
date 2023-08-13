@@ -9,14 +9,32 @@ import useCartContext from '../hooks/useCartContext'
 import instance from '../config/api'
 
 
-const ProductCard = ({id, name, image, price }) => {
+const ProductCard = ({id, name, image, price, description }) => {
   const { cart, dispatch } = useCartContext()
   const [product, setProduct] = useState({})
-  const addToCart = (id, name, image, price) => {
-    instance.post(`/api/v1/cart/add-to-cart/${id}`, {
+  const addToCart = ( name, price, id, description) => {
+    instance.post(`/api/v1/cart/add-to-cart/1`,{
+      id: 0,
+      productId: 1,
+      productName: "Aloe Vera Plant",
+      productImage: " ",
+      productSize: " ",
+      description: "string",
+      quantity: 0,
+      unitPrice: 0,
+      subTotal: 0,
+      cartId: 0
+    },{
       headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+        Authorization: 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
       }
+    })
+    .then((response) => {
+      console.log(response.data)
+    })
+    .catch((err) => {
+      console.log(err)
+      console.log(name,  price, id, description)
     })
     
   }
@@ -45,9 +63,7 @@ const ProductCard = ({id, name, image, price }) => {
                 <IconButton icon={<AiOutlineHeart size={'1rem'}/>} _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'}  background={'none'} transition={'.6s'}/>
               </ListItem>
               <ListItem>
-                <Link as={RouterLink}>
-                  {/* <IconButton onClick={() => addToCart(name, image, price, id)} icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/> */}
-                </Link>
+                <IconButton onClick={() => addToCart(name, price, id, description)} icon={<FiShoppingCart size={'1rem'}/>}  _hover={{color: 'white', background: 'brand.500'}} width={'36px'} height={'36px'} textAlign={'center'} borderRadius={'100%'} background={'none'} transition={'.6s'}/>
               </ListItem>
               
             </List>

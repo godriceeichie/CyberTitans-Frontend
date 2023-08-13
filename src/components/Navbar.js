@@ -30,7 +30,7 @@ const Navbar = ({cartOnOpen, cartIsOpen,  cartOnClose }) => {
                         <NavLink to={'/about'} className={'navbar__link'}>About Us</NavLink>
                         <NavLink to={'/contact'} className={'navbar__link'}>Contact Us</NavLink>
                     </Box>
-                    <Flex gap={{lg: '.5rem'}} alignItems={'center'} fontWeight={'medium'} display={show ? 'none' : 'flex'}>
+                    <Flex gap={{base: '.5rem'}} alignItems={'center'} fontWeight={'medium'} display={show ? 'none' : 'flex'}>
                         {/* <Button bg={'none'} p={'0'} hideFrom={'lg'} onClick={() => setShow(!show)}>
                             <Image src={searchIcon} width={'20px'}/>
                         </Button> */}
@@ -99,7 +99,7 @@ const Navbar = ({cartOnOpen, cartIsOpen,  cartOnClose }) => {
                     </Flex>
                 </Flex>
                 <Cart  cartRef={cartRef} isOpen={cartIsOpen} onClose={cartOnClose} onOpen={cartOnOpen}/>
-                <HamburgerMenu isOpen={isOpen} onClose={onClose} onOpen={onOpen} btnRef={hamburgerRef}/>
+                <HamburgerMenu isOpen={isOpen} onClose={onClose} onOpen={onOpen} hamburgerRef={hamburgerRef}/>
             </Box>
             
         </Box>
