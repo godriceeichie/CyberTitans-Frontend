@@ -26,8 +26,11 @@ const FilterAccordion = () => {
                 </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-                <RadioGroup onChange={setProductType} value={productType} >
+                <RadioGroup onChange={setProductType} defaultValue='all' value={productType} >
                     <Stack spacing={5}>
+                        <Radio colorScheme='green'  value={'all'}>
+                            All
+                        </Radio>
                         <Radio colorScheme='green' value='PLANT'>
                             Plants
                         </Radio>
@@ -49,8 +52,12 @@ const FilterAccordion = () => {
             </h2>
             <AccordionPanel pb={4}>
                 <Stack>
-                <RadioGroup onChange={setPlantCategory} value={plantCategory}>
+                <RadioGroup onChange={setPlantCategory} defaultValue='all' value={plantCategory}>
                     <Stack spacing={5}>
+                        
+                        <Radio colorScheme='green' value='all'>
+                            All
+                        </Radio>
                         <Radio colorScheme='green' value='Flowering'>
                             Flowering
                         </Radio>

@@ -19,23 +19,19 @@ function ImageUpload() {
     }
   const [selectedImage, setSelectedImage] = useState(null);
   const onUpload = async (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = (event) => {
-      setSelectedImage(event.target.result);
-    };
-
-    reader.readAsDataURL(file);
+    setSelectedImage(e.target.files[0])
   };
 
-  const handleImageUpload = async (e) => {
+  const handleImageUpload = (e) => {
     e.preventDefault()
     console.log(selectedImage)
-    
-    instance.put('/api/v1/admin/updateImage/1', {image: selectedImage}, {
+    const formData = new FormData()
+    formData.append("image", selectedImage)
+    instance.post('/api/v1/admin/image-upload/1', formData, {
     headers: {
-        'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcHRlY2hAZ21haWwuY29tIiwiaWF0IjoxNjkxODQ4MDAzLCJleHAiOjE2OTc5MDYwMDN9.m5nLy22ACHzdR--WAW5VblsJAjgsQqMdnpSz278wNnhxThMahxhTow-Jl4qoNxie'
+        Authorization: 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcHRlY2hAZ21haWwuY29tIiwiaWF0IjoxNjkxODQ4MDAzLCJleHAiOjE2OTc5MDYwMDN9.m5nLy22ACHzdR--WAW5VblsJAjgsQqMdnpSz278wNnhxThMahxhTow-Jl4qoNxie',
+        
+        "Content-Type": "multipart/form-data"
     }
     })
     .then((response) => {

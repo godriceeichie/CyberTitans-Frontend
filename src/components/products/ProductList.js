@@ -19,9 +19,6 @@ const ProductList = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [plantCategory, setPlantCategory] = useRecoilState(plantCategoryAtom)
   const [productType, setProductType] = useRecoilState(productTypeAtom)
-  // const [minPrice, setMinPrice] = useRecoilState(minPriceAtom)
-  // const [maxPrice, setMaxPrice] = useRecoilState(maxPriceAtom)
-
   useEffect(() => {
     // Load products from local storage
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
@@ -76,52 +73,72 @@ const ProductList = () => {
 
   useEffect(() => {
     if(query){
-      instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=productName&filterParam=${query}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
-        headers: {
-          'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
-        }})
-      .then((response) => {
-        setFilteredProducts(response.data.content);
-        setIsLoading(false);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      if(query === ' '){
+        setFilteredProducts(products)
+      }
+      else{
+        setIsLoading(true)
+        instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=productName&filterParam=${query}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
+          headers: {
+            'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+          }})
+        .then((response) => {
+          setFilteredProducts(response.data.content);
+          setIsLoading(false);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      }
     }
   }, [query]);
   useEffect(() => {
     // const filteredItems = products.filter(product => product.categoryName === plantCategory);
     if(plantCategory){
-      instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=categoryName&filterParam=${plantCategory}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
-        headers: {
-          'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
-        }})
-      .then((response) => {
-        setFilteredProducts(response.data.content);
-        // console.log(response.data.content)
-  
-        setIsLoading(false);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      if(plantCategory === 'all'){
+        setFilteredProducts(products)
+      }else{
+        setIsLoading(true)
+        instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=categoryName&filterParam=${plantCategory}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
+          headers: {
+            'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+          }})
+        .then((response) => {
+          setFilteredProducts(response.data.content);
+          // console.log(response.data.content)
+    
+          setIsLoading(false);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      }
+      
     }
   }, [plantCategory]);
   useEffect(() => {
     if(productType){
-      instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=productType&filterParam=${productType}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
-        headers: {
-          'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
-        }})
-      .then((response) => {
-        setFilteredProducts(response.data.content);
-        // console.log(response.data.content)
-  
-        setIsLoading(false);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      if(productType === 'all'){
+        setFilteredProducts(products)
+      }else{  
+        setIsLoading(true)
+        instance.get(`/api/v1/user/getAllProducts?sortBy=productPrice&sortDir=desc&filterBy=productType&filterParam=${productType}&productPriceStartRange=0.00&productPriceEndRange=17976931348623157.00`,{
+          headers: {
+            'Authorization': 'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJlbW1hZWljaGllQGdtYWlsLmNvbSIsImlhdCI6MTY5MTg1NzQ0NSwiZXhwIjoxNjk3OTE1NDQ1fQ.wX-CTTBTSCHbl3aCdIFs4i7Msl8GGnmnbij4eaXbIiCpWZQungpB1RNxyDeiM52h'
+          }})
+        .then((response) => {
+          setFilteredProducts(response.data.content);
+          // console.log(response.data.content)
+    
+          setIsLoading(false);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      }
+    }
+    else{
+
     }
   }, [productType]);
   // useEffect(() => {

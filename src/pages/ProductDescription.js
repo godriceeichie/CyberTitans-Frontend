@@ -26,7 +26,6 @@ import React, { useEffect, useState } from "react";
 import useProductsContext from "../hooks/useProducts";
 import instance from "../config/api";
 import { AiOutlineDelete, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import useCartContext from "../hooks/useCartContext";
 import cartAtom from "../states/atoms/cartAtom";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import AloeVeraPlant from "../assets/aloe-vera-img.webp";
@@ -35,7 +34,7 @@ import Review from "../components/Review";
 import ReviewForm from "./ReviewForm";
 
 const ProductDescription = (props) => {
-  const { cartItems, dispatch } = useCartContext();
+
   
 
   const { id } = useParams();
@@ -88,7 +87,6 @@ const ProductDescription = (props) => {
       cart.push(cartItem);
       setCartItems(prevCart => [...prevCart, cartItem])
       localStorage.setItem("cart", JSON.stringify(cart));
-      console.log(cartItems)
       toast({
         title: "Added to cart",
         status: "success",
@@ -326,7 +324,7 @@ const ProductDescription = (props) => {
           <Heading fontSize={'2xl'}>Customer Reviews</Heading>
           <Flex>
             <Review />
-            <ReviewForm />
+            <ReviewForm id={id}/>
           </Flex>
         </Box>
       </Container>
