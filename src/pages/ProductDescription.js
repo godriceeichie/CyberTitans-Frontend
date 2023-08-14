@@ -27,42 +27,21 @@ import useProductsContext from "../hooks/useProducts";
 import instance from "../config/api";
 import { AiOutlineDelete, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import useCartContext from "../hooks/useCartContext";
-import cartAtom from "../states/atoms/cart";
-import { useRecoilState } from "recoil";
+import cartAtom from "../states/atoms/cartAtom";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import AloeVeraPlant from "../assets/aloe-vera-img.webp";
 import filledStar from "../assets/filledStar.svg";
 import Review from "../components/Review";
 
 const ProductDescription = (props) => {
   const { cartItems, dispatch } = useCartContext();
-  const [cartData, setCartData] = useRecoilState(cartAtom);
+  
 
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [qty, setQty] = useState(1);
   const toast = useToast();
-
-  // const reduceQty = (productid) => {
-  //   console.log('reduce')
-  //   let cart = JSON.parse(localStorage.getItem('cart'));
-  //   let item = cart.find(({ id }) => id === productid);
-  //   if (item && item.qty > 0) {
-  //     item.qty--;
-  //     setQty(item.qty);
-  //     console.log("Decreased qty:", item.qty);
-  //   }
-
-  // }
-  // const increaseQty = (productid) => {
-  //   console.log('increase')
-  //   let cart = JSON.parse(localStorage.getItem('cart'));
-  //   let item = cart.find(({ id }) => id === productid);
-  //   if (item) {
-  //     item.qty++;
-  //     setQty(item.qty);
-  //     console.log("Increased qty:", item.qty);
-  //   }
-  // }
+  const setCartItems = useSetRecoilState(cartAtom);
 
   const addToCart = (
     name,
@@ -106,10 +85,8 @@ const ProductDescription = (props) => {
         waterRequirement,
       };
       cart.push(cartItem);
-      // dispatch({type: 'ADD', payload: cart})
+      setCartItems(prevCart => [...prevCart, cartItem])
       localStorage.setItem("cart", JSON.stringify(cart));
-      setCartData([cartItem, ...cartData]);
-      console.log(cartData);
       console.log(cartItems)
       toast({
         title: "Added to cart",
