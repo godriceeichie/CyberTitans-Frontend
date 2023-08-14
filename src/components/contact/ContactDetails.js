@@ -39,7 +39,7 @@ const ContactDetails = () => {
                 <VStack gap={'2'}>
                     <Heading as={'h3'} fontSize={'1.4rem'} fontWeight={'semibold'} color={'brand.500'}>Gmail</Heading>
                     <Container maxW={'2xs'} fontSize={'1.14rem'}>
-                        fronet@gmail.com
+                        cybertitans076@gmail.com
                     </Container>
                 </VStack>
                 <IconButton onClick={() => copy(email)}>
