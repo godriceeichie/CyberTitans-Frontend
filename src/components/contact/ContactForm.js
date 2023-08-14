@@ -12,7 +12,7 @@ const ContactForm = () => {
     const submitData = (data) => {
         const recipient = 'cybertitans076@gmail.com'
         const subject = encodeURIComponent(data.subject)
-        const body = encodeURIComponent(data.description)
+        const body = encodeURIComponent(data.message)
         const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
         window.location.href = mailtoLink;
         toast({
@@ -58,12 +58,12 @@ const ContactForm = () => {
                             <Input px={'1.5'} placeholder='Your message subject' _placeholder={{fontStyle: 'normal'}} type='text' {...register("subject")}/>
                             <FormErrorMessage>{errors.subject?.message}</FormErrorMessage>    
                         </FormControl>
-                        <FormControl isInvalid={errors.description}>
+                        <FormControl isInvalid={errors.message}>
                             <FormLabel mb={{base: '0.87rem', lg: '2'}} color={'brand.500'} fontSize={{base: 'lg', lg: 'xl'}}>
                                 Your Message
                             </FormLabel>
-                            <Textarea px={'1.5'} placeholder='Your message here' _placeholder={{fontStyle: 'normal'}} type='text' {...register("description")}/>
-                            <FormErrorMessage>{errors.description?.message}</FormErrorMessage>
+                            <Textarea px={'1.5'} placeholder='Your message here' _placeholder={{fontStyle: 'normal'}} type='text' {...register("message")}/>
+                            <FormErrorMessage>{errors.message?.message}</FormErrorMessage>
                         </FormControl>
                         <Button type='submit' mt={'9'} bg={'black'} borderRadius={'3xl'} color={'white'} fontSize={'md'} _hover={{bgColor: 'white', borderWidth: '1px', borderColor: 'black', color: 'black'}}>Send Message</Button>
                     </Stack>
