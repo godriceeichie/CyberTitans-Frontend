@@ -38,7 +38,7 @@ const ContactDetails = () => {
             <GridItem py={'4'} display={'flex'} flexDirection={'column'} justifyContent={'space-between'} alignItems={'center'} gap={'2'} textAlign={'center'} borderRadius={'0.91px'}  borderWidth={'0.91px'} borderColor={'brand.400'} shadow={'0px 3.6576101779937744px 29.260881423950195px 1.8288050889968872px rgba(0, 32, 23, 0.02)'}>
                 <VStack gap={'2'}>
                     <Heading as={'h3'} fontSize={'1.4rem'} fontWeight={'semibold'} color={'brand.500'}>Gmail</Heading>
-                    <Container maxW={'2xs'} fontSize={'1.14rem'}>
+                    <Container fontSize={'1.14rem'}>
                         cybertitans076@gmail.com
                     </Container>
                 </VStack>

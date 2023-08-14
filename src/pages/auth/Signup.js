@@ -82,7 +82,7 @@ const Signup = () => {
                     <div className="leftSignupWrapper">
                         <div className="signupHeading">
                             <h2>Create your account</h2>
-                            <p>Let's get started with (company name) and give you the best experience</p>
+                            <p>Let's get started with your details and give you the best experience</p>
                             <Button fontWeight={'medium'}>
                                 <Image src={google} mr={'1.5'}/>
                                 Sign up with Google
@@ -132,7 +132,7 @@ const Signup = () => {
                             </FormControl>
                             <Flex alignItems={'center'} justifyContent={'space-between'}>
                                 <Checkbox colorScheme="green" size={'sm'}>I agree to the terms and condition</Checkbox>
-                                <Link as={RouterLink} href="" color={'brand.500'} fontWeight={'medium'}>Forgot Password?</Link>
+                                
                             </Flex>
                             <Button 
                                 w={'100%'} 

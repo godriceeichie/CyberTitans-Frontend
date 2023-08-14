@@ -98,7 +98,7 @@ const Navbar = ({cartOnOpen, cartIsOpen,  cartOnClose }) => {
                         </Link>
                     </Flex>
                 </Flex>
-                <Cart setCartLength={setCartLength}  cartRef={cartRef} isOpen={cartIsOpen} onClose={cartOnClose} onOpen={cartOnOpen}/>
+                <Cart setCartLength={setCartLength} cartLength={cartLength}  cartRef={cartRef} isOpen={cartIsOpen} onClose={cartOnClose} onOpen={cartOnOpen}/>
                 <HamburgerMenu isOpen={isOpen} onClose={onClose} onOpen={onOpen} hamburgerRef={hamburgerRef}/>
             </Box>
             

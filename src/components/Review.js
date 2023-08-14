@@ -10,7 +10,7 @@ const Review = () => {
           <Text fontSize="md" color="gray.600" fontWeight="bold">
             Godrice Eichie
           </Text>
-          <AiOutlineDelete />
+          
         </Flex>
         <Text color="gray.600" mt="0.5rem">
           Lorem Ipsum is simply dummy text of the printing and typesetting
