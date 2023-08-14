@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import CartContextProvider from './context/CartContext';
 import ProductsContextProvider from './context/ProductsContext';
 import { RecoilRoot } from 'recoil';
 
@@ -35,11 +34,9 @@ root.render(
   <React.StrictMode>
     <RecoilRoot>
       <ChakraProvider theme={theme}>
-        <CartContextProvider>
-          <ProductsContextProvider>
-            <App />
-          </ProductsContextProvider>
-        </CartContextProvider>
+        <ProductsContextProvider>
+          <App />
+        </ProductsContextProvider>
       </ChakraProvider>
     </RecoilRoot>
   </React.StrictMode>

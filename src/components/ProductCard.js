@@ -5,7 +5,6 @@ import { ViewIcon } from '@chakra-ui/icons'
 import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai'
 import { FiShoppingCart } from 'react-icons/fi'
 import filledStar from '../assets/filledStar.svg'
-import useCartContext from '../hooks/useCartContext'
 import instance from '../config/api'
 
 
