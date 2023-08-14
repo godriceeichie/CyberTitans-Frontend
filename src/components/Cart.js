@@ -116,6 +116,7 @@ const Cart = ({
                   position={"relative"}
                   color={"white"}
                   transition={"0.4s"}
+                  onClick={onClose}
                   _before={{
                     width: "100%",
                     height: "100%",

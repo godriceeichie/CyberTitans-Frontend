@@ -32,6 +32,7 @@ import { useRecoilState, useSetRecoilState } from "recoil";
 import AloeVeraPlant from "../assets/aloe-vera-img.webp";
 import filledStar from "../assets/filledStar.svg";
 import Review from "../components/Review";
+import ReviewForm from "./ReviewForm";
 
 const ProductDescription = (props) => {
   const { cartItems, dispatch } = useCartContext();
@@ -324,12 +325,8 @@ const ProductDescription = (props) => {
           ))} */}
           <Heading fontSize={'2xl'}>Customer Reviews</Heading>
           <Flex>
-            <Box>
-              <Review />
-              <Box>
-
-              </Box>
-            </Box>
+            <Review />
+            <ReviewForm />
           </Flex>
         </Box>
       </Container>
