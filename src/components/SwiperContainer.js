@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { A11y, Keyboard, Navigation } from 'swiper/modules'
 import SwiperNavButtons from './SwiperNavButtons'
-import products from '../data/products'
 import ProductCard from './ProductCard'
+import useProductsContext from '../hooks/useProducts'
+import instance from '../config/api'
 
 const SwiperContainer = () => {
+  const {products, setProducts} = useProductsContext()
+  useEffect(() => {
+    instance.get('/api/v1/user/getAllProducts')
+      .then((response) => {
+
+        setProducts(response.data.content);
+
+        // Update local storage with fetched data
+        localStorage.setItem('products', JSON.stringify(response.data.content));
+
+        ;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
   return (
     <Swiper
     
@@ -30,10 +47,10 @@ const SwiperContainer = () => {
     >
         <SwiperNavButtons />
         {
-          products.map(({index, image, name, price, discountPrice}) => {
+          products.map(({productId, index, productName, productPrice, discountPrice}) => {
             return(
               <SwiperSlide key={index}>
-                <ProductCard name={name} image={image} price={price} discountPrice={discountPrice} />
+                <ProductCard id={productId} name={productName} price={productPrice} discountPrice={discountPrice} />
               </SwiperSlide>
             )
           })
